@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Prime Lane Motors</title>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&amp;family=Montserrat:wght@600;700;800&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#534400",
+                        "surface": "#131313",
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#241a00",
+                        "on-tertiary": "#3a3000",
+                        "on-primary": "#3c2f00",
+                        "primary": "#f2ca50",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353534",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#d0c5af",
+                        "primary-fixed": "#ffe088",
+                        "primary-container": "#d4af37",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "outline": "#99907c",
+                        "tertiary-fixed": "#ffe16d",
+                        "background": "#131313",
+                        "on-secondary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-primary": "#735c00",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-secondary-container": "#b8b8b8",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "tertiary": "#f2cc00",
+                        "on-surface": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-container": "#554300",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-bright": "#3a3939",
+                        "outline-variant": "#4d4635",
+                        "tertiary-container": "#d2b100",
+                        "surface-tint": "#e9c349",
+                        "secondary": "#c6c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Chivo"],
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Work Sans"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Work Sans"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-lg": ["Chivo"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glint-hover:hover {
+            box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.4);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #f2ca50, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-gold {
+            background: linear-gradient(to bottom, #f2ca50, #d4af37);
+        }
+        .input-ghost {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #c6c6c6;
+            color: #e5e2e1;
+        }
+        .input-ghost:focus {
+            outline: none;
+            border-bottom: 1px solid #f2ca50;
+            box-shadow: 0 1px 0 0 #f2ca50;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background border-b border-outline-variant bg-background/95 backdrop-blur-md shadow-[0_4px_20px_rgba(212,175,55,0.1)] fixed top-0 z-50 flex justify-between items-center px-container-padding w-full max-w-[1200px] mx-auto left-0 right-0 h-20">
+<div class="font-display-lg text-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">
+            PRIME LANE
+        </div>
+<div class="hidden md:flex gap-8 items-center font-label-lg text-label-lg uppercase">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Inventory</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Finance</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Contact</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="bg-gradient-gold text-on-primary-fixed font-label-lg text-label-lg uppercase px-6 py-3 rounded glint-hover transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+                Apply for Finance
+            </button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-container-padding max-w-[1200px] mx-auto w-full">
+<!-- Header -->
+<div class="text-center mb-16">
+<h1 class="font-display-lg text-display-lg text-gradient-gold mb-4 uppercase">Let's Get You Approved</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Contact us today for a free finance assessment. Experience personalised service and flexible options tailored for your future.
+            </p>
+<div class="h-[1px] w-32 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-8"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Info & Map Card -->
+<div class="bg-surface-container-low border border-primary/20 rounded-xl p-8 flex flex-col gap-8 shadow-lg relative overflow-hidden group">
+<div class="absolute inset-0 border border-primary/0 group-hover:border-primary/50 transition-colors duration-500 rounded-xl pointer-events-none"></div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-secondary-fixed mb-6 uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 28px;">location_on</span>
+                        Our Showroom
+                    </h2>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-highest shrink-0">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Direct Line</p>
+<p class="font-headline-md text-headline-md text-on-surface">+27 676 219 820</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-highest shrink-0">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Email Inquiry</p>
+<p class="font-body-md text-body-md text-on-surface">sullimanzain94@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="w-full h-64 rounded-lg overflow-hidden border border-primary/20 relative mt-auto">
+<img class="object-cover w-full h-full opacity-70 hover:opacity-100 transition-opacity duration-300" data-alt="A stylized, high-contrast dark mode satellite map view focusing on a modern metropolitan area. The map uses a sleek black and dark grey color palette, with major arteries and highways highlighted in subtle, glowing metallic gold lines to match a luxury automotive aesthetic. The lighting simulates a nighttime urban environment." data-location="Johannesburg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbAoj2xJSi9pJea90EanAHubnvWpu3tqaMNVnF99nrPBNk1fDEz45usgYLZi2bJ5oY2PF_W_LuPG264d1oQK-CnL8IH6wTwOFNlwEo2-hYyH3dI3wo4J2jCuaXs8PZ0Voa0kw222Fo_xVdajIIhRMuRBUZa6gkO-b5ofqmYXbPDaFfHyNqLS9EJk-u25AB5UjNFNbZfhiuBPovtSaWljZWCG36kk-hoWIjWRCkjCKQVcN-NU2YfvhZ3A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Prime Lane Motors HQ</span>
+</div>
+</div>
+</div>
+<!-- Finance Assessment Form -->
+<div class="bg-surface-container border border-primary p-8 rounded-xl relative shadow-[0_0_20px_rgba(212,175,55,0.05)]">
+<!-- Glint effect -->
+<div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 uppercase">Get Approved</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Fill out the details below for a free, no-obligation finance assessment.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">First Name</label>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your first name" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Last Name</label>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your last name" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Phone Number</label>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your contact number" type="tel"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Email Address</label>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your email address" type="email"/>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Employment Status</label>
+<select class="input-ghost py-2 w-full font-body-md text-body-md bg-transparent appearance-none">
+<option class="bg-surface text-on-surface" value="">Select status...</option>
+<option class="bg-surface text-on-surface" value="employed">Employed</option>
+<option class="bg-surface text-on-surface" value="self_employed">Self Employed</option>
+<option class="bg-surface text-on-surface" value="other">Other</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Additional Information (Optional)</label>
+<textarea class="input-ghost py-2 w-full font-body-md text-body-md resize-none h-24" placeholder="Tell us about the vehicle you are interested in..."></textarea>
+</div>
+<button class="w-full bg-gradient-gold text-on-primary-fixed font-headline-md text-headline-md uppercase py-4 rounded mt-4 glint-hover transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center gap-2" type="button">
+                        Submit Assessment
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant mt-4">
+<span class="material-symbols-outlined text-[14px] align-middle mr-1">lock</span>
+                        Your information is secure and confidential.
+                    </p>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-primary/20 bg-gradient-to-b from-surface-container-low to-black">
+<div class="w-full max-w-[1200px] mx-auto px-container-padding flex flex-col md:flex-row justify-between gap-gutter items-center">
+<div class="font-display-lg text-headline-md text-primary mb-4 md:mb-0">
+                PRIME LANE
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Inventory</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Finance</a>
+<a class="text-primary hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Terms of Service</a>
+</div>
+<div class="text-on-surface-variant font-body-md text-body-md mt-4 md:mt-0">
+                © 2024 Prime Lane Motors. The Way To Go.
+            </div>
+</div>
+</footer>
+</body></html>

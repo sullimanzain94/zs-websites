@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>First Organic Lead Check-in Protocol — Monitoring Active</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#c8c6c5",
+                      "surface-container": "#1e2020",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-primary": "#3c2f00",
+                      "surface-dim": "#121414",
+                      "on-error": "#690005",
+                      "secondary-container": "#474746",
+                      "on-background": "#e3e2e2",
+                      "surface-container-highest": "#343535",
+                      "primary": "#f2ca50",
+                      "tertiary-fixed": "#e4e2e1",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "outline-variant": "#4d4635",
+                      "primary-container": "#d4af37",
+                      "tertiary-fixed-dim": "#c8c6c6",
+                      "on-surface": "#e3e2e2",
+                      "tertiary-container": "#b4b2b2",
+                      "primary-fixed": "#ffe088",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#383939",
+                      "on-primary-container": "#554300",
+                      "inverse-surface": "#e3e2e2",
+                      "on-tertiary-container": "#454545",
+                      "inverse-on-surface": "#2f3131",
+                      "on-tertiary": "#303030",
+                      "background": "#121414",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-surface-variant": "#d0c5af",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-secondary-fixed-variant": "#474746",
+                      "outline": "#99907c",
+                      "inverse-primary": "#735c00",
+                      "surface-container-high": "#292a2a",
+                      "surface-variant": "#343535",
+                      "tertiary": "#d0cdcd",
+                      "on-secondary-container": "#b7b5b4",
+                      "on-primary-fixed": "#241a00",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-container-low": "#1a1c1c",
+                      "error-container": "#93000a",
+                      "on-secondary": "#313030",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "surface-tint": "#e9c349",
+                      "surface-container-lowest": "#0d0e0f",
+                      "surface": "#121414",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#c8c6c5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "container-padding": "24px",
+                      "gutter": "16px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "26px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .metallic-glow {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .gold-glow {
+            box-shadow: inset 0 1px 0 rgba(212, 175, 55, 0.2), 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .blinking-dot {
+            animation: blinker 1.5s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen antialiased flex flex-col md:flex-row overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- JSON Component: SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-[280px] z-50 bg-surface-container-lowest border-r border-white/5 py-8 sticky top-0 shrink-0">
+<div class="px-gutter mb-stack-lg flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center overflow-hidden border border-white/10 shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, minimalist automotive emblem forged from brushed titanium and polished obsidian. The lighting is moody and cinematic, highlighting the sharp geometric angles of the logo. A subtle, warm golden light reflects off the edges, reinforcing a premium, high-end automotive concierge aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5AvAlOJfYg3diNR77wev3jSgilcLsrFnp4VvZqNkk_X8ftt5vJbPdOigIna5OAMNcnYCqd2xT58lcDzfUuXa6j8g2ugGs-W4ytx6gtkYHanjjSkMXIfQDtzSo2v_jf5YN-XnaGgcXlA4havlAyO95ubjAvrzm2QqvANPM5Ikwm3W05Oeg52UUiM9T_3Bi83Hw_QKanqlpB3zhxlGAPNNhQr-cr4yoSfWnjZqRlNuzB7HVPjdzGcFVRA"/>
+</div>
+<div>
+<h1 class="font-headline-md text-body-md font-bold text-primary tracking-tight">Prime Lane Motors</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Private Concierge</p>
+</div>
+</div>
+<div class="px-gutter mb-stack-lg">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider py-3 px-4 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Application
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="text-primary font-bold bg-surface-container-high border-l-4 border-primary px-4 py-3 flex items-center gap-3 w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span class="font-body-md text-body-md">Leads</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-body-md text-body-md">Pipeline</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-body-md text-body-md">Applications</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">history_toggle_off</span>
+<span class="font-body-md text-body-md">Follow-ups</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="mt-auto pt-4 px-4 border-t border-white/5">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 w-full hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">Sign Out</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 bg-background relative">
+<!-- Mobile Top Nav Placeholder (Supressed for Dashboard specific view, keeping raw structure if needed but hiding) -->
+<header class="md:hidden flex items-center justify-between px-gutter py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-40">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Prime Lane</h1>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</div>
+</header>
+<!-- JSON Component: TopNavBar (Desktop only, contextual) -->
+<header class="hidden md:flex justify-between items-center px-gutter py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 sticky top-0 right-0 w-full z-40">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">First Lead Check-in</h2>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high p-2 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an automotive executive in a sharply tailored charcoal suit. The background is a slightly blurred, dramatically lit modern garage featuring deep blacks and sleek architectural lines. Subtle golden rim lighting outlines the subject's profile, reinforcing a premium, concierge-level service aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOtGHi5VcNWxOPXQWv6vIJQXs-24raVSwxc3StBowDzig0tYEeCVINE4Og8qVqalhseLVOePdl-ogJlwqD5wPr1fX9Kyklt0ycXPz0e2KxbvecBwtcl689eWMVPXJzkZNjWuF-2RS7Lte46XurI-HIDeT7WpJ_AqmNj-RfbKlP5vVBhLVm3hb-I06rdtYNq4IV_K81SzLASOGjFojkMz_ZmmizufTLNkaSjKnAdId3VkvKGGPS9wRu_g"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-container-padding lg:p-[40px] max-w-7xl mx-auto w-full flex-1 flex flex-col gap-stack-lg">
+<!-- Alert Banner -->
+<div class="w-full bg-surface-container-highest border-2 border-primary gold-glow rounded-xl p-6 flex flex-col gap-4 mb-6 relative overflow-hidden"><div class="absolute -right-10 -top-10 opacity-10 pointer-events-none"><span class="material-symbols-outlined text-[120px] text-primary">verified</span></div><div class="flex items-center justify-between border-b border-white/10 pb-3"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-primary animate-pulse">notifications_active</span><h3 class="font-headline-md text-body-lg font-bold text-primary uppercase tracking-wider">🔔 QUALIFIED LEAD — ACTION REQUIRED</h3></div><span class="font-label-sm text-label-sm bg-primary text-on-primary px-3 py-1 rounded-full font-bold">REAL ORGANIC LEAD</span></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Customer Details</span><p class="font-body-md text-on-surface font-bold">Sarah Miller <span class="text-on-surface-variant font-normal">(L-ORG-001)</span></p><p class="font-body-md text-primary-fixed-dim flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">local_fire_department</span> 85 (HOT)</p></div><div class="flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Interest &amp; Intent</span><p class="font-body-md text-on-surface">VW Golf 8 R</p><p class="font-body-md text-primary-fixed-dim">Finance Intent: High</p></div><div class="flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Status &amp; Assignment</span><p class="font-body-md text-on-surface">Result: <span class="text-primary-fixed-dim font-bold">COMPLETED (Verified)</span></p><p class="font-body-md text-on-surface-variant">Agent: Zain Sulliman • Just Now</p></div></div><div class="mt-2 p-4 bg-surface rounded-lg border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Recommended Next Action</span><p class="font-body-md text-on-surface">Initiate Finance Application via WhatsApp.</p></div><button class="bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase px-6 py-2 rounded hover:opacity-90 transition-opacity">Start Application</button></div></div><div class="w-full bg-error-container/20 border border-error/50 rounded-lg p-4 flex items-center gap-4 animate-pulse">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider font-bold">URGENT: FIRST ORGANIC LEAD DETECTED — MONITORING IN PROGRESS</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Left Column: Metrics & Identity -->
+<div class="lg:col-span-8 flex flex-col gap-stack-lg">
+<!-- Status Panel Bento -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container rounded-xl p-4 metallic-glow border border-white/5 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Current Stage</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary blinking-dot"></div>
+<span class="font-body-lg text-body-lg text-primary font-medium">INITIAL CONTACT</span>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-4 metallic-glow border border-white/5 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Time Since Arrival</span>
+<span class="font-body-lg text-body-lg text-on-surface font-medium">14m 22s</span>
+</div>
+<div class="bg-surface-container rounded-xl p-4 metallic-glow border border-white/5 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Response Time</span>
+<span class="font-body-lg text-body-lg text-primary-container font-medium">8m 45s</span>
+</div>
+<div class="bg-surface-container rounded-xl p-4 metallic-glow border border-white/5 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Health</span>
+<div class="flex items-center gap-2 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-body-lg text-body-lg font-medium">OPTIMAL</span>
+</div>
+</div>
+</div>
+<!-- Lead Identity Card -->
+<div class="bg-surface-container-high rounded-xl p-6 gold-glow border-l-4 border-l-primary flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-20 -top-20 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">directions_car</span>
+</div>
+<div class="flex flex-col gap-1 relative z-10">
+<div class="flex items-center gap-3 mb-2">
+<span class="font-label-sm text-label-sm bg-surface text-on-surface-variant px-2 py-1 rounded border border-white/10">L-ORG-001</span>
+<span class="font-label-sm text-label-sm bg-error/10 text-error px-2 py-1 rounded border border-error/20 flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> HOT (85)
+                                </span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">VW Golf 8 R Interest</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[18px]">public</span> Source: Facebook
+                            </p>
+</div>
+<div class="flex flex-col gap-2 relative z-10 text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Assigned Agent</span>
+<div class="flex items-center gap-3 bg-surface p-2 rounded-lg border border-white/5">
+<div class="w-8 h-8 rounded-full bg-surface-bright overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A closely cropped, dramatic portrait of a high-end automotive sales agent named Zain Sulliman. He is dressed impeccably in a dark, textured blazer. The lighting is low-key with a sharp rim light that separates him from the pure black background. The overall mood is intense, professional, and sophisticated, aligning perfectly with a luxury concierge service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPsX_7GjoJVPWq-dA3WQCMidhDSULmBob8JdzPpoczbC0O6gkbkAeBjvXAtsyHPg7keXNImyN43M1CfidloxfXvVArWm-4rsig6YwvlEFJ1BylGPgu1vebajWiowPZcbXPiJvLedIdwmpsIltA2xWXSBecXIw2oRxe1VmBW4OdReVwRASiXswRCCcxbe0vhkRhmtnje6pYIyp-G4ofRxn9yU99kaS0EpyEg0S_Vsj3_LEsNP8zC4VXwQ"/>
+</div>
+<span class="font-body-md text-body-md font-medium text-on-surface">Zain Sulliman</span>
+</div>
+</div>
+</div>
+<!-- Verification Sequence -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow border border-white/5 flex flex-col gap-6">
+<h4 class="font-headline-md text-headline-md text-on-surface border-b border-white/5 pb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fact_check</span> Verification Sequence
+                        </h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+<!-- Checked Items -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Lead captured successfully</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Lead source recorded</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Facebook Ad - Q4 Campaign</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Lead scored correctly</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">+40 Contact, +30 Vehicle, +15 Source</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Lead assigned correctly</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Zain Sulliman - Primary Rotation</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">First response sent</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">WhatsApp Template: WS_NEW_LEAD</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Response time recorded</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">8m 45s</span>
+</div>
+</div>
+<!-- Pending Items -->
+<div class="flex items-start gap-3 mt-4"><span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">check_circle</span><div class="flex flex-col"><span class="font-body-md text-body-md text-on-surface">Lead qualification</span><span class="font-label-sm text-label-sm text-primary-fixed-dim mt-1">COMPLETED (Verified)</span></div></div>
+<div class="flex items-start gap-3 mt-4"><span class="material-symbols-outlined text-primary animate-pulse">radio_button_checked</span><div class="flex flex-col"><span class="font-body-md text-body-md text-on-surface">Application initiated</span><span class="font-label-sm text-label-sm text-primary mt-1 font-bold uppercase tracking-widest">NEXT ACTION</span></div></div>
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Application progress</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">N/A</span>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant">radio_button_unchecked</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Final outcome</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Awaiting Pipeline</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Context & Feed -->
+<div class="lg:col-span-4 flex flex-col gap-stack-lg">
+<!-- First Lead Check-in Panel -->
+<div class="bg-surface-container-highest rounded-xl p-6 border border-white/10 shadow-lg flex flex-col gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary">radar</span>
+<h4 class="font-headline-md text-body-lg font-bold text-on-surface uppercase tracking-wider">Pilot Monitor</h4>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</span>
+<span class="font-body-md text-body-md text-primary-fixed-dim bg-primary/10 px-3 py-1 rounded inline-block w-fit border border-primary/20">CONTACTED / AWAITING REPLY</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Outstanding Action</span>
+<p class="font-body-md text-body-md text-on-surface bg-surface p-3 rounded border border-white/5 leading-relaxed">
+                                Zain S. to verify finance intent via WhatsApp.
+                            </p>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Exceptions/Errors</span>
+<span class="font-body-md text-body-md text-secondary-fixed-dim">None detected.</span>
+</div>
+</div>
+<!-- Live Event Feed -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow border border-white/5 flex-1 flex flex-col">
+<h4 class="font-headline-md text-body-lg text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">list_alt</span> Live Event Feed
+                        </h4>
+<div class="flex flex-col gap-6 relative">
+<!-- Vertical Line -->
+<div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-white/10 z-0"></div>
+<!-- Feed Item -->
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-highest border-2 border-primary flex items-center justify-center shrink-0 mt-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:45:22 AM</span>
+<span class="font-body-md text-body-md text-on-surface">Assignment algorithm executed. Zain Sulliman selected (Rotation Index: 4).</span>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-highest border-2 border-white/20 flex items-center justify-center shrink-0 mt-1 bg-surface-container">
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:45:20 AM</span>
+<span class="font-body-md text-body-md text-on-surface">Lead scoring complete. Total: 85 (Threshold met for HOT designation).</span>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-highest border-2 border-white/20 flex items-center justify-center shrink-0 mt-1 bg-surface-container">
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:45:18 AM</span>
+<span class="font-body-md text-body-md text-on-surface">Raw payload parsed. Intent identified: Vehicle Interest (VW Golf 8 R).</span>
+</div>
+</div>
+<!-- Feed Item -->
+<div class="flex gap-4 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-highest border-2 border-white/20 flex items-center justify-center shrink-0 mt-1 bg-surface-container">
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:45:15 AM</span>
+<span class="font-body-md text-body-md text-on-surface">Webhook received from Meta API (LeadGen Form).</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Disclaimer -->
+<div class="mt-stack-lg border-t border-white/5 pt-6 pb-12 flex justify-center text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant/60 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    READ-ONLY MODE ACTIVE: Core business logic locked during first lead pilot.
+                </p>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Leads List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2020",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-lowest": "#0d0f0f",
+                        "outline": "#99907c",
+                        "on-secondary": "#2d3134",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#2e3131",
+                        "surface-container-high": "#282a2a",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#444747",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e1e3e2",
+                        "inverse-primary": "#735c00",
+                        "tertiary": "#cdcece",
+                        "primary": "#f2ca50",
+                        "primary-fixed": "#ffe088",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b6b8bc",
+                        "on-secondary-fixed": "#191c1f",
+                        "secondary-container": "#46494d",
+                        "on-primary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "background": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b1b3b3",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#c4c7ca",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-container": "#434545",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#c5c7c6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e0e2e6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-fixed": "#191c1c",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #121414; color: #e2e2e2; }
+        .glass-panel { background: rgba(30, 32, 32, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-primary { background: linear-gradient(180deg, #D4AF37 0%, #B69121 100%); color: #000; transition: all 0.2s ease; }
+        .btn-primary:hover { opacity: 0.9; box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+        .btn-secondary { background: transparent; border: 1px solid #c4c7ca; color: #fff; transition: all 0.2s ease; }
+        .btn-secondary:hover { border-color: #D4AF37; color: #D4AF37; }
+        .table-row-hover:hover { background-color: rgba(255, 255, 255, 0.03); }
+        .status-badge-hot { background-color: rgba(212, 175, 55, 0.2); color: #f2ca50; border: 1px solid rgba(212, 175, 55, 0.4); }
+        .status-badge-warm { background-color: rgba(255, 255, 255, 0.1); color: #e2e2e2; border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden min-h-screen flex">
+<!-- SideNavBar Component -->
+<nav class="hidden md:flex bg-surface-container-lowest dark:bg-surface-container-lowest text-primary font-label-sm text-label-sm font-medium docked h-full w-64 left-0 border-r border-white/5 flat no shadows fixed left-0 top-0 h-full flex flex-col pt-4 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary text-xl">directions_car</span>
+</div>
+<div>
+<h1 class="font-headline-md text-[18px] leading-tight font-bold text-primary tracking-tight">Command Centre</h1>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider">Internal Operations</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 px-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+                Leads
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+                Pipeline
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                Applications
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+                Verification
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+                Decisions
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                Follow-ups
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                Analytics
+            </a>
+</div>
+<div class="p-4 mt-auto">
+<button class="w-full py-3 btn-primary font-button-text text-button-text rounded flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Application
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen bg-background">
+<!-- TopNavBar Component -->
+<header class="bg-surface-container dark:bg-surface-container font-body-md text-body-md docked top-0 right-0 border-b border-white/10 shadow-sm flex justify-between items-center w-full px-gutter py-2 sticky top-0 z-40">
+<div class="flex-1 max-w-md">
+<div class="relative flex items-center w-full h-10 rounded-lg bg-[#1E2121] border border-white/10 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary overflow-hidden transition-all">
+<div class="grid place-items-center h-full w-12 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="peer h-full w-full outline-none text-sm text-on-surface bg-transparent pr-2 font-label-sm uppercase" placeholder="Search leads, applications, or VIN..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-[14px] font-medium text-on-surface leading-tight">Zain Sulliman</p>
+<p class="text-[12px] text-on-surface-variant">Senior Consultant</p>
+</div>
+<img alt="Zain Sulliman" class="w-10 h-10 rounded-full border border-white/10 object-cover" data-alt="Professional headshot of a corporate finance consultant in a luxury modern office setting, dark background with subtle warm lighting, high quality portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlAvwHV_nKOrCcCImYVGz3mMU3CNlFDaDwOn_yELKSjZGpk1heF6H7RTkjrwqvWHeka_M7NHGH8vdcraMPKccSkBWAtp5Umty5ySpOyFSEmgY8tOjPRnQVFfzUgDZmwNIYZ7bi3HVZ69mu97NQd3FBrx-i9LBbT8-Qdu0qguic2i_gvHjB7ltebEWFtk41xPcLMo1SikmBBDbb7CSdOLwwd0pj5ZZX9eJYbRvladHL8X1Pl9QOInVS8w"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 p-gutter md:p-margin-desktop overflow-y-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Active Leads</h2>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-2xl">Manage and track your active prospects. Prioritize HOT leads requiring immediate follow-up.</p>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="btn-secondary px-4 py-2 rounded font-button-text text-button-text flex items-center justify-center gap-2 flex-1 md:flex-none">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export
+                    </button>
+<button class="btn-primary px-4 py-2 rounded font-button-text text-button-text flex items-center justify-center gap-2 flex-1 md:flex-none">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                        Add Lead
+                    </button>
+</div>
+</div>
+<!-- Filters Bar -->
+<div class="glass-panel rounded-xl p-4 mb-6 flex flex-col lg:flex-row gap-4 items-center justify-between">
+<div class="flex flex-wrap gap-3 w-full lg:w-auto">
+<!-- Filter: Priority -->
+<div class="relative">
+<select class="appearance-none bg-[#1E2121] border border-white/10 text-on-surface font-label-sm uppercase text-xs rounded px-4 py-2 pr-10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary h-10 w-full sm:w-40 cursor-pointer">
+<option value="">ALL PRIORITIES</option>
+<option value="hot">HOT LEADS</option>
+<option value="warm">WARM LEADS</option>
+<option value="cold">COLD LEADS</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Filter: Status -->
+<div class="relative">
+<select class="appearance-none bg-[#1E2121] border border-white/10 text-on-surface font-label-sm uppercase text-xs rounded px-4 py-2 pr-10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary h-10 w-full sm:w-48 cursor-pointer">
+<option value="">ALL STATUSES</option>
+<option value="new">NEW INQUIRY</option>
+<option value="contacted">CONTACTED</option>
+<option value="test_drive">TEST DRIVE BOOKED</option>
+<option value="finance">FINANCE PENDING</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Filter: Salesperson -->
+<div class="relative">
+<select class="appearance-none bg-[#1E2121] border border-white/10 text-on-surface font-label-sm uppercase text-xs rounded px-4 py-2 pr-10 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary h-10 w-full sm:w-48 cursor-pointer">
+<option value="zain">ASSIGNED: ZAIN S.</option>
+<option value="all">ALL CONSULTANTS</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="text-on-surface-variant font-label-sm text-[12px] uppercase w-full lg:w-auto text-right">
+                    Showing 8 Active Leads
+                </div>
+</div>
+<!-- Leads Data Table -->
+<div class="glass-panel rounded-xl overflow-hidden border border-white/10 w-full">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left whitespace-nowrap">
+<thead>
+<tr class="bg-surface-container-high border-b border-white/10">
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Lead ID</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Customer</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Vehicle Interest</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Score</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Status</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant">Assigned</th>
+<th class="px-6 py-4 font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant text-right">Last Contact</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 font-body-md text-[14px]">
+<!-- Row 1 (HOT) -->
+<tr class="table-row-hover transition-colors group cursor-pointer relative">
+<td class="px-6 py-4 font-label-sm text-primary">#PLM-8902</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-white/10 text-xs font-bold text-on-surface">MD</div>
+<div>
+<p class="text-on-surface font-medium">Michael Davies</p>
+<p class="text-on-surface-variant text-[12px]">Web Inquiry</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-on-surface">2022 Porsche 911 Carrera S</p>
+<p class="text-on-surface-variant text-[12px]">Finance Requested</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[92%]"></div>
+</div>
+<span class="font-label-sm text-xs text-primary">92</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="status-badge-hot px-2.5 py-1 rounded text-[11px] font-label-sm uppercase tracking-wide">HOT - Action Reqd</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Zain S.</td>
+<td class="px-6 py-4 text-right text-on-surface-variant">2 hrs ago</td>
+</tr>
+<!-- Row 2 (WARM) -->
+<tr class="table-row-hover transition-colors group cursor-pointer relative">
+<td class="px-6 py-4 font-label-sm text-on-surface-variant">#PLM-8895</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-white/10 text-xs font-bold text-on-surface">SJ</div>
+<div>
+<p class="text-on-surface font-medium">Sarah Jenkins</p>
+<p class="text-on-surface-variant text-[12px]">Walk-in</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-on-surface">2023 Range Rover Sport</p>
+<p class="text-on-surface-variant text-[12px]">Cash Buyer</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant w-[65%]"></div>
+</div>
+<span class="font-label-sm text-xs text-on-surface-variant">65</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="status-badge-warm px-2.5 py-1 rounded text-[11px] font-label-sm uppercase tracking-wide">Test Drive Booked</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Zain S.</td>
+<td class="px-6 py-4 text-right text-on-surface-variant">Yesterday</td>
+</tr>
+<!-- Row 3 (WARM) -->
+<tr class="table-row-hover transition-colors group cursor-pointer relative">
+<td class="px-6 py-4 font-label-sm text-on-surface-variant">#PLM-8871</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center border border-white/10 text-xs font-bold text-on-surface">TR</div>
+<div>
+<p class="text-on-surface font-medium">Thomas Richards</p>
+<p class="text-on-surface-variant text-[12px]">Referral</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-on-surface">2021 Mercedes-AMG G63</p>
+<p class="text-on-surface-variant text-[12px]">Trade-in Evaluation</p>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant w-[58%]"></div>
+</div>
+<span class="font-label-sm text-xs text-on-surface-variant">58</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="status-badge-warm px-2.5 py-1 rounded text-[11px] font-label-sm uppercase tracking-wide">Finance Pending</span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Zain S.</td>
+<td class="px-6 py-4 text-right text-on-surface-variant">2 days ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 border-t border-white/5 flex justify-between items-center text-sm text-on-surface-variant">
+<span>Showing 1 to 3 of 8 entries</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-white/10 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - Vehicle Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2020",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-lowest": "#0d0f0f",
+                        "outline": "#99907c",
+                        "on-secondary": "#2d3134",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#2e3131",
+                        "surface-container-high": "#282a2a",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#444747",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e1e3e2",
+                        "inverse-primary": "#735c00",
+                        "tertiary": "#cdcece",
+                        "primary": "#f2ca50",
+                        "primary-fixed": "#ffe088",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b6b8bc",
+                        "on-secondary-fixed": "#191c1f",
+                        "secondary-container": "#46494d",
+                        "on-primary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "background": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b1b3b3",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#c4c7ca",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-container": "#434545",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#c5c7c6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e0e2e6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-fixed": "#191c1c",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "button-text": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .btn-primary {
+            background: linear-gradient(180deg, #D4AF37 0%, #B69121 100%);
+            color: black;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid theme('colors.outline');
+            color: theme('colors.on-surface');
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: theme('colors.primary');
+            color: theme('colors.primary');
+        }
+        
+        .card-glow {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-glow:hover {
+            box-shadow: 0 0 5px 2px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .input-dark {
+            background-color: #1E2121;
+            border: 1px solid theme('colors.outline');
+            color: theme('colors.on-surface');
+        }
+        
+        .input-dark:focus {
+            border-color: theme('colors.primary');
+            box-shadow: inset 0 0 0 2px rgba(212, 175, 55, 0.2);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+<!-- Top Navigation -->
+<nav class="hidden md:flex flex-col bg-background dark:bg-background border-b border-white/10 shadow-md sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Prime Lane Motors
+            </div>
+<div class="flex space-x-8 items-center">
+<a class="font-button-text text-button-text uppercase tracking-wider text-primary border-b-2 border-primary pb-1 hover:opacity-90 transition-all scale-95" href="#">Inventory</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Finance</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">About</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Contact</a>
+</div>
+<div class="flex space-x-4 items-center">
+<button class="btn-primary font-button-text text-button-text px-6 py-3 rounded-lg uppercase tracking-wider">Apply for Finance</button>
+<button class="btn-secondary font-button-text text-button-text px-4 py-3 rounded-lg uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+                    WhatsApp
+                </button>
+</div>
+</div>
+</nav>
+<!-- Mobile Top Navigation -->
+<nav class="md:hidden flex flex-col bg-background dark:bg-background border-b border-white/10 shadow-md sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                PLM
+            </div>
+<button class="text-on-surface">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col lg:flex-row gap-gutter">
+<!-- Filters Sidebar -->
+<aside class="w-full lg:w-1/4 flex flex-col gap-6">
+<div class="bg-surface-container rounded-xl p-6 border border-white/10 shadow-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-white/10 pb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+                    Refine Search
+                </h2>
+<form class="flex flex-col gap-6">
+<!-- Make/Model -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Make</label>
+<select class="input-dark w-full rounded-md px-4 py-3 font-body-md text-body-md appearance-none">
+<option>Volkswagen</option>
+<option>Audi</option>
+<option>BMW</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Model</label>
+<select class="input-dark w-full rounded-md px-4 py-3 font-body-md text-body-md appearance-none">
+<option>All Models</option>
+<option>Golf GTI</option>
+<option>Golf R</option>
+<option>Polo Vivo</option>
+<option>Tiguan</option>
+<option>Amarok</option>
+</select>
+</div>
+<!-- Year Range -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Year Range</label>
+<div class="flex items-center gap-2">
+<input class="input-dark w-full rounded-md px-3 py-2 font-body-md text-body-md" max="2024" min="2010" placeholder="Min" type="number"/>
+<span class="text-on-surface-variant">-</span>
+<input class="input-dark w-full rounded-md px-3 py-2 font-body-md text-body-md" max="2024" min="2010" placeholder="Max" type="number"/>
+</div>
+</div>
+<!-- Price Range -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Price Range (ZAR)</label>
+<div class="flex flex-col gap-4 mt-2">
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="1500000" min="100000" type="range"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>R100k</span>
+<span>R1.5m+</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Max Mileage</label>
+<select class="input-dark w-full rounded-md px-4 py-3 font-body-md text-body-md appearance-none">
+<option>Any</option>
+<option>Up to 50,000 km</option>
+<option>Up to 100,000 km</option>
+</select>
+</div>
+<button class="btn-primary w-full py-3 mt-4 rounded-lg font-button-text text-button-text uppercase tracking-widest flex justify-center items-center gap-2" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="search">search</span>
+                        Apply Filters
+                    </button>
+<button class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest text-center mt-2" type="button">
+                        Clear All
+                    </button>
+</form>
+</div>
+</aside>
+<!-- Inventory Grid -->
+<section class="w-full lg:w-3/4">
+<div class="flex justify-between items-end mb-8 border-b border-white/10 pb-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Available Inventory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Showing 24 premium vehicles matching your criteria.</p>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Sort by:</span>
+<select class="bg-transparent border-none text-on-surface font-body-md text-body-md focus:ring-0 cursor-pointer p-0">
+<option class="bg-surface-container text-on-surface">Newest Arrivals</option>
+<option class="bg-surface-container text-on-surface">Price: Low to High</option>
+<option class="bg-surface-container text-on-surface">Price: High to Low</option>
+<option class="bg-surface-container text-on-surface">Mileage: Low to High</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Vehicle Card 1 -->
+<div class="bg-surface-container rounded-xl overflow-hidden card-glow flex flex-col h-full group relative">
+<div class="absolute top-4 right-4 z-10 bg-primary/90 text-on-primary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm tracking-widest uppercase backdrop-blur-sm shadow-md">
+                        New Arrival
+                    </div>
+<div class="relative h-56 w-full bg-surface-variant overflow-hidden">
+<img alt="Vehicle Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, metallic silver 2023 Volkswagen Golf R parked in a dimly lit, luxurious showroom. The high-key overhead lighting highlights the sharp character lines and sporty front fascia. The deep obsidian floor reflects the vehicle, creating a premium, aspirational mood typical of a high-end dealership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWJXuM_XROmD1KMaTo6-u9_7Jr19Zoolm9PE3VlzUg-73F1lSX2K8uhEdpOzyo8qe6x2L1KCsiDoEYGz9Uk6H0GuGvYX3dQSCD0tlyD8aeiZEKL3SXE0yJX5m_NwkIouq1yMkTmWYJqdgolyuqMoBBiUdPSX9fmnH2g-_or-p1Wizu1u8XwKWTH3-qeeT2cOFvtetX9UmO9u944VjT-Oj7nbAbjlhndFAsakYLmKPFo6rkUUjRXfoQwQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2023 Volkswagen Golf R 2.0 TSI 4Motion</h3>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4">
+                            R 899,900
+                        </div>
+<div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="speed">speed</span>
+<span class="font-body-md text-body-md text-on-surface-variant">15,400 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Petrol</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Automatic</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2023</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
+<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 2 -->
+<div class="bg-surface-container rounded-xl overflow-hidden card-glow flex flex-col h-full group">
+<div class="relative h-56 w-full bg-surface-variant overflow-hidden">
+<img alt="Vehicle Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pristine, pure white 2022 Volkswagen Tiguan R-Line shown from a dynamic 3/4 angle in a modern corporate setting. Subtle rim lighting accentuates its sophisticated design against a dark, metallic background. The overall aesthetic conveys authority, efficiency, and premium automotive quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUlW3hduKWhPmBylDH8FfeAJZiDcw8NmHTTZwrOsvGaGBAtUokD28xIt0An2NZ8l82aba-JBTS4P-emBB2IEqAjZgo7gVM15Q5C4DlNr-fIM0yioVaBsuuDxHqK1LDGMn2Re92BY6RrcG7UElvViMxHRw2tqfUiPCufKPfqn7yVlnKdW3XN_K_hQPtAr7eXSeUREn3Sn0iCsqYuDu1R5V_O1b97cNg_dBZcJyOlYcghteZ8nzMPPfr2A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2022 Volkswagen Tiguan 2.0 TSI R-Line</h3>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4">
+                            R 745,000
+                        </div>
+<div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="speed">speed</span>
+<span class="font-body-md text-body-md text-on-surface-variant">32,100 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Petrol</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md text-on-surface-variant">DSG</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2022</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
+<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 3 -->
+<div class="bg-surface-container rounded-xl overflow-hidden card-glow flex flex-col h-full group">
+<div class="relative h-56 w-full bg-surface-variant overflow-hidden">
+<img alt="Vehicle Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An aggressive, deep metallic blue 2024 Volkswagen Amarok Aventura double cab bakkie bathed in atmospheric, cinematic studio lighting. The dark canvas allows the executive gold reflections on its trim to pop, emphasizing prestige and high-performance capability in a luxury automotive context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh9A6zlqJat7uGpuDemU39sWD355yLZSibpUnTZmRXYSMTkt6cZy4dT8KCkDtPJv6Kn-CX6UVKEXi4HxvpnKzGU0VnDZ8HTWVDpyeOUaoY-VbAH6VVUS75oZbWV3MrpduDLGEZV5fwKnS9qXtf7GU94B6p_z2uLDAjpGdln-OOlc2EPvGdXJR8yCSyBOj6h_DQkfbcKtU5POe3vnoTiZeyBwkw1XZ8vhETs3DsxWnHjHDmB1zZPBPyBg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2024 Volkswagen Amarok 3.0 V6 TDI Aventura</h3>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4">
+                            R 1,150,000
+                        </div>
+<div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="speed">speed</span>
+<span class="font-body-md text-body-md text-on-surface-variant">5,000 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Diesel</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Automatic</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2024</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
+<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 4 -->
+<div class="bg-surface-container rounded-xl overflow-hidden card-glow flex flex-col h-full group">
+<div class="relative h-56 w-full bg-surface-variant overflow-hidden">
+<img alt="Vehicle Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A stealthy, matte grey 2021 Volkswagen Polo GTI parked against a sleek, dark concrete wall. Minimalist, tactile accents of red and metallic silver are visible on the grille. The scene is illuminated by soft, inner-glow style lighting that conveys a modern, high-tech automotive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaxOmgk96CEoDxucm1J4ilaHbAdPxg0Cr-KCAXVEZuuz97UssKaswswNyrFJ3e7kl6qUH6Fm-3G48lMKNQhs0TOGkzwIJoa1SnifJh8-OOjIJv2H5TNo264ZBiLsYn_NLnySR_HxVkOyRgT3nB2ZzNArWJot_Dv5Y2yTAb4yPVZSu5U7r50LzGhB_-L6Y02P1oq8KyG2yMVxgx1R98-8SvbsiIAb0Xda-qaxZvZLqigDdEFm9fKAkv8w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-80"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2021 Volkswagen Polo 2.0 TSI GTI DSG</h3>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4">
+                            R 429,900
+                        </div>
+<div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="speed">speed</span>
+<span class="font-body-md text-body-md text-on-surface-variant">45,800 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Petrol</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md text-on-surface-variant">DSG</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary/70 text-sm" data-icon="calendar_month">calendar_month</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2021</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
+<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center mt-12 gap-2">
+<button class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-10 h-10 rounded-lg bg-primary text-black font-button-text text-button-text flex items-center justify-center">1</button>
+<button class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors font-button-text text-button-text">2</button>
+<button class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors font-button-text text-button-text">3</button>
+<button class="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10 w-full py-section-gap px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter mt-auto">
+<div class="md:col-span-1 flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary">
+                Prime Lane Motors
+            </div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">© 2024 Prime Lane Motors. Authorized Financial Services Provider.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Use</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">FSP Disclosure</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Cookie Settings</a>
+</div>
+</footer>
+</body></html>

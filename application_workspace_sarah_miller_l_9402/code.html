@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Application Workspace - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-background": "#e3e2e2",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary": "#303030",
+                        "on-primary-fixed-variant": "#574500",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#3c2f00",
+                        "surface-container-highest": "#343535",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "secondary-container": "#474746",
+                        "on-secondary": "#313030",
+                        "primary-container": "#d4af37",
+                        "background": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e3e2e2",
+                        "surface-tint": "#e9c349",
+                        "outline-variant": "#4d4635",
+                        "outline": "#99907c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-dim": "#121414",
+                        "inverse-primary": "#735c00",
+                        "surface-bright": "#383939",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed": "#ffe088",
+                        "inverse-surface": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#454545",
+                        "surface-variant": "#343535",
+                        "tertiary": "#d0cdcd",
+                        "error": "#ffb4ab",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container": "#1e2020",
+                        "surface": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-primary-container": "#554300",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-container": "#b4b2b2",
+                        "error-container": "#93000a",
+                        "secondary": "#c8c6c5",
+                        "primary": "#f2ca50",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "container-padding": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .inner-glow {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+        .gold-glow-border {
+            box-shadow: inset 0 0 0 1px rgba(242, 202, 80, 0.3);
+        }
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 bg-background/80 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-gutter py-4 transition-all">
+<div class="flex items-center gap-4">
+<span class="md:hidden font-headline-md text-headline-md font-bold text-primary">Prime Lane Motors</span>
+<div class="hidden md:flex items-center gap-2 text-on-surface-variant bg-surface-container-high/50 rounded-full px-4 py-2 border border-white/5 inner-glow w-64">
+<span class="material-symbols-outlined text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-sm w-full placeholder-on-surface-variant/50 focus:ring-0" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10 ml-2">
+<img alt="Executive Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a luxury automotive executive, warm studio lighting, deep background, high contrast, elegant corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZwqkbuGtg9R3xltgyAxC5rbBUuDHBpVRL1KaCK7q2u9pjicR8HCC9yaocN1RjbehnlVCoV3IyhUsZ4sVgOQFArS4Kki5RGrEQ_HuYeCf5ThVyN8rUD8bHq9xmQTT2hjkLlDEjNJB80UokE9TMq9fpEv9F1F93KwTBue0UoE4p7JAYQIKbmUbYT_HdHFyIvWl9wrhQVUDo0_lwbpXZyQIyYe68RBcBejHqcz5hmPCtsqqlK6V9zQrY4A"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full py-8 fixed left-0 top-0 w-[280px] z-50 bg-surface-container-lowest border-r border-white/5">
+<div class="px-6 mb-8 flex flex-col gap-1">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-white/10 mb-4 inner-glow">
+<img alt="Prime Lane Motors Logo" class="w-full h-full object-cover" data-alt="A minimalist luxury car brand logo featuring a stylized metallic 'P' on a deep obsidian black background. Warm gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChpaNNYd5S9KDmjEaHe2c6wH3P6Bar2ape8KFxeeSzsjj8munKCEfnC6WZ3RKmSjvuDDbOMecgGElSMOe-0VbYsvQ91TIKpcQm14B4qu3_3ew_Chj_9Co_o9bJWS51c_MhVMH8qwoVOmEJ7Zbzel7QZCSrQyFYHrfrdSgYbOyLfwtsjj2IkBsQe4wPcAebKbMkhVd9UNianoC6iF_UP9kSJnMbQuYVuG1xivRg_wJqkTxoksMPjHyP1w"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Prime Lane Motors</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Private Concierge</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="person_search">person_search</span>
+<span class="font-body-md text-body-md">Leads</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="account_tree">account_tree</span>
+<span class="font-body-md text-body-md">Pipeline</span>
+</a>
+<a class="text-primary font-bold bg-surface-container-high border-l-4 border-primary px-4 py-3 flex items-center gap-3 rounded-r-lg opacity-100 scale-100 shadow-[0_0_15px_rgba(242,202,80,0.1)]" href="#">
+<span class="material-symbols-outlined" data-icon="description" data-weight="fill" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-body-md text-body-md">Applications</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="history_toggle_off">history_toggle_off</span>
+<span class="font-body-md text-body-md">Follow-ups</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="analytics">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 px-4 rounded-lg btn-primary-gradient text-on-primary font-body-md text-body-md font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(242,202,80,0.2)]">
+<span class="material-symbols-outlined">add</span>
+                New Application
+            </button>
+</div>
+<div class="px-2 mt-6 border-t border-white/5 pt-4 space-y-1">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+<span>Support</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3 hover:bg-surface-container transition-all rounded-r-lg text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-[280px] mt-[72px] min-h-[calc(100vh-72px)] p-gutter md:p-container-padding flex flex-col gap-stack-lg max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">L-9402</span>
+<span class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-2 py-1 rounded inner-glow">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        Awaiting Documents
+                    </span>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">Sarah Miller</h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md mt-1">
+<span class="material-symbols-outlined text-[20px]">directions_car</span>
+<span>2022 VW Golf R</span>
+<span class="mx-2 text-white/20">|</span>
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span>Finance App: Pend.</span>
+</div>
+</div>
+<!-- Decision Status & Actions -->
+<div class="flex flex-col items-start md:items-end gap-4">
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-widest">Decision Status</p>
+<p class="font-headline-md text-headline-md text-on-surface">Awaiting Sub.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="bg-surface-container-high text-on-surface font-body-md text-body-md px-4 py-2 rounded-lg border border-white/10 hover:bg-surface-container-highest transition-colors flex items-center gap-2 inner-glow">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+                        WhatsApp
+                    </button>
+<button class="bg-surface-container-high text-on-surface font-body-md text-body-md px-4 py-2 rounded-lg border border-white/10 hover:bg-surface-container-highest transition-colors flex items-center gap-2 inner-glow">
+<span class="material-symbols-outlined text-[20px]">call</span>
+                        Log Contact
+                    </button>
+<button class="btn-primary-gradient text-on-primary font-body-md text-body-md font-bold px-6 py-2 rounded-lg hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(242,202,80,0.2)]">
+                        Submit to Finance
+                    </button>
+</div>
+</div>
+</header>
+<!-- Next Best Action Panel -->
+<section class="bg-surface-container-highest border border-primary/30 rounded-xl p-6 relative overflow-hidden gold-glow-border group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-primary/10 transition-colors duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h3 class="font-label-sm text-label-sm text-primary mb-2 flex items-center gap-2 uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+                        Next Best Action
+                    </h3>
+<p class="font-headline-md text-headline-md text-on-surface leading-tight">
+                        Request missing ID document and Proof of Residence via WhatsApp.
+                    </p>
+</div>
+<button class="bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors px-6 py-3 rounded-lg font-body-md text-body-md font-semibold flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined">send</span>
+                    Send Request
+                </button>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md">
+<!-- Left Column (Tracker, Checklist, Financials) -->
+<div class="lg:col-span-8 flex flex-col gap-stack-md">
+<!-- Progress Tracker -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-6 inner-glow flex flex-col justify-center h-full min-h-[140px]">
+<div class="flex justify-between items-end mb-4">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Application Progress</h3>
+<span class="font-headline-md text-headline-md text-primary">65%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-3 overflow-hidden inner-glow">
+<div class="bg-primary h-full rounded-full relative" style="width: 65%;">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
+</div>
+</div>
+</div>
+<!-- Documents Checklist -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-6 inner-glow">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_open</span>
+                        Documents Checklist
+                    </h3>
+<div class="space-y-3">
+<!-- Verified Doc -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high/50 border border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">badge</span>
+<span class="font-body-md text-body-md text-on-surface line-through opacity-70">Driver's License</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                            </span>
+</div>
+<!-- Missing Doc (Alert) -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-error/5 border border-error/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">id_card</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">ID Document</span>
+</div>
+<span class="font-label-sm text-label-sm text-error bg-error/10 px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span> Missing
+                            </span>
+</div>
+<!-- Pending Doc -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high/50 border border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">receipt_long</span>
+<span class="font-body-md text-body-md text-on-surface">3 Months Bank Statements</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> Pending
+                            </span>
+</div>
+<!-- Missing Doc -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-error/5 border border-error/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">home_pin</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Proof of Residence</span>
+</div>
+<span class="font-label-sm text-label-sm text-error bg-error/10 px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span> Missing
+                            </span>
+</div>
+<!-- Pending Doc -->
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-high/50 border border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">request_quote</span>
+<span class="font-body-md text-body-md text-on-surface">Payslip</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-highest px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> Pending
+                            </span>
+</div>
+</div>
+</div>
+<!-- Financial Profile -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-6 inner-glow grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="col-span-1 sm:col-span-3">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+                            Financial Summary
+                        </h3>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-white/5">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Gross Income</p>
+<p class="font-headline-md text-headline-md text-on-surface">£4,850 <span class="text-sm text-on-surface-variant font-normal">/mo</span></p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-white/5">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Employment</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium truncate">Senior Architect</p>
+<p class="text-sm text-on-surface-variant mt-0.5">Full-time, 4 yrs</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-lg border border-white/5">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Deposit Available</p>
+<p class="font-headline-md text-headline-md text-primary">£5,000</p>
+</div>
+</div>
+</div>
+<!-- Right Column (Timeline & Notes) -->
+<div class="lg:col-span-4 flex flex-col gap-stack-md">
+<!-- Timeline -->
+<div class="bg-surface-container border border-white/5 rounded-xl p-6 inner-glow flex-1 flex flex-col">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                        Timeline
+                    </h3>
+<div class="relative pl-6 border-l border-white/10 space-y-6 flex-1">
+<!-- Node 1 -->
+<div class="relative">
+<div class="absolute -left-[30px] w-3 h-3 rounded-full bg-surface-container border-2 border-primary mt-1.5 shadow-[0_0_8px_rgba(242,202,80,0.5)]"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Today, 09:42 AM</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Docs Reviewed</p>
+<p class="text-sm text-on-surface-variant mt-1">License verified. ID rejected due to poor image quality.</p>
+</div>
+<!-- Node 2 -->
+<div class="relative opacity-70 hover:opacity-100 transition-opacity">
+<div class="absolute -left-[30px] w-3 h-3 rounded-full bg-surface-container border-2 border-white/30 mt-1.5"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Oct 25, 14:15 PM</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Documents Requested</p>
+<p class="text-sm text-on-surface-variant mt-1">Automated checklist sent via Email.</p>
+</div>
+<!-- Node 3 -->
+<div class="relative opacity-70 hover:opacity-100 transition-opacity">
+<div class="absolute -left-[30px] w-3 h-3 rounded-full bg-surface-container border-2 border-white/30 mt-1.5"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Oct 24, 11:30 AM</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Application Started</p>
+<p class="text-sm text-on-surface-variant mt-1">Lead converted to application.</p>
+</div>
+</div>
+</div>
+<!-- Notes -->
+<div class="bg-surface-container-highest border border-white/5 rounded-xl p-6 inner-glow flex-shrink-0">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Notes</h3>
+<button class="text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-white/5 text-sm text-on-surface-variant leading-relaxed">
+                        Customer is eager to take delivery before the weekend. Pre-approved for £35k pending final address verification. Note: Prefers WhatsApp communication.
+                    </div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

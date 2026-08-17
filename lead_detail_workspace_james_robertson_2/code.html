@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lead L-9042: James Robertson - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-container": "#554300",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-secondary": "#2f3131",
+                        "outline-variant": "#4d4635",
+                        "surface-container-high": "#282a2b",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#241a00",
+                        "outline": "#99907c",
+                        "on-secondary-container": "#b8b8b8",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-bright": "#37393a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-tint": "#e9c349",
+                        "tertiary": "#d0cdcd",
+                        "tertiary-container": "#b4b2b2",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container": "#1e2020",
+                        "on-primary": "#3c2f00",
+                        "on-surface-variant": "#d0c5af",
+                        "secondary-container": "#484949",
+                        "primary-container": "#d4af37",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-container": "#454544",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-tertiary": "#313030",
+                        "primary-fixed": "#ffe088",
+                        "on-secondary-fixed-variant": "#464747",
+                        "error": "#ffb4ab",
+                        "on-background": "#e2e2e2",
+                        "surface": "#121414",
+                        "surface-dim": "#121414",
+                        "secondary": "#c6c6c6",
+                        "surface-variant": "#333535",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#121414",
+                        "primary": "#f2ca50",
+                        "surface-container-highest": "#333535",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e3e2e2",
+                        "inverse-surface": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(40, 42, 43, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(204, 204, 204, 0.1);
+        }
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(242, 202, 80, 0.1);
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333535; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #484949; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/10 shadow-xl flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">local_police</span>
+<span class="font-display-lg text-primary uppercase tracking-tighter text-[24px] md:text-[32px] leading-none">Prime Lane Motors</span>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Vehicles</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Finance</a>
+<a class="text-primary font-bold font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Dashboard</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex flex-col text-right">
+<span class="font-label-md text-label-md text-on-surface">Zain Sulliman</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">Sales Executive</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of Zain Sulliman, a sales executive, wearing a sharp dark suit with a subtle gold lapel pin. The background is a blurred high-end car showroom with dramatic lighting. The image conveys authority, trust, and premium service in a modern, sophisticated automotive setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBSKQn2jpq0cWSSWNlXCcXXTIFukp6rCXaJxUR9lo8Jego_wOMwjNxFukCd2SQ2v5Gli5tgrSt9CYgjl8NkDiP_Bf35w9UMcPCp6YqyHRLFDvPE7MShRQx02Lwd30ofpBBUC8aQbwAGcNsMt2tQ7ZFDT906_7mtj4KJwPEpkBcGn9AlgKRqA6wBLA4DbyhpB1LURyJShqDBmr_cnmI1OcopR969YDPqSwlV4tCDFIvHHuSrE4awpeG9w"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 pb-32 md:pb-12 space-y-gutter">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 bg-primary/10 text-primary font-label-md text-label-md rounded border border-primary/20">L-9042</span>
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant font-label-md text-label-md rounded">NEW</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">James Robertson</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">event</span>
+                    Received Oct 24, 09:15 AM
+                </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] px-4 py-2 rounded-full border border-[#25D366]/30 transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </button>
+<button class="flex items-center gap-2 bg-surface-variant hover:bg-surface-bright text-on-surface px-4 py-2 rounded-full border border-outline-variant/30 transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">call</span> Call
+                </button>
+<button class="flex items-center gap-2 bg-surface-variant hover:bg-surface-bright text-on-surface px-4 py-2 rounded-full border border-outline-variant/30 transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">mail</span> Email
+                </button>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-fixed-dim text-on-primary px-5 py-2 rounded-full font-label-md text-label-md font-bold transition-colors shadow-[0_4px_14px_rgba(242,202,80,0.3)]">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Mark Contacted
+                </button>
+</div>
+</div>
+<!-- ACTION NOW Banner -->
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-error mb-8 flex flex-col md:flex-row items-center justify-between gap-4 animate-pulse">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-error/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-error-container">ACTION NOW</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-intent lead. Target vehicle (Golf 8 R) is in high demand. Immediate follow-up required.</p>
+</div>
+</div>
+<button class="w-full md:w-auto flex items-center justify-center gap-2 bg-error text-on-error px-6 py-3 rounded-full font-label-md text-label-md font-bold hover:bg-error-container hover:text-on-error-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">schedule</span> Schedule Follow-up
+            </button>
+</div>
+<!-- Workflow Progress -->
+<div class="glass-panel p-6 rounded-xl mb-8">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-6 tracking-widest">Lead Pipeline Status</h3>
+<div class="relative flex justify-between">
+<!-- Track background -->
+<div class="absolute top-1/2 left-0 w-full h-1 bg-surface-variant -translate-y-1/2 rounded-full z-0"></div>
+<!-- Track fill -->
+<div class="absolute top-1/2 left-0 w-[0%] h-1 bg-primary -translate-y-1/2 rounded-full z-0 transition-all duration-1000 ease-in-out"></div>
+<!-- Steps -->
+<div class="relative z-10 flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center border-4 border-surface shadow-[0_0_15px_rgba(242,202,80,0.5)]">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">fiber_new</span>
+</div>
+<span class="font-label-md text-label-md text-primary text-[10px] md:text-[12px] whitespace-nowrap">NEW</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[16px]">contact_phone</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap">CONTACTED</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap">QUALIFIED</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[16px]">request_quote</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap hidden md:block">FINANCE PROCESS</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap md:hidden">FINANCE</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[16px]">description</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap">APPLICATION</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px] md:text-[12px] whitespace-nowrap">SALE</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Details -->
+<div class="md:col-span-8 space-y-gutter">
+<!-- Vehicle Interest & Score -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Vehicle Card -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent z-0"></div>
+<div class="relative z-10">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-4 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">directions_car</span> Vehicle Interest
+                            </h3>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">2021 VW Golf 8 R</h4>
+<p class="font-body-md text-body-md text-primary font-bold">R 949,000</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="px-2 py-1 bg-surface-variant text-on-surface-variant font-label-md text-label-md text-[10px] rounded border border-outline-variant/30">Ref: V-4492</span>
+<a class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md text-[12px] underline flex items-center gap-1" href="#">View Inventory <span class="material-symbols-outlined text-[14px]">open_in_new</span></a>
+</div>
+</div>
+</div>
+<!-- Readiness Score -->
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between items-center text-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-2 tracking-widest self-start flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">speed</span> Readiness Score
+                        </h3>
+<div class="relative w-32 h-32 flex items-center justify-center">
+<!-- Circular Progress (Fake) -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="40" stroke="rgba(204, 204, 204, 0.1)" stroke-width="8"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="none" r="40" stroke="#f2ca50" stroke-dasharray="251.2" stroke-dashoffset="12.56" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-primary leading-none">95</span>
+<span class="font-label-md text-label-md text-on-surface-variant text-[10px]">/100</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-[#25D366] mt-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> High Probability
+                        </p>
+</div>
+</div>
+<!-- Financial Profile -->
+<div class="glass-panel p-6 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">account_balance</span> Financial Profile
+                        </h3>
+<button class="text-primary hover:text-primary-fixed-dim font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                        </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-variant/30 p-4 rounded-lg border border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase mb-1">Declared Budget</p>
+<p class="font-title-md text-title-md text-on-surface">R 900,000</p>
+</div>
+<div class="bg-surface-variant/30 p-4 rounded-lg border border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase mb-1">Deposit Available</p>
+<p class="font-title-md text-title-md text-on-surface">R 50,000</p>
+</div>
+<div class="bg-surface-variant/30 p-4 rounded-lg border border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase mb-1">Trade-In</p>
+<p class="font-title-md text-title-md text-on-surface">None</p>
+</div>
+<div class="bg-surface-variant/30 p-4 rounded-lg border border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase mb-1">Income (Est)</p>
+<p class="font-title-md text-title-md text-on-surface">R 35k+/mo</p>
+</div>
+</div>
+<div class="mt-4 bg-surface-variant/30 p-4 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">work</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Employment Status</p>
+<p class="font-body-md text-body-md text-on-surface">Employed Full-time</p>
+</div>
+</div>
+</div>
+<!-- Contact Information -->
+<div class="glass-panel p-6 rounded-xl">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-6 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">contact_mail</span> Contact Details
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Full Name</p>
+<p class="font-body-md text-body-md text-on-surface">James Robertson</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">phone_iphone</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Mobile Number</p>
+<p class="font-body-md text-body-md text-on-surface">+27 67 621 9820</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Email Address</p>
+<p class="font-body-md text-body-md text-on-surface">j.robertson@email.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined">my_location</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant text-[10px] uppercase">Source</p>
+<p class="font-body-md text-body-md text-on-surface">Web Form (Facebook GTI Promo)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Activity & Notes -->
+<div class="md:col-span-4 space-y-gutter">
+<div class="glass-panel p-6 rounded-xl h-full flex flex-col">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase mb-6 tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> Activity &amp; Notes
+                    </h3>
+<!-- Add Note Input -->
+<div class="mb-6 relative">
+<textarea class="w-full bg-surface-variant/50 border border-outline-variant/30 rounded-lg p-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" placeholder="Add a note or log a call..." rows="3"></textarea>
+<button class="absolute bottom-3 right-3 bg-primary text-on-primary p-2 rounded-full hover:bg-primary-fixed-dim transition-colors shadow-md">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<!-- Timeline -->
+<div class="flex-grow overflow-y-auto pr-2 space-y-6">
+<!-- Timeline Item 1 -->
+<div class="relative pl-6 border-l border-outline-variant/30 pb-2">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-primary"></div>
+<p class="font-label-md text-label-md text-primary text-[10px] mb-1">Today, 09:15 AM</p>
+<p class="font-title-md text-title-md text-on-surface text-[14px]">Lead Created</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[12px] mt-1">Lead submitted via Facebook GTI Promo form. Automatically assigned to Zain S.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/80 backdrop-blur-xl fixed bottom-0 w-full z-50 pb-safe border-t border-outline-variant/10 shadow-[0_-10px_30px_rgba(0,0,0,0.4)] flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-md text-label-md uppercase text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1">directions_car</span>
+<span class="font-label-md text-label-md uppercase text-[10px]">Vehicles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="font-label-md text-label-md uppercase text-[10px]">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 -mt-4 shadow-[0_0_15px_rgba(242,202,80,0.5)] scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-md text-label-md uppercase text-[10px]">Portal</span>
+</a>
+</nav>
+</body></html>

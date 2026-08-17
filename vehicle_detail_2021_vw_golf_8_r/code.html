@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2021 VW Golf 8 R - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&amp;family=Montserrat:wght@400;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-container": "#534400",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary": "#3a3000",
+                        "on-primary": "#3c2f00",
+                        "tertiary": "#f2cc00",
+                        "on-primary-container": "#554300",
+                        "surface-variant": "#353534",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#201f1f",
+                        "on-secondary-container": "#b8b8b8",
+                        "surface-dim": "#131313",
+                        "outline": "#99907c",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-surface-variant": "#d0c5af",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "tertiary-container": "#d2b100",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-tint": "#e9c349",
+                        "surface-bright": "#3a3939",
+                        "primary": "#f2ca50",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#e9c349",
+                        "primary-container": "#d4af37",
+                        "secondary-container": "#484949",
+                        "inverse-primary": "#735c00",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed": "#241a00",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "secondary": "#c6c6c6",
+                        "on-tertiary-fixed": "#221b00",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-md": ["Work Sans"],
+                        "display-lg": ["Montserrat"],
+                        "label-lg": ["Chivo"],
+                        "body-lg": ["Work Sans"],
+                        "label-sm": ["Chivo"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glint-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .glint-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(212,175,55,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(45deg) translateY(-100%);
+            animation: glint 3s infinite linear;
+            pointer-events: none;
+        }
+        @keyframes glint {
+            0% { transform: rotate(45deg) translateY(-100%); }
+            100% { transform: rotate(45deg) translateY(100%); }
+        }
+        .gold-border-gradient {
+            border: 1px solid transparent;
+            border-image: linear-gradient(to bottom, #d4af37, #735c00) 1;
+        }
+        .metallic-text {
+            background: linear-gradient(to bottom, #ffffff, #c6c6c6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 flex justify-between items-center px-container-padding w-full max-w-[1200px] mx-auto left-0 right-0 bg-background/95 backdrop-blur-md shadow-[0_4px_20px_rgba(212,175,55,0.1)] border-b border-outline-variant h-20 transition-all duration-300">
+<div class="flex items-center gap-gutter">
+<a class="flex items-center gap-2 group" href="#">
+<img alt="Prime Lane Motors Logo" class="h-12 w-12 object-contain group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb92jx-OPJexi33F2yWuSjEFkEDj-n1_JqCDVCG-bSjLwozcIuOrYmXT0wWG4pIziknPqOb-KZxQeqpP0pjjLzOq0XqMWrAcpuaZYAbsG3VE9tklgTwTjbEAis2gVK05fbb2vaVQxH4HJhD8NFwcsz_OIUqGAiPuT_gSjyGTmWWu0uJlwBkA-fUOgOf1Ksr50bShVtw1mewI_ISkfOLsiDX1E_sae4tMF1aKx3C6I5XKe_b7VALI0gbAxMQUFzhLlQENs"/>
+<span class="font-display-lg text-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary hidden sm:block">PRIME LANE</span>
+</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg uppercase text-primary font-bold border-b-2 border-primary pb-1 transition-colors duration-300 hover:text-primary" href="#">Inventory</a>
+<a class="font-label-lg text-label-lg uppercase text-on-surface-variant font-medium transition-colors duration-300 hover:text-primary" href="#">Finance</a>
+<a class="font-label-lg text-label-lg uppercase text-on-surface-variant font-medium transition-colors duration-300 hover:text-primary" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<a class="hidden md:flex items-center justify-center bg-gradient-to-b from-primary-container to-inverse-primary text-on-primary font-label-lg text-label-lg uppercase px-6 py-3 rounded shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all duration-300 glint-effect border border-primary/50" href="#">
+                Apply for Finance
+            </a>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-container-padding pt-32 pb-section-gap flex flex-col gap-section-gap">
+<!-- Hero Section: Vehicle Presentation -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: Image Gallery (Bento style) -->
+<div class="lg:col-span-8 flex flex-col gap-base">
+<!-- Main Image -->
+<div class="relative w-full aspect-video rounded-lg overflow-hidden gold-border-gradient shadow-[0_10px_30px_rgba(0,0,0,0.5)] group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, metallic blue 2021 VW Golf 8 R parked on a dark, wet asphalt surface under dramatic studio lighting. The lighting highlights the aggressive front fascia, R-line badging, and aerodynamic lines of the vehicle. The background is a deep, luxurious obsidian black with subtle metallic gold reflections on the ground, creating a high-contrast, premium automotive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWaSjDxmEeEkVL63yKs-pjxOl8l6dnmleocRI3IaNJ8dQPjBXewQsfKw1WRP1pcMWK2RXT1HpjEdfceVqe3vtnOBydClwe0yWV9CeF-7lqjJi3ndKq5o_3qTSOqasWML6LXNOpYMUzld5KciA1WcOISmaF9M__qyJGFT1EOBO7iaD_6Z2QYOx7ynk_G2JJc6LaAb_X2Bmi7h05E04KWpPQ8NTnOAf5uW23GYV04Bjf88UhuRdYN2IUGA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-surface-container-high/80 backdrop-blur-sm border border-primary/30 text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+                            Verified Listing
+                        </span>
+<span class="bg-surface-container-high/80 backdrop-blur-sm border border-primary/30 text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+<span class="material-symbols-outlined text-[14px] text-primary">local_gas_station</span>
+                            Petrol
+                        </span>
+</div>
+</div>
+<!-- Thumbnails Grid -->
+<div class="grid grid-cols-4 gap-base">
+<div class="aspect-[4/3] rounded overflow-hidden border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<img class="w-full h-full object-cover" data-alt="Close up detail shot of the 2021 VW Golf 8 R alloy wheels with prominent blue R brake calipers. The lighting is sharp, emphasizing the metallic finish of the wheels against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCJFBtS_xq7u1ECIHixqZp2s18AbEYsJ4mpUyWYtDAq4BstcaMk0FayrCHmVehbGv6IuzMY3HyzAXxgBJ2OsOwsnhVtKxO1F7CyjM9o4rJLOZtrLeOC4k-H53wKeS6g3DID1Os-xpimK5RpdrPECzRPdwd3v3R6ekMXTe2dSJsaQN_O0Pdj9ogtR3e1GqqGtafrU4SVcg5H7pZDbnV0CFVypxnU7ArO3KFuI1h4R5KEHTsF2491Bo1Xw"/>
+</div>
+<div class="aspect-[4/3] rounded overflow-hidden border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<img class="w-full h-full object-cover" data-alt="Interior view of the 2021 VW Golf 8 R cockpit, focusing on the digital dashboard, premium sport seats, and ambient blue lighting. The environment is dark and luxurious, highlighting the advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnIEN1rDn2Sgef2pBEOyljPgygEQdkHAXKVAIwg133QA-G8G6qFe-jTP4UjRwb5FWLBScckaJQJsN2pvBLKldYKPOYpZpJJAP4XBL_BK4WbrKqTtRc7YP9xsalso4cVFa8XIPBh4psIKxH8EiwMDPJWdPFWW8tpjrOuHu01etv9mtwgBYXHGpVruh1Lyf0XWZGox3lSZ-ympqS-83Tkh1dNjDeviJjQTyXIa-39M4SWh3qoGHNBGuIeQ"/>
+</div>
+<div class="aspect-[4/3] rounded overflow-hidden border border-outline-variant hover:border-primary cursor-pointer transition-colors">
+<img class="w-full h-full object-cover" data-alt="Rear three-quarter view of the 2021 VW Golf 8 R showing the quad exhaust pipes and aggressive rear diffuser. Shot under dramatic, low-key lighting with subtle gold reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPYmcalsvrskWpnNeJ6S3VG1NJMB28kkQTmTkkxrQoI-Xa2Kh3W73GOhwRnuvvhQRkSNqPDoJ7Og2bQiiscvzzzPv7m3BEb1oqSXr5KAeQDfskQ_zmWp2wNrP_BG9KmFUKDGiYV0Pw0BR7IGsrh8hJZsxzOktWN3ZZmO9MbFPQNycR_bR2qqZDTbiQmXY0_OpoZt8EyziBnypgOr8b_4mWRJx3BOLS7QDla4r3vKx_TUAeI8f32YKNxQ"/>
+</div>
+<div class="aspect-[4/3] rounded overflow-hidden border border-outline-variant hover:border-primary cursor-pointer transition-colors relative flex items-center justify-center bg-surface-container-high">
+<span class="material-symbols-outlined text-3xl text-primary">photo_library</span>
+<span class="absolute bottom-2 font-label-sm text-label-sm text-on-surface-variant">+12 Photos</span>
+</div>
+</div>
+</div>
+<!-- Right: Vehicle Details & Actions -->
+<div class="lg:col-span-4 flex flex-col gap-8 bg-surface-container-lowest p-6 rounded-xl gold-border-gradient shadow-2xl relative z-10">
+<!-- Header & Price -->
+<div class="flex flex-col gap-2 border-b border-primary/20 pb-6">
+<h1 class="font-display-lg text-display-lg metallic-text">2021 VW Golf 8 R</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant">2.0 TSI 4Motion DSG</p>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-display-lg text-headline-lg text-primary">R 899,900</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Incl. VAT</span>
+</div>
+</div>
+<!-- Key Specs Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1 p-3 bg-surface-container rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mileage</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">35,000 km</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Year</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">2021</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Transmission</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Automatic</span>
+</div>
+<div class="flex flex-col gap-1 p-3 bg-surface-container rounded border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">sell</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Reference</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">V-4492</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4 mt-4">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-b from-primary-container to-inverse-primary text-on-primary font-label-lg text-label-lg uppercase px-6 py-4 rounded shadow-[0_0_20px_rgba(212,175,55,0.15)] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all duration-300 glint-effect border border-primary/50" id="applyFinanceBtn">
+<span class="material-symbols-outlined">payments</span>
+                        Apply For Finance
+                    </button>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase px-4 py-3 rounded border border-outline-variant hover:border-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                            WhatsApp
+                        </button>
+<button class="flex items-center justify-center gap-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase px-4 py-3 rounded border border-outline-variant hover:border-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                            Enquiry
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-primary/20 bg-gradient-to-b from-surface-container-low to-black flat no shadows">
+<div class="w-full max-w-[1200px] mx-auto px-container-padding flex flex-col md:flex-row justify-between gap-gutter">
+<div class="flex flex-col gap-4">
+<span class="font-display-lg text-headline-md text-primary">PRIME LANE</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Automotive Sales Industry. Your dream car. Our finance. Your future.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">
+                    © 2024 Prime Lane Motors. The Way To Go.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-surface">Links</h4>
+<nav class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Inventory</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Finance</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Terms of Service</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-headline-md text-on-surface">Contact Us</h4>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary">call</span>
+                    +27 676 219 820
+                </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary">mail</span>
+                    sullimanzain94@gmail.com
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        document.getElementById('applyFinanceBtn').addEventListener('click', function() {
+            // Simulated form pre-fill logic
+            console.log('Passing vehicle details to finance form:');
+            console.log({
+                make: 'VW',
+                model: 'Golf 8 R',
+                year: '2021',
+                ref: 'V-4492',
+                price: 'R899,900'
+            });
+            alert('Opening Finance Application for 2021 VW Golf 8 R (Ref: V-4492)');
+        });
+    </script>
+</body></html>

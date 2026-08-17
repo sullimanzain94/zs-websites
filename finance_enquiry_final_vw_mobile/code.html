@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - Finance Enquiry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#3c2f00",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-variant": "#333535",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cdcd",
+                        "on-tertiary-container": "#454544",
+                        "surface-container": "#1e2020",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "secondary": "#c6c6c6",
+                        "tertiary-container": "#b4b2b2",
+                        "surface": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#d4af37",
+                        "surface-tint": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "on-background": "#e2e2e2",
+                        "on-secondary": "#2f3131",
+                        "secondary-container": "#484949",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-container": "#b8b8b8",
+                        "surface-dim": "#121414",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed": "#ffe088",
+                        "background": "#121414",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#282a2b",
+                        "surface-bright": "#37393a",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(153, 144, 124, 0.1);
+        }
+        .form-well {
+            background: rgba(18, 20, 20, 0.5);
+            border: 1px solid rgba(153, 144, 124, 0.3);
+            transition: all 0.3s ease;
+        }
+        .form-well:focus-within {
+            border-color: #f2ca50;
+            box-shadow: 0 0 10px rgba(242, 202, 80, 0.2);
+        }
+        
+        .success-state {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .success-state.active {
+            display: flex;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Header (Transactional Intent: No Nav Shell) -->
+<header class="w-full flex justify-center py-6">
+<img alt="Prime Lane Motors Logo" class="w-32 h-32 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXQNvny8g4jUadfmkIVVZiU0IJvOzYiVSb3NGk09drD--F-o0I3tVGYa-p95vAtgCrsTzbrd9A3exBja81zcQ452VrafifBWIqTOkPJsEGMGh_ZrIkSmCRpS83CEIjibr1ymqipACKHSTGdesH5Uxn4OZkilkLauWkjnuSrwXxydMKz8Uo5V_HjDP9t8BwbimAK4go1l_qIHRSImFB2X9vo6X54yOvS0VCCuZ6SEbIYbkE2AmNV_s4ETy9FTCsNnYr1-0"/>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 flex justify-center items-start">
+<!-- Form Container -->
+<div class="w-full max-w-[600px] glass-panel rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-6 relative">
+<div id="form-container">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase text-center">Finance Enquiry</h2>
+<form class="space-y-6" id="finance-enquiry-form">
+<!-- Personal Details -->
+<div class="space-y-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Full Name</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Mobile Number</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="082 123 4567" required="" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Email Address</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="john@example.com" required="" type="email"/>
+</div>
+</div>
+</div>
+<!-- Vehicle & Financials -->
+<div class="space-y-6 pt-4 border-t border-outline-variant/30">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">VW Model of Interest</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="e.g. Golf GTI, Polo" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Employment Status</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
+<option disabled="" selected="" value="">Select Status</option>
+<option value="employed">Employed Full-Time</option>
+<option value="self_employed">Self Employed</option>
+<option value="contract">Contract Worker</option>
+<option value="retired">Retired</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Monthly Income (Net)</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
+<option disabled="" selected="" value="">Select Income</option>
+<option value="under_10k">Under R10,000</option>
+<option value="10k_20k">R10,000 - R20,000</option>
+<option value="20k_30k">R20,000 - R30,000</option>
+<option value="30k_plus">R30,000+</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Do you have a deposit?</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" required="" type="radio" value="yes"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Yes</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" type="radio" value="no"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">No</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" type="radio" value="not_sure"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Not Sure</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Preferences & Additional Info -->
+<div class="space-y-6 pt-4 border-t border-outline-variant/30">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Contact Method</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
+<option value="phone">Phone Call</option>
+<option value="whatsapp">WhatsApp</option>
+<option value="email">Email</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Additional Information (Optional)</label>
+<textarea class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="Any specific requirements or questions?" rows="3"></textarea>
+</div>
+<!-- Consent Checkboxes -->
+<div class="space-y-4 pt-4 border-t border-outline-variant/30">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="mt-1 flex-shrink-0">
+<input class="w-5 h-5 rounded border-outline-variant bg-surface-container-low text-primary focus:ring-primary focus:ring-offset-background" required="" type="checkbox"/>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">I consent to Prime Lane Motors processing my information for this enquiry.</span>
+</label>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="pt-6 flex justify-center items-center mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md uppercase px-8 py-4 rounded-lg font-bold hover:bg-primary-container transition-colors shadow-[0_0_20px_rgba(242,202,80,0.3)]" id="submit-btn" type="submit">
+                    SUBMIT FINANCE ENQUIRY
+                </button>
+</div>
+</form>
+</div>
+<!-- Success State -->
+<div class="success-state flex-col items-center justify-center py-12 text-center" id="success-state">
+<span class="material-symbols-outlined text-primary text-[64px] mb-4">check_circle</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4 uppercase">ENQUIRY RECEIVED</h2>
+<p class="text-on-surface-variant text-body-lg">Thank you for your interest. One of our finance specialists will contact you shortly.</p>
+</div>
+<!-- Disclaimer -->
+<div class="mt-8 text-[12px] leading-relaxed text-outline-variant text-center opacity-60 px-4">
+        "Prime Lane Motors assists customers with their vehicle and finance journey. Finance approval, interest rates, instalments and other credit terms are determined by the applicable finance provider and are subject to its assessment, affordability requirements, credit criteria and approval. Finance approval is not guaranteed."
+    </div>
+</div>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('finance-enquiry-form');
+            const formContainer = document.getElementById('form-container');
+            const successState = document.getElementById('success-state');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Hide form, show success state
+                formContainer.style.display = 'none';
+                successState.classList.add('active');
+                
+                // Scroll to top of container for mobile
+                window.scrollTo({
+                    top: formContainer.parentElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

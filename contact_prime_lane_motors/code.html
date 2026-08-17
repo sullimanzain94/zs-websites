@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#303030",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#343535",
+                        "outline-variant": "#4d4635",
+                        "surface": "#121414",
+                        "primary": "#f2ca50",
+                        "on-background": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#474746",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e3e2e2",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-tint": "#e9c349",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-container": "#b4b2b2",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed": "#e4e2e1",
+                        "background": "#121414",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#343535",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "tertiary": "#d0cdcd",
+                        "outline": "#99907c",
+                        "surface-bright": "#383939",
+                        "surface-container": "#1e2020",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary-container": "#454545",
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        unit: "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        gutter: "16px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, theme('colors.primary-fixed'), theme('colors.primary-container'));
+        }
+        .btn-ghost-gold {
+            background: transparent;
+            border: 1px solid theme('colors.primary');
+            color: theme('colors.primary');
+            transition: all 0.3s ease;
+        }
+        .btn-ghost-gold:hover {
+            background: theme('colors.primary-container');
+            color: theme('colors.on-primary-container');
+            border-color: theme('colors.primary-container');
+        }
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .input-field {
+            background-color: theme('colors.surface-container-low');
+            border: none;
+            border-bottom: 1px solid theme('colors.outline-variant');
+            color: theme('colors.on-surface');
+            transition: border-color 0.3s ease;
+        }
+        .input-field:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary');
+            box-shadow: 0 1px 0 0 theme('colors.primary');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 bg-surface-container-low/90 border-b border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-center px-container-padding py-stack-sm max-w-screen-2xl mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tight uppercase">
+                Prime Lane Motors
+            </div>
+<div class="hidden md:flex gap-stack-lg items-center font-body-lg text-body-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Inventory</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Showroom</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Services</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 active:scale-95 transition-transform" href="#">Concierge</a>
+</div>
+<div class="flex gap-stack-md items-center">
+<button class="hidden lg:block text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm">WhatsApp</button>
+<button class="bg-gradient-gold text-on-primary-container px-6 py-2 rounded-full font-label-sm text-label-sm uppercase hover:opacity-90 transition-opacity">Apply for Finance</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-stack-lg px-container-padding max-w-screen-xl mx-auto w-full">
+<header class="mb-12 text-center md:text-left">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-4">We're Here to Assist You.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with our private concierge team for bespoke automotive acquisition, finance inquiries, or to schedule a private viewing.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Contact Options & Info (Left Col) -->
+<div class="lg:col-span-5 flex flex-col gap-8">
+<!-- Quick Actions Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+<a class="glass-panel p-6 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors" href="#">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Direct Messaging</div>
+<div class="font-headline-md text-headline-md text-on-surface">WhatsApp Us</div>
+</div>
+</a>
+<a class="glass-panel p-6 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors" href="#">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant group-hover:text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Concierge Line</div>
+<div class="font-body-lg text-body-lg text-on-surface">+1 (800) 555-0198</div>
+</div>
+</a>
+<a class="glass-panel p-6 rounded-xl flex items-center gap-4 group hover:bg-surface-container transition-colors" href="#">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant group-hover:text-primary group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">General Enquiries</div>
+<div class="font-body-lg text-body-lg text-on-surface">concierge@primelane.com</div>
+</div>
+</a>
+</div>
+<!-- Business Hours -->
+<div class="glass-panel p-6 rounded-xl">
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Boutique Hours
+                    </h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span>Monday - Friday</span>
+<span class="text-on-surface">9:00 AM — 7:00 PM</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span>Saturday</span>
+<span class="text-on-surface">10:00 AM — 5:00 PM</span>
+</li>
+<li class="flex justify-between pt-1">
+<span>Sunday</span>
+<span class="text-primary">By Appointment Only</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Form & Map (Right Col) -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Contact Form -->
+<div class="glass-panel p-8 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-gold"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Send an Enquiry</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-2" for="firstName">First Name</label>
+<input class="input-field p-3" id="firstName" placeholder="James" required="" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-2" for="lastName">Last Name</label>
+<input class="input-field p-3" id="lastName" placeholder="Bond" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-2" for="email">Email Address</label>
+<input class="input-field p-3" id="email" placeholder="james@example.com" required="" type="email"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-2" for="interest">Area of Interest</label>
+<select class="input-field p-3 bg-surface-container-low" id="interest">
+<option>Vehicle Acquisition</option>
+<option>Private Viewing</option>
+<option>Financial Services</option>
+<option>Consignment</option>
+<option>Other</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-2" for="message">Message</label>
+<textarea class="input-field p-3 resize-none" id="message" placeholder="How may we assist you?" required="" rows="4"></textarea>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="bg-gradient-gold text-on-primary-container px-8 py-3 rounded-full font-label-sm text-label-sm uppercase hover:opacity-90 transition-opacity flex items-center gap-2" type="submit">
+                                Send Message
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Map Placeholder -->
+<div class="h-64 rounded-xl overflow-hidden border border-outline-variant/30 relative group">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A stylized, dark-mode map interface showing a high-end commercial district. The map features deep charcoal and obsidian tones for the terrain, with subtle brushed gold and warm amber glowing lines representing major roadways. A prominent, elegant gold marker indicates a premium automotive showroom location. The aesthetic is highly polished, minimalist, and conveys a luxury private concierge atmosphere." data-location="Beverly Hills" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_spJQoH0sNJo8aL-GMDB4nmVuij-5XLSUCzgAI2G2HNqWHzWKiDLWhU5c-qT3gWZ19MxIOUqzN0FRdTYZ_JUzQmQRjg9SbZz4PISbkxy21ImRZF8NGLBwcuQ_MeOu_aYANmLz-iIh5GlqP9XncMiL-aEp5PZ7oC2gmQymWGfgVg4-lKSxlugiK7_o_SxOW99YElmJSgil3ttsC6OuwYnhKrpUPWuGByke41CFb7NjLdNLhjHgqL2yWg"/>
+<div class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur px-4 py-2 rounded-lg border border-outline-variant/50">
+<div class="font-label-sm text-label-sm text-primary uppercase">Showroom Location</div>
+<div class="font-body-md text-body-md text-on-surface">Beverly Hills, CA</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 w-full relative">
+<div class="w-full py-stack-lg px-container-padding flex flex-col items-center gap-stack-md max-w-screen-2xl mx-auto">
+<div class="font-headline-md text-headline-md text-primary opacity-80 hover:opacity-100 transition-opacity">
+                Prime Lane Motors
+            </div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Financial Disclosure</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Cookie Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sitemap</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-4 text-center">
+                © 2024 Prime Lane Motors. All rights reserved. Private Concierge Automotive Group.
+            </div>
+</div>
+</footer>
+</body></html>

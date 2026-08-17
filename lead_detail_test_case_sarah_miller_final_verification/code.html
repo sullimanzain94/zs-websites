@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lead Detail - Test Case</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-highest": "#343535",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c5af",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "surface-tint": "#e9c349",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface": "#121414",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-tertiary": "#303030",
+                        "on-primary": "#3c2f00",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#e3e2e2",
+                        "primary-container": "#d4af37",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary": "#d0cdcd",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-primary-fixed": "#241a00",
+                        "on-background": "#e3e2e2",
+                        "surface-variant": "#343535",
+                        "surface-container": "#1e2020",
+                        "outline": "#99907c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#454545",
+                        "on-error": "#690005",
+                        "background": "#121414",
+                        "surface-bright": "#383939",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .inner-glow {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+        .gold-glow {
+            box-shadow: inset 0 0 0 1px rgba(242, 202, 80, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-8 bg-surface-container-lowest border-r border-white/5 fixed left-0 top-0 w-[280px] z-50">
+<div class="px-gutter mb-stack-lg">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Prime Lane Motors</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-unit uppercase tracking-widest">Private Concierge</p>
+</div>
+<div class="px-gutter mb-stack-lg">
+<button class="w-full bg-gradient-to-r from-primary to-primary-fixed-dim text-on-primary font-body-md font-semibold py-3 rounded flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Application
+            </button>
+</div>
+<div class="flex-1 flex flex-col gap-unit">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase">Dashboard</span>
+</a>
+<a class="text-primary font-bold bg-surface-container-high border-l-4 border-primary px-4 py-3 flex items-center gap-3 scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_search</span>
+<span class="font-label-sm text-label-sm uppercase">Leads</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm uppercase">Pipeline</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-sm text-label-sm uppercase">Applications</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">history_toggle_off</span>
+<span class="font-label-sm text-label-sm uppercase">Follow-ups</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-label-sm uppercase">Analytics</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-unit px-gutter">
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-sm text-label-sm uppercase">Support</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm uppercase">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center px-gutter py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 fixed top-0 right-0 w-[calc(100%-280px)] z-40">
+<div class="flex items-center gap-3 bg-surface-container-high rounded px-3 py-2 inner-glow">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none text-body-md text-on-surface focus:ring-0 placeholder:text-on-surface-variant/50 w-64" placeholder="Search leads, vehicles..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high inner-glow overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up professional headshot of an executive in a bespoke dark charcoal suit. The lighting is sophisticated and moody, consistent with a luxury automotive brand identity. High contrast, sharp focus, set against a dark, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1mxHhFY_rvMb8ttgLZq-IJk_5ObXRD0BTANBvn8TU8JxmKzJSRCvMScI3IQVnkDAzMAuRry5Hpc2ffp01uPuT6XeslwfKiYmYPeaDEpqsidBbb_ICkMerZMdrwhhWKq99wB6bjTNSepxLf29YmZefAgEAN2xuABAEcPH9nY688oTfylcxj1tFeR7QWjzrPwpM_Y5JIVD97am7VJ-5T6bPSLlEZGDIfQbCxEes58j3ufj3pvgqlpB21Q"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="w-full md:pl-[280px] pt-[80px] min-h-screen bg-surface flex flex-col">
+<div class="p-container-padding flex-1 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-stack-lg gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-1 bg-error-container text-on-error-container font-label-sm text-label-sm rounded uppercase tracking-widest">[TEST CASE]</span>
+<div class="flex items-center gap-2 px-2 py-1 bg-surface-container-high rounded inner-glow">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Awaiting Verification</span>
+</div>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Test Lead - Sarah Miller</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Lead Owner: Zain Sulliman</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest rounded hover:bg-primary/10 transition-colors">
+                        Decline
+                    </button>
+<button class="px-6 py-2 bg-gradient-to-r from-primary to-primary-fixed-dim text-on-primary font-label-sm text-label-sm uppercase tracking-widest rounded hover:opacity-90 transition-opacity">
+                        Verify Lead
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Vehicle Interest (Main Card) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl inner-glow p-container-padding flex flex-col relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20" data-alt="A highly stylized, moody, dark-mode abstract background featuring subtle metallic textures and soft, glowing golden accents, reminiscent of a luxury vehicle's interior dashboard lighting. Deep obsidian blacks and brushed gunmetal grays dominate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxigEpo-hvdc7OYCFWDxris4poLaZy_xvvfsS-sMEThyiiBdt8PgAGeliYUXjFyKJFc80xiXMkwtqBvvYBG4TUViG4pjdtBLXoxL8eeEPptpReyVSHBMXV0YJ2pirdb_vHGgkiRJUIAbYex0s2N88Nlxfom5KWMg_6VWNYasL3wdmiLR6WWXfiqITLGFKgkziGgKk253gpv6a6Q0pV1bqDYNeI6xZHELXhX2OTr-vDrY5qAobX6Bf86w')"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Vehicle of Interest</h3>
+<span class="material-symbols-outlined text-primary">directions_car</span>
+</div>
+<div class="flex-1 flex items-end">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-primary mb-2">2021 VW Golf 8 R</h4>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">info</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Availability: To be confirmed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Target -->
+<div class="md:col-span-4 bg-surface-container-high rounded-xl gold-glow p-container-padding flex flex-col justify-between">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Target Monthly Installment</h3>
+<p class="font-headline-lg text-headline-lg text-on-surface">R4,000</p>
+</div>
+<div class="mt-stack-md">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Preferred Term</h3>
+<p class="font-body-lg text-body-lg text-on-surface">Not Specified</p>
+</div>
+</div>
+<!-- Disclaimer -->
+<div class="md:col-span-12 bg-surface-container rounded-xl inner-glow p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5">warning</span>
+<p class="font-label-sm text-label-sm text-outline leading-relaxed">
+                        Monthly payment is an estimate only. Final payment, interest rate, term, deposit and approval are subject to the applicable finance provider's assessment and approved terms.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

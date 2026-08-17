@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - Vehicle Inventory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Chivo:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#e3e2e2",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-tertiary-container": "#534400",
+                    "surface": "#131313",
+                    "surface-variant": "#353534",
+                    "surface-dim": "#131313",
+                    "on-primary-fixed": "#241a00",
+                    "on-tertiary": "#3a3000",
+                    "on-primary": "#3c2f00",
+                    "primary": "#f2ca50",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "tertiary-fixed-dim": "#e9c400",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-highest": "#353534",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-surface-variant": "#d0c5af",
+                    "primary-fixed": "#ffe088",
+                    "primary-container": "#d4af37",
+                    "error-container": "#93000a",
+                    "on-error": "#690005",
+                    "outline": "#99907c",
+                    "tertiary-fixed": "#ffe16d",
+                    "background": "#131313",
+                    "on-secondary": "#2f3131",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed": "#221b00",
+                    "inverse-primary": "#735c00",
+                    "surface-container": "#201f1f",
+                    "on-tertiary-fixed-variant": "#544600",
+                    "on-secondary-container": "#b8b8b8",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#484949",
+                    "tertiary": "#f2cc00",
+                    "on-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-primary-container": "#554300",
+                    "on-secondary-fixed-variant": "#464747",
+                    "surface-bright": "#3a3939",
+                    "outline-variant": "#4d4635",
+                    "tertiary-container": "#d2b100",
+                    "surface-tint": "#e9c349",
+                    "secondary": "#c6c6c6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "gutter": "16px",
+                    "container-padding": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Chivo"
+                    ],
+                    "headline-md": [
+                            "Montserrat"
+                    ],
+                    "body-md": [
+                            "Work Sans"
+                    ],
+                    "display-lg": [
+                            "Montserrat"
+                    ],
+                    "headline-lg": [
+                            "Montserrat"
+                    ],
+                    "body-lg": [
+                            "Work Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Montserrat"
+                    ],
+                    "label-lg": [
+                            "Chivo"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .gold-gradient-btn {
+            background: linear-gradient(180deg, #f2ca50 0%, #d4af37 100%);
+            color: #131313;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        .gold-gradient-btn:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        .metallic-border {
+            border: 1px solid #d4af37;
+        }
+        .card-hover:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+            border-color: #f2ca50;
+        }
+        .speed-line {
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37 0%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md pt-20 antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 z-50 flex justify-between items-center px-container-padding w-full max-w-[1200px] mx-auto left-0 right-0 h-20 border-b border-outline-variant bg-background/95 backdrop-blur-md shadow-[0_4px_20px_rgba(212,175,55,0.1)]">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">PRIME LANE</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg uppercase text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Inventory</a>
+<a class="font-label-lg text-label-lg uppercase text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Finance</a>
+<a class="font-label-lg text-label-lg uppercase text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center px-6 py-2 rounded-DEFAULT gold-gradient-btn font-label-lg text-label-lg uppercase font-bold scale-95 active:scale-90 transition-transform duration-200">
+                Apply for Finance
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="w-full max-w-[1200px] mx-auto px-container-padding py-section-gap">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-headline-lg-mobile text-on-surface uppercase mb-4">
+                Premium <span class="text-primary">Inventory</span>
+</h1>
+<div class="speed-line w-32 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Discover our curated selection of high-quality vehicles. Every car in our inventory undergoes a rigorous inspection to ensure peace of mind and premium performance.
+            </p>
+</div>
+<!-- Filters & Search Bar (Bento style integration) -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-gutter mb-12">
+<!-- Search -->
+<div class="lg:col-span-4 bg-surface-container-low border border-outline-variant rounded-lg p-1 flex items-center">
+<span class="material-symbols-outlined text-primary ml-4 mr-2">search</span>
+<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body-md placeholder-on-surface-variant/50 h-12" placeholder="Search make, model, or keyword..." type="text"/>
+<button class="px-6 py-2 h-full rounded-DEFAULT gold-gradient-btn font-label-lg text-label-lg uppercase font-bold ml-2">
+                    Search
+                </button>
+</div>
+<!-- Filters -->
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-surface-container-highest border border-outline-variant p-6 rounded-lg">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 uppercase">Filters</h3>
+<!-- Brand Filter -->
+<div class="mb-6">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-2">Brand</label>
+<select class="w-full bg-surface-container border-b border-outline-variant border-t-0 border-l-0 border-r-0 text-on-surface focus:border-primary focus:ring-0 py-2">
+<option>All Brands</option>
+<option>Volkswagen</option>
+<option>BMW</option>
+<option>Mercedes-Benz</option>
+<option>Audi</option>
+</select>
+</div>
+<!-- Body Type -->
+<div class="mb-6">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-2">Body Type</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full border border-primary text-primary font-label-sm text-label-sm cursor-pointer hover:bg-primary/10">SUV</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant text-on-surface-variant font-label-sm text-label-sm cursor-pointer hover:border-primary hover:text-primary">Sedan</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant text-on-surface-variant font-label-sm text-label-sm cursor-pointer hover:border-primary hover:text-primary">Hatchback</span>
+<span class="px-3 py-1 rounded-full border border-outline-variant text-on-surface-variant font-label-sm text-label-sm cursor-pointer hover:border-primary hover:text-primary">Bakkie</span>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-6">
+<label class="block font-label-lg text-label-lg text-on-surface-variant mb-2">Max Price</label>
+<input class="w-full accent-primary" max="1000000" min="100000" step="50000" type="range"/>
+<div class="flex justify-between mt-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>R100k</span>
+<span>R1M+</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-DEFAULT border border-primary text-primary font-label-lg text-label-lg uppercase font-bold hover:bg-primary/10 transition-colors">
+                        Apply Filters
+                    </button>
+</div>
+</div>
+<!-- Vehicle Grid -->
+<div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Car Card 1 -->
+<div class="bg-surface-container border border-outline-variant rounded-lg overflow-hidden card-hover transition-all duration-300 group flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern Volkswagen Golf R parked in a dramatically lit studio environment. The car is deep metallic blue, reflecting harsh, angled spotlighting that highlights its aggressive front grille and aerodynamic lines. The background is pure, light-absorbing black, creating a high-contrast, premium aesthetic. The lighting creates a 'glint' effect on the car's metallic surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeZYbhVYR7uL2HnszBHqKJwNum4VFiKDG6l9CbU5u0Z8JaVnb3io4KDwQfeeTFIxsXoU7JttUdv_XZi-K0AesrU_pGAf4ypKVCzTtUVMNaH7JTOW-wGheBejuXInT6a0MfWF7WB8mEY9n5V9IT7T18KUeLyUHWufxIyDB6YlXSOJ7Wljzyjh43uMpXAerKaV0OO92vx6xOLDVdl7CL79L6pzXq79Wpv5gdLQ6esDDXhIlO4_iHaTeC3A"/>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur-sm border border-primary text-primary px-3 py-1 rounded-full font-label-sm text-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                            Premium
+                        </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">2021 VW Golf 8 R</h3>
+<span class="font-headline-md text-headline-md text-primary">R 899,900</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 border-b border-outline-variant/50 pb-4">
+                                2.0 TSI 4Motion DSG
+                            </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-label-sm text-label-sm">35,000 km</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">local_gas_station</span>
+<span class="font-label-sm text-label-sm">Petrol</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm">Automatic</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">2021</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded border border-outline-variant/30 flex justify-between items-center mt-auto">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Est. Finance</span>
+<span class="font-headline-md text-[18px] text-on-surface">R 14,500 <span class="text-sm font-normal text-on-surface-variant">/pm</span></span>
+</div>
+<button class="px-4 py-2 rounded-DEFAULT gold-gradient-btn font-label-sm text-label-sm uppercase font-bold">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Car Card 2 -->
+<div class="bg-surface-container border border-outline-variant rounded-lg overflow-hidden card-hover transition-all duration-300 group flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious Mercedes-Benz C-Class sedan in a dark, atmospheric setting. The vehicle is painted in a lustrous metallic silver, standing out against an obsidian black background. Subtle, warm gold accent lighting reflects off the car's chrome details and polished wheels, emphasizing a high-end, prestigious automotive brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYDBHO45Fhy448lXtOQTvF_fEemoKwxACB1SzS7faEC1v9RoO0jOC1ccXUh1zvqmD1-D9kQaO_Q0RWIjoAOLR-TWjIlxNCaErmraPE5hrwrYZcDFLWxCcH1HQk9wC8nW1_cqxilNgauxkJzMdDJfaoRizRNvsnPi07pTJ-E0jlImx9U1bbWo8geCZv7DtGkDIgS6Mh_rDVrO7dydKf2GSrOP8PgCksHeDC5VI63MGrvcemBex2n0ouWw"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">2022 M-Benz C200</h3>
+<span class="font-headline-md text-headline-md text-primary">R 750,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 border-b border-outline-variant/50 pb-4">
+                                AMG Line Auto
+                            </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-label-sm text-label-sm">42,000 km</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">local_gas_station</span>
+<span class="font-label-sm text-label-sm">Petrol</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm">Automatic</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">2022</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded border border-outline-variant/30 flex justify-between items-center mt-auto">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Est. Finance</span>
+<span class="font-headline-md text-[18px] text-on-surface">R 12,200 <span class="text-sm font-normal text-on-surface-variant">/pm</span></span>
+</div>
+<button class="px-4 py-2 rounded-DEFAULT gold-gradient-btn font-label-sm text-label-sm uppercase font-bold">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Car Card 3 -->
+<div class="bg-surface-container border border-outline-variant rounded-lg overflow-hidden card-hover transition-all duration-300 group flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A rugged yet premium Volkswagen Amarok V6 bakkie (pickup truck) positioned dynamically. The lighting is cinematic, casting deep shadows while highlighting the sharp creases of the bodywork and the metallic dark grey paint. The setting feels like an exclusive underground garage with subtle gold glints catching the edges of the vehicle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlVDSNal7aeWrtP7ewE6ODPx3-ZV65_LwPo4d81UOeN8A7-FGZ7aBNe0zKVpecy6FU1dg1Qn0VZUgKDVurpQRPe2A9lvxXViSiAQ8xK_16LjnA9HQ-04MYJonsrjJjT1vvAtsyL81W9cFqYGcsSm6qBsEUHSmr6xpTSt55bk1cMZfP8SOCs43oFRXhrlDjg0LtHLi5UIsicsWTHoMNGLLtRvd5prPG61nZMdeHXEbVSIopGs4S8nNnEA"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">2020 VW Amarok V6</h3>
+<span class="font-headline-md text-headline-md text-primary">R 680,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 border-b border-outline-variant/50 pb-4">
+                                3.0 TDI Highline 4Motion
+                            </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-label-sm text-label-sm">85,000 km</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">local_gas_station</span>
+<span class="font-label-sm text-label-sm">Diesel</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm">Automatic</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">2020</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded border border-outline-variant/30 flex justify-between items-center mt-auto">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Est. Finance</span>
+<span class="font-headline-md text-[18px] text-on-surface">R 11,100 <span class="text-sm font-normal text-on-surface-variant">/pm</span></span>
+</div>
+<button class="px-4 py-2 rounded-DEFAULT gold-gradient-btn font-label-sm text-label-sm uppercase font-bold">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Car Card 4 -->
+<div class="bg-surface-container border border-outline-variant rounded-lg overflow-hidden card-hover transition-all duration-300 group flex flex-col">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated BMW 3 Series sedan shown from a low 3/4 front angle. The car is painted in alpine white, standing out starkly against a pitch-black background. Sharp, focused lighting emphasizes the iconic kidney grille and aggressive LED headlights. The overall mood is authoritative, high-contrast, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDotZpw_-KrRLnoRDGx4MzMXMNySAO_CTUkm9KHC0bKpELT_aEnlb-L-1GK2z7Fe808Nmgs155pr51BjoHeKllwjZ12ThhjGJ0qYpkHmVIxORWRALHLgS593d3O882mIlmKGz7m7jicFuCF_wLFHXfQTnNP6LGNbUQ-OnyOu9T_psiql9dx6BckTZqlzMpTcKhNdlG88I6cD2OqFeKAGagyh9rX8Cq-kCMchO7EArAAJzUD8rFKBYscJg"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase">2023 BMW 320i</h3>
+<span class="font-headline-md text-headline-md text-primary">R 820,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 border-b border-outline-variant/50 pb-4">
+                                M Sport Auto
+                            </p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<span class="font-label-sm text-label-sm">15,000 km</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">local_gas_station</span>
+<span class="font-label-sm text-label-sm">Petrol</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">settings</span>
+<span class="font-label-sm text-label-sm">Automatic</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="font-label-sm text-label-sm">2023</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded border border-outline-variant/30 flex justify-between items-center mt-auto">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant uppercase">Est. Finance</span>
+<span class="font-headline-md text-[18px] text-on-surface">R 13,300 <span class="text-sm font-normal text-on-surface-variant">/pm</span></span>
+</div>
+<button class="px-4 py-2 rounded-DEFAULT gold-gradient-btn font-label-sm text-label-sm uppercase font-bold">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-section-gap border-t border-primary/20 bg-gradient-to-b from-surface-container-low to-black">
+<div class="w-full max-w-[1200px] mx-auto px-container-padding flex flex-col md:flex-row justify-between gap-gutter">
+<div class="mb-8 md:mb-0">
+<span class="font-display-lg text-headline-md text-primary block mb-2">PRIME LANE MOTORS</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Automotive Sales Industry. Your dream car. Our finance. Your future.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 md:gap-16">
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Inventory</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Finance</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[1200px] mx-auto px-container-padding mt-12 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                © 2024 Prime Lane Motors. The Way To Go.
+            </p>
+</div>
+</footer>
+</body></html>

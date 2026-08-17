@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Launch Monitoring Dashboard - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@400&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#343535",
+                        "on-primary": "#3c2f00",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#343535",
+                        "surface-tint": "#e9c349",
+                        "on-surface": "#e3e2e2",
+                        "inverse-surface": "#e3e2e2",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#e3e2e2",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-dim": "#121414",
+                        "tertiary-container": "#b4b2b2",
+                        "on-primary-container": "#554300",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-high": "#292a2a",
+                        "tertiary-fixed": "#e4e2e1",
+                        "primary": "#f2ca50",
+                        "background": "#121414",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "surface": "#121414",
+                        "surface-container": "#1e2020",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "surface-container-low": "#1a1c1c",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#454545",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#574500",
+                        "primary-fixed": "#ffe088",
+                        "inverse-on-surface": "#2f3131",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-primary-fixed": "#241a00",
+                        "outline": "#99907c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "secondary-container": "#474746",
+                        "inverse-primary": "#735c00",
+                        "on-tertiary": "#303030",
+                        "tertiary": "#d0cdcd",
+                        "surface-bright": "#383939"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glow-border { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+        .gold-glow { box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.3); }
+        .bg-gradient-gold { background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Top Navigation (Mobile) -->
+<nav class="md:hidden flex justify-between items-center px-gutter py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-40">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Prime Lane Motors</div>
+<div class="flex gap-4">
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</nav>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-full py-8 fixed left-0 top-0 w-[280px] z-50 bg-surface-container-lowest border-r border-white/5">
+<div class="px-gutter mb-8">
+<div class="font-headline-md text-headline-md font-bold text-primary">Prime Lane Motors</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-1">Private Concierge</div>
+</div>
+<div class="flex flex-col flex-grow">
+<!-- Active: Dashboard -->
+<a class="text-primary font-bold bg-surface-container-high border-l-4 border-primary px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inactive -->
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">person_search</span>
+                Leads
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+                Pipeline
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">description</span>
+                Applications
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">history_toggle_off</span>
+                Follow-ups
+            </a>
+<a class="text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+</div>
+<div class="px-gutter mt-auto flex flex-col gap-2">
+<button class="bg-gradient-gold text-on-primary font-bold py-3 px-4 rounded hover:opacity-90 transition-opacity w-full flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">add</span> New Application
+            </button>
+<div class="mt-4 border-t border-white/10 pt-4">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">help_outline</span> Support
+                </a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-2 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow md:ml-[280px] flex flex-col w-full relative">
+<!-- TopNavBar (Desktop) -->
+<header class="hidden md:flex justify-between items-center px-gutter py-4 sticky top-0 z-30 bg-background/80 backdrop-blur-xl border-b border-white/5">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">Launch Monitoring</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-high border-b border-transparent focus:border-primary text-on-surface pl-10 pr-4 py-2 rounded-t outline-none focus:bg-surface-container-highest transition-colors font-body-md text-body-md w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-on-surface-variant hover:text-on-surface p-2 hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined">settings</span></button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden glow-border">
+<img class="w-full h-full object-cover" data-alt="A detailed headshot of a luxury automotive executive in a sleek, dimly lit obsidian office, conveying professionalism and trust, highly realistic, cinematic lighting, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8WW8mPsL3rXQbAxyYT_b34e7tFAWfxcHse4ybYO9x7aUTTH9HSU9BZM7EJe_G_5kEJixsk64gC6TfZ9vJFu4Ag_zX-eExS4M-hjLKX74o5s95IbCrs57czrp2g0wWKHHsPif2EcTQttgP6T4D6dmMhUUXpwRTi3hVzMjqgweMGhl1iqQU3MciBlKKNij027mKt9ZAiAk83zhmLnkky7opT46rBNHO4R969ZQ-m2RJGDMcJuH34JnQfw"/>
+</div>
+</div>
+</header>
+<div class="p-container-padding flex flex-col gap-stack-lg max-w-7xl mx-auto w-full">
+<!-- 1. Top Banner -->
+<div class="bg-error-container text-on-error-container p-4 rounded-lg flex items-center gap-4 border border-error/20">
+<span class="material-symbols-outlined text-error">warning</span>
+<p class="font-bold text-sm">CONTROLLED PUBLIC LAUNCH — DO NOT MODIFY CORE LOGIC UNTIL FIRST ORGANIC LEAD IS VERIFIED.</p>
+</div>
+<!-- 2. Status Overview Bar -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="bg-surface-container p-4 rounded-lg flex flex-col gap-1 glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Status</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">LIVE / MONITORING</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col gap-1 glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">First Organic Lead</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container">hourglass_empty</span>
+<span class="font-headline-md text-headline-md font-bold text-tertiary-container">AWAITING</span>
+</div>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col gap-1 glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Health</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">OPTIMAL</span>
+</div>
+</div>
+</div>
+<!-- 3. KPI Grid & 6. Pilot Checklist -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-stack-md">
+<div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-stack-md">
+<!-- KPI Cards -->
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Organic Leads</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold">0</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">DEMO: 0</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Capture Success</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold text-primary">100%</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">DEMO</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Scoring Success</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold text-primary">100%</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">DEMO</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assignment Success</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold text-primary">100%</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">DEMO</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg. Response Time</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold text-tertiary-container">--</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Awaiting Data</span>
+</div>
+<div class="bg-surface-container p-4 rounded-lg flex flex-col glow-border">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Conversion Rate</span>
+<div class="mt-2 text-3xl font-headline-lg font-bold text-tertiary-container">--</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Awaiting Data</span>
+</div>
+</div>
+<!-- Pilot Integrity Checklist -->
+<div class="bg-surface-container p-6 rounded-lg glow-border">
+<h3 class="font-headline-md text-headline-md font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">fact_check</span> Integrity Checklist
+                    </h3>
+<ul class="space-y-3 font-label-sm text-label-sm text-on-surface">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Lead capture verified</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Scoring verified</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Assignment verified</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Communication verified</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check</span> Application workflow verified</li>
+</ul>
+</div>
+</div>
+<!-- 4. FIRST ORGANIC LEAD Panel (Primary Focus) -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-white/5 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(circle_at_center,theme(colors.primary)_0%,transparent_70%)]"></div>
+<span class="material-symbols-outlined text-6xl text-surface-variant mb-4">radar</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface-variant text-center mb-2">Awaiting First Organic Lead</h2>
+<p class="text-on-surface-variant max-w-md text-center">Monitoring all channels for the first organic inbound. This panel will automatically populate with comprehensive telemetry upon arrival.</p>
+<div class="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 w-full opacity-30">
+<!-- Placeholders for card layout -->
+<div class="bg-surface-container p-3 rounded text-center"><div class="h-2 bg-surface-variant rounded w-1/2 mx-auto mb-2"></div><div class="h-4 bg-surface-variant rounded w-3/4 mx-auto"></div></div>
+<div class="bg-surface-container p-3 rounded text-center"><div class="h-2 bg-surface-variant rounded w-1/2 mx-auto mb-2"></div><div class="h-4 bg-surface-variant rounded w-3/4 mx-auto"></div></div>
+<div class="bg-surface-container p-3 rounded text-center"><div class="h-2 bg-surface-variant rounded w-1/2 mx-auto mb-2"></div><div class="h-4 bg-surface-variant rounded w-3/4 mx-auto"></div></div>
+<div class="bg-surface-container p-3 rounded text-center"><div class="h-2 bg-surface-variant rounded w-1/2 mx-auto mb-2"></div><div class="h-4 bg-surface-variant rounded w-3/4 mx-auto"></div></div>
+<div class="bg-surface-container p-3 rounded text-center"><div class="h-2 bg-surface-variant rounded w-1/2 mx-auto mb-2"></div><div class="h-4 bg-surface-variant rounded w-3/4 mx-auto"></div></div>
+</div>
+</div>
+<!-- 5. Live Activity Feed & 7. Metrics (Funnel) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md">
+<!-- Live Activity Feed -->
+<div class="bg-surface-container p-6 rounded-lg glow-border h-[300px] flex flex-col">
+<h3 class="font-headline-md text-headline-md font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">rss_feed</span> Live System Activity
+                    </h3>
+<div class="flex-grow overflow-y-auto space-y-4 pr-2 custom-scrollbar">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">info</span>
+<div>
+<p class="text-sm">Database connection stable.</p>
+<span class="text-xs text-on-surface-variant font-label-sm">Just now</span>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">info</span>
+<div>
+<p class="text-sm">WhatsApp templates synchronized.</p>
+<span class="text-xs text-on-surface-variant font-label-sm">2 mins ago</span>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">info</span>
+<div>
+<p class="text-sm">Lead scoring logic verified against control set.</p>
+<span class="text-xs text-on-surface-variant font-label-sm">15 mins ago</span>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">play_arrow</span>
+<div>
+<p class="text-sm">System initialized for Launch Monitoring.</p>
+<span class="text-xs text-on-surface-variant font-label-sm">1 hr ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Funnel Visualization Placeholder -->
+<div class="bg-surface-container p-6 rounded-lg glow-border h-[300px] flex flex-col">
+<h3 class="font-headline-md text-headline-md font-bold mb-4">Pipeline Funnel</h3>
+<div class="flex-grow flex flex-col justify-center items-center gap-2 opacity-50">
+<div class="w-full bg-surface-variant h-8 rounded flex items-center justify-center text-xs">Leads (0)</div>
+<div class="w-5/6 bg-surface-variant h-8 rounded flex items-center justify-center text-xs">Qualified (0)</div>
+<div class="w-4/6 bg-surface-variant h-8 rounded flex items-center justify-center text-xs">App Start (0)</div>
+<div class="w-3/6 bg-surface-variant h-8 rounded flex items-center justify-center text-xs">App Complete (0)</div>
+<div class="w-2/6 bg-primary/20 text-primary border border-primary/50 h-8 rounded flex items-center justify-center text-xs font-bold">Conversion (0)</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<style>
+        /* Custom scrollbar for a sleeker look */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: theme('colors.surface-variant');
+            border-radius: 10px;
+        }
+    </style>
+</body></html>

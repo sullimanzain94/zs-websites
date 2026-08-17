@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Command Centre - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#1e2020",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-lowest": "#0d0f0f",
+                        "outline": "#99907c",
+                        "on-secondary": "#2d3134",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#2e3131",
+                        "surface-container-high": "#282a2a",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#444747",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e1e3e2",
+                        "inverse-primary": "#735c00",
+                        "tertiary": "#cdcece",
+                        "primary": "#f2ca50",
+                        "primary-fixed": "#ffe088",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b6b8bc",
+                        "on-secondary-fixed": "#191c1f",
+                        "secondary-container": "#46494d",
+                        "on-primary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "background": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b1b3b3",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#c4c7ca",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-container": "#434545",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#c5c7c6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e0e2e6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-fixed": "#191c1c",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        unit: "8px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "button-text": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .metallic-glow { box-shadow: 0 0 10px rgba(212, 175, 55, 0.1) inset; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .metallic-glow:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) inset, 0 0 5px rgba(212, 175, 55, 0.2); border-color: rgba(212, 175, 55, 0.3); }
+        .bg-gradient-metallic { background: linear-gradient(180deg, #D4AF37 0%, #B69121 100%); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col pt-4 bg-surface-container-lowest border-r border-white/5 w-64 z-20">
+<div class="px-6 mb-8">
+<h1 class="font-headline-md text-headline-md text-primary">Command Centre</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-2 tracking-wider">Internal Operations</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-2">
+<li>
+<a class="flex items-center px-4 py-3 bg-primary-container text-on-primary-container rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-4" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm font-medium">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">person_search</span>
+<span class="font-label-sm text-label-sm font-medium">Leads</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">account_tree</span>
+<span class="font-label-sm text-label-sm font-medium">Pipeline</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">description</span>
+<span class="font-label-sm text-label-sm font-medium">Applications</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">verified_user</span>
+<span class="font-label-sm text-label-sm font-medium">Verification</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">gavel</span>
+<span class="font-label-sm text-label-sm font-medium">Decisions</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">history</span>
+<span class="font-label-sm text-label-sm font-medium">Follow-ups</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined mr-4">analytics</span>
+<span class="font-label-sm text-label-sm font-medium">Analytics</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-4 mt-auto">
+<button class="w-full bg-gradient-metallic text-black font-button-text text-button-text uppercase tracking-wider py-3 rounded-lg shadow-md hover:opacity-90 transition-all flex items-center justify-center">
+<span class="material-symbols-outlined mr-2">add</span>
+                New Application
+            </button>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Small) -->
+<header class="flex justify-between items-center w-full px-gutter py-2 bg-surface-container border-b border-white/10 shadow-sm z-10 sticky top-0">
+<div class="flex items-center opacity-0">
+<span class="font-body-md text-body-md text-primary">Prime Lane Motors</span>
+</div>
+<div class="flex-1 flex justify-center max-w-md mx-auto">
+<!-- Search Bar logic would go here if not hidden/on_left etc, per JSON search_bar: on_left -->
+<div class="relative w-full mr-auto">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-highest border border-white/10 text-on-surface rounded-full py-2 pl-10 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body-md text-body-md placeholder-on-surface-variant/50" placeholder="Search applications, leads, inventory..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex space-x-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="flex items-center border-l border-white/10 pl-6 cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Zain Sulliman" class="w-8 h-8 rounded-full object-cover border border-outline-variant mr-3" data-alt="A professional headshot of an executive in a dark tailored suit, high-contrast dramatic studio lighting, dark background, exuding authority and confidence, tailored for a luxury automotive finance portal context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyzPNX3thUfDzczRnT9R1j6K4pfVUw75lq9yKoLlF3h4dE1HLJ0ziFFF3W2fsjLqoOBohnEYqTfzn9bXYBMW2TU3OhAFEC5q3JWFraUOMS2MbWKMrG0SaYrOFN10KX8wuv63IAM8pIr4FqUF3Ek7za-hAly0AJI8FeACJUTZwbNTFQFZQxEDWkN53I_o4oY0G5pCJn_rUcSnp5QZk4nQqkwBhkca2JmQWZi-EKj0j-v7u6Xnx6hcTaSA"/>
+<span class="font-body-md text-body-md text-on-surface font-medium">Zain Sulliman</span>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-gutter overflow-y-auto">
+<div class="max-w-container-max mx-auto space-y-8">
+<!-- Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Dashboard Overview</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Real-time metrics for Prime Lane Motors operations.</p>
+</div>
+<div class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
+                        Live Data
+                    </div>
+</div>
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">New Leads</span>
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">142</span>
+<span class="font-body-md text-body-md text-emerald-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> 12%
+                            </span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Qualified Leads</span>
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">89</span>
+<span class="font-body-md text-body-md text-emerald-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> 8%
+                            </span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Applications</span>
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">45</span>
+<span class="font-body-md text-body-md text-red-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_down</span> 2%
+                            </span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approvals</span>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">32</span>
+<span class="font-body-md text-body-md text-emerald-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> 15%
+                            </span>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Conversion Rate</span>
+<span class="material-symbols-outlined text-primary">query_stats</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">22.5%</span>
+<span class="font-body-md text-body-md text-emerald-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> 1.2%
+                            </span>
+</div>
+</div>
+<!-- KPI 6 -->
+<div class="bg-surface-container rounded-xl p-6 metallic-glow transition-all">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Avg Response Time</span>
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+<div class="flex items-end space-x-4">
+<span class="font-display-lg text-display-lg text-on-surface">14m</span>
+<span class="font-body-md text-body-md text-emerald-400 mb-2 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">trending_down</span> 3m
+                            </span>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container rounded-xl border border-white/5 overflow-hidden">
+<div class="p-6 border-b border-white/5 flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity Feed</h3>
+<button class="font-button-text text-button-text text-primary hover:text-primary-fixed transition-colors uppercase tracking-wider">View All</button>
+</div>
+<div class="p-6">
+<ul class="space-y-6">
+<li class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center mr-4 shrink-0 border border-white/10 text-primary">
+<span class="material-symbols-outlined text-sm">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium text-white">Application Approved:</span> John Doe - 2023 Mercedes-Benz AMG GT</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">10 minutes ago • Finance Dept</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center mr-4 shrink-0 border border-white/10 text-secondary">
+<span class="material-symbols-outlined text-sm">contact_mail</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium text-white">New Lead Received:</span> Sarah Jenkins requesting quote on Porsche 911</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">45 minutes ago • Web Portal</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center mr-4 shrink-0 border border-white/10 text-error">
+<span class="material-symbols-outlined text-sm">warning</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium text-white">Verification Failed:</span> Document mismatch for Application #8892</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">2 hours ago • Compliance</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center mr-4 shrink-0 border border-white/10 text-primary">
+<span class="material-symbols-outlined text-sm">payments</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface"><span class="font-medium text-white">Deal Closed:</span> Finance cleared for Michael Chang - BMW M5</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">3 hours ago • Executive Desk</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

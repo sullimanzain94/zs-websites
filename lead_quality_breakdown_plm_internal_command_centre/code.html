@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lead Quality Breakdown - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary": "#303030",
+                      "metallic-silver": "#c8c6c5",
+                      "tertiary-container": "#cfcece",
+                      "surface-tint": "#eac249",
+                      "surface-bright": "#343535",
+                      "on-tertiary-container": "#575858",
+                      "inverse-primary": "#745b00",
+                      "surface-container-highest": "#333535",
+                      "secondary-fixed": "#e4e2e1",
+                      "inverse-surface": "#e2e2e2",
+                      "primary-container": "#f2ca50",
+                      "on-secondary-fixed": "#1b1c1b",
+                      "tertiary-fixed-dim": "#c7c6c6",
+                      "tertiary": "#ebeaea",
+                      "error-container": "#93000a",
+                      "surface-dim": "#121414",
+                      "outline-variant": "#4d4635",
+                      "surface-container-high": "#282a2a",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "tertiary-fixed": "#e3e2e2",
+                      "on-secondary-fixed-variant": "#474746",
+                      "surface-obsidian": "#121414",
+                      "surface-container": "#1e2020",
+                      "on-surface": "#e2e2e2",
+                      "surface": "#121414",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "on-primary-fixed": "#241a00",
+                      "inverse-on-surface": "#2f3131",
+                      "surface-container-lowest": "#0d0f0f",
+                      "primary-fixed": "#ffe08a",
+                      "on-primary": "#3d2f00",
+                      "surface-variant": "#333535",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#d0c5af",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-container-low": "#1a1c1c",
+                      "primary-fixed-dim": "#eac249",
+                      "on-error-container": "#ffdad6",
+                      "background": "#121414",
+                      "on-secondary-container": "#b6b5b4",
+                      "on-background": "#e2e2e2",
+                      "secondary": "#c8c6c5",
+                      "error": "#ffb4ab",
+                      "secondary-container": "#474746",
+                      "outline": "#99907c",
+                      "on-primary-container": "#6b5500",
+                      "on-primary-fixed-variant": "#574400",
+                      "gold-accent": "#f2ca50",
+                      "on-tertiary": "#2f3131",
+                      "primary": "#ffe9b0",
+                      "gold-dim": "#d4af37"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "unit": "4px",
+                      "stack-md": "16px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "stack-lg": "32px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Manrope"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "26px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for internal tools */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121414;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333535;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #474746;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+
+        .inner-glow {
+            box-shadow: inset 0 0 0 1px rgba(242, 202, 80, 0.15);
+        }
+        
+        .table-row-hover:hover {
+            background-color: rgba(242, 202, 80, 0.05);
+            box-shadow: inset 4px 0 0 0 #f2ca50;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest text-primary font-label-sm text-label-sm font-medium docked h-full w-64 left-0 border-r border-white/5 flat no shadows fixed left-0 top-0 h-full flex flex-col pt-4 z-40 hidden md:flex">
+<div class="px-gutter mb-8 flex flex-col gap-2">
+<div class="font-headline-md text-headline-md text-primary gold-gradient-text">Command Centre</div>
+<div class="text-on-surface-variant opacity-70">Internal Operations</div>
+<img alt="PLM Official Logo" class="w-16 h-16 object-contain mt-4 opacity-80" data-alt="A small, stylized automotive shield logo in metallic gold on a dark background, representing luxury and trust in a professional context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhQfI5qR-83-ypKKYV12G3ZWlZHOBrW9Obe3bXZjibRYTk4PsIe1S56QDA1AIsfg9wUioRE7xonlREWSpW7hZQC2jY9j6EVsNOPl9JgU1ERhW5ZBsWK7A2EKcgjUV3sF1fTB3qB9mOA-l5npapfzVtCq47LFZKlAAXJ4IZUtP6v_Hqi20Ivkx8h2Z0HOy3N5OjlOvZ1BEjb-FzrZ-E3CFWzVgP4Z2vDS23Niov9eXgRmmKwp4AGADijkfI5GQtj141oKE"/>
+</div>
+<ul class="flex flex-col gap-1 px-2 flex-grow">
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_search</span>
+                    Leads
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+                    Pipeline
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">description</span>
+                    Applications
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                    Verification
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">gavel</span>
+                    Decisions
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">history</span>
+                    Follow-ups
+                </a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 flex items-center gap-3 p-3 transition-colors duration-200 hover:bg-surface-variant/50" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                    Analytics
+                </a>
+</li>
+</ul>
+<div class="p-gutter mt-auto border-t border-white/5">
+<button class="w-full gold-gradient-bg text-on-primary-container font-label-md text-label-md py-3 rounded hover:opacity-90 transition-opacity font-semibold">
+                New Application
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full md:ml-64 flex flex-col min-h-screen bg-surface-obsidian relative">
+<!-- TopNavBar (Shared Component - Small) -->
+<header class="bg-surface-container dark:bg-surface-container text-primary font-body-md text-body-md docked top-0 right-0 border-b border-white/10 shadow-sm flex justify-between items-center w-full px-gutter py-2 sticky z-30 backdrop-blur-xl bg-opacity-80">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex items-center bg-surface-bright rounded-full px-4 py-2 border border-white/5 focus-within:border-gold-dim transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-2 text-[20px]">search</span>
+<input class="bg-transparent border-none outline-none text-on-surface placeholder-on-surface-variant/50 font-label-md text-label-md w-64 focus:ring-0 p-0" placeholder="Search leads (DEMO)..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors Active: opacity-80 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-label-sm text-label-sm text-on-surface">Zain Sulliman</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant opacity-70">Sales Owner</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-bright border border-gold-dim/30 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gold-dim">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop overflow-y-auto">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">Lead Quality Breakdown</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time analysis of incoming Volkswagen leads. <span class="bg-error/20 text-error px-2 py-0.5 rounded font-label-sm text-label-sm ml-2">DEMO DATA</span></p>
+</div>
+<div class="hidden sm:flex gap-3">
+<button class="px-4 py-2 border border-gold-dim/30 text-gold-dim rounded font-label-md text-label-md hover:bg-gold-dim/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export Report
+                    </button>
+</div>
+</div>
+<!-- KPI Cards Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter mb-stack-lg">
+<div class="bg-surface-container rounded-lg p-4 inner-glow flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm">Total Leads</div>
+<div class="font-headline-md text-headline-md text-on-surface">1,248</div>
+<div class="text-gold-dim font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% this month
+                    </div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 inner-glow flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm">Qualified Leads</div>
+<div class="font-headline-md text-headline-md text-on-surface">892</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">71% Qualification Rate</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 inner-glow border-b-2 border-error flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">local_fire_department</span>
+                        High-Intent
+                    </div>
+<div class="font-headline-md text-headline-md text-error">345</div>
+<div class="text-error/80 font-label-sm text-label-sm">Score 80-100</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 inner-glow flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm">Apps Started</div>
+<div class="font-headline-md text-headline-md text-on-surface">412</div>
+<div class="text-primary font-label-sm text-label-sm">33% of Total</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 inner-glow flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm">Conversion Rate</div>
+<div class="font-headline-md text-headline-md text-gold-accent">18.5%</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm">Completed Apps</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 inner-glow flex flex-col gap-2">
+<div class="text-on-surface-variant font-label-sm text-label-sm">Avg. Response Time</div>
+<div class="font-headline-md text-headline-md text-on-surface">14m</div>
+<div class="text-gold-dim font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> Goal: &lt; 15m
+                    </div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-stack-lg">
+<!-- Interactive Lead Table -->
+<div class="lg:col-span-2 bg-surface-container rounded-lg inner-glow overflow-hidden flex flex-col">
+<div class="p-4 border-b border-white/5 flex justify-between items-center bg-surface-bright/50">
+<h2 class="font-headline-md text-headline-md text-on-surface text-[18px]">Active Leads Queue <span class="text-on-surface-variant text-[14px] font-normal ml-2">(Zain's Pipeline)</span></h2>
+<div class="flex gap-2">
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">filter_list</span></button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/5 text-on-surface-variant font-label-sm text-label-sm bg-surface-dim">
+<th class="p-4 font-medium whitespace-nowrap">Lead Name</th>
+<th class="p-4 font-medium whitespace-nowrap">VW Model Int.</th>
+<th class="p-4 font-medium whitespace-nowrap">Stated Budget</th>
+<th class="p-4 font-medium whitespace-nowrap cursor-pointer hover:text-gold-dim flex items-center gap-1">Score <span class="material-symbols-outlined text-[14px]">arrow_downward</span></th>
+<th class="p-4 font-medium whitespace-nowrap">Status</th>
+<th class="p-4 font-medium whitespace-nowrap"></th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-white/5">
+<tr class="table-row-hover cursor-pointer transition-colors" onclick="document.getElementById('lead-drawer').classList.remove('translate-x-full')">
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md text-label-md">MR</div>
+<div>
+<div class="font-medium">Marcus R.</div>
+<div class="text-on-surface-variant text-[12px]">2 hrs ago</div>
+</div>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">VW Golf 8 R</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">R 950,000</td>
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-full w-[94%]"></div>
+</div>
+<span class="text-error font-label-md text-label-md font-bold">94</span>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap">
+<span class="px-2.5 py-1 bg-primary-container/10 text-primary border border-primary/20 rounded font-label-sm text-label-sm flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> App Started
+                                        </span>
+</td>
+<td class="p-4 whitespace-nowrap text-right text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</td>
+</tr>
+<tr class="table-row-hover cursor-pointer transition-colors">
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md text-label-md">SN</div>
+<div>
+<div class="font-medium">Sarah N.</div>
+<div class="text-on-surface-variant text-[12px]">4 hrs ago</div>
+</div>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">VW Tiguan 1.4 TSI</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">R 650,000</td>
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-error h-full w-[82%]"></div>
+</div>
+<span class="text-error font-label-md text-label-md font-bold">82</span>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap">
+<span class="px-2.5 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> Contacted
+                                        </span>
+</td>
+<td class="p-4 whitespace-nowrap text-right text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</td>
+</tr>
+<tr class="table-row-hover cursor-pointer transition-colors">
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md text-label-md">JN</div>
+<div>
+<div class="font-medium">James N.</div>
+<div class="text-on-surface-variant text-[12px]">Yesterday</div>
+</div>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">VW Polo GTI</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">R 450,000</td>
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-gold-dim h-full w-[65%]"></div>
+</div>
+<span class="text-gold-dim font-label-md text-label-md font-bold">65</span>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap">
+<span class="px-2.5 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> New
+                                        </span>
+</td>
+<td class="p-4 whitespace-nowrap text-right text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</td>
+</tr>
+<tr class="table-row-hover cursor-pointer transition-colors">
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md text-label-md">LM</div>
+<div>
+<div class="font-medium">Lindiwe M.</div>
+<div class="text-on-surface-variant text-[12px]">Yesterday</div>
+</div>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">VW T-Cross</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">R 380,000</td>
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-gold-dim h-full w-[55%]"></div>
+</div>
+<span class="text-gold-dim font-label-md text-label-md font-bold">55</span>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap">
+<span class="px-2.5 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> New
+                                        </span>
+</td>
+<td class="p-4 whitespace-nowrap text-right text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</td>
+</tr>
+<tr class="table-row-hover cursor-pointer transition-colors opacity-70">
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md text-label-md">DK</div>
+<div>
+<div class="font-medium">David K.</div>
+<div class="text-on-surface-variant text-[12px]">2 days ago</div>
+</div>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">VW Taigo</td>
+<td class="p-4 whitespace-nowrap text-on-surface-variant">Not specified</td>
+<td class="p-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 bg-surface-variant rounded-full h-1.5 overflow-hidden">
+<div class="bg-on-surface-variant/50 h-full w-[35%]"></div>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md font-bold">35</span>
+</div>
+</td>
+<td class="p-4 whitespace-nowrap">
+<span class="px-2.5 py-1 bg-surface-variant text-on-surface-variant rounded font-label-sm text-label-sm flex items-center gap-1.5 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span> Pending Info
+                                        </span>
+</td>
+<td class="p-4 whitespace-nowrap text-right text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- VW Performance Section & Scoring Legend -->
+<div class="flex flex-col gap-gutter">
+<!-- Scoring Legend -->
+<div class="bg-surface-container rounded-lg inner-glow p-4">
+<h3 class="font-label-md text-label-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">policy</span> Scoring Metrics
+                        </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between p-2 rounded bg-surface-bright/30">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error shadow-[0_0_8px_rgba(255,180,171,0.5)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">HOT</span>
+</div>
+<span class="font-label-sm text-label-sm text-error">80-100</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-bright/30">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-gold-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface">WARM</span>
+</div>
+<span class="font-label-sm text-label-sm text-gold-dim">50-79</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-bright/30">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-on-surface-variant/50"></span>
+<span class="font-label-sm text-label-sm text-on-surface">LOW PRIORITY</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant/80">0-49</span>
+</div>
+</div>
+</div>
+<!-- VW Performance Section -->
+<div class="bg-surface-container rounded-lg inner-glow p-4 flex-1">
+<h3 class="font-label-md text-label-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bar_chart</span> Model Interest <span class="text-on-surface-variant font-normal text-[12px]">(DEMO)</span>
+</h3>
+<div class="flex flex-col gap-4">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">VW Polo (Inc. GTI)</span>
+<span class="text-on-surface-variant">45% Conv.</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-gold-dim h-2 rounded-full" style="width: 85%"></div>
+</div>
+<div class="text-right text-[10px] text-on-surface-variant mt-1">342 Active Leads</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">VW Tiguan</span>
+<span class="text-on-surface-variant">32% Conv.</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-gold-dim h-2 rounded-full opacity-80" style="width: 65%"></div>
+</div>
+<div class="text-right text-[10px] text-on-surface-variant mt-1">215 Active Leads</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">VW T-Cross</span>
+<span class="text-on-surface-variant">28% Conv.</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-gold-dim h-2 rounded-full opacity-60" style="width: 45%"></div>
+</div>
+<div class="text-right text-[10px] text-on-surface-variant mt-1">156 Active Leads</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">VW Taigo</span>
+<span class="text-on-surface-variant">15% Conv.</span>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-2">
+<div class="bg-gold-dim h-2 rounded-full opacity-40" style="width: 25%"></div>
+</div>
+<div class="text-right text-[10px] text-on-surface-variant mt-1">84 Active Leads</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant/50 mt-8 pb-4">
+                Internal Use Only. Data marked as DEMO for demonstration purposes.
+            </div>
+</div>
+</main>
+<!-- Lead Detail Drawer (Side Panel) -->
+<div class="fixed inset-y-0 right-0 w-full md:w-[480px] bg-surface-container-highest border-l border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col" id="lead-drawer">
+<!-- Drawer Header -->
+<div class="p-4 border-b border-white/5 flex justify-between items-center bg-surface-container sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant font-headline-md text-headline-md text-[18px]">MR</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface text-[20px]">Marcus R.</h2>
+<div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2 hrs ago
+                    </div>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-on-surface bg-surface-bright rounded-full hover:bg-surface-variant transition-colors" onclick="document.getElementById('lead-drawer').classList.add('translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="flex-1 overflow-y-auto p-gutter flex flex-col gap-stack-md">
+<!-- Highlight Status -->
+<div class="bg-error/10 border border-error/20 rounded-lg p-4 flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5">local_fire_department</span>
+<div>
+<div class="font-label-md text-label-md text-error font-bold mb-1">HOT LEAD: Score 94/100</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-[14px]">High probability of conversion. Action recommended within 15 minutes.</div>
+</div>
+</div>
+<!-- Customer Info & Signals -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Contact Details</div>
+<div class="font-body-md text-body-md text-on-surface">082 *** ****</div>
+<div class="font-body-md text-body-md text-on-surface text-[14px]">m***@gmail.com</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-1">Stated Budget</div>
+<div class="font-body-md text-body-md text-gold-accent font-semibold">R 950,000</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Finance requested</div>
+</div>
+</div>
+<!-- Vehicle Interest (Bento style) -->
+<div class="mt-2">
+<div class="font-label-sm text-label-sm text-on-surface-variant mb-2">Primary Interest</div>
+<div class="bg-surface-bright rounded-lg overflow-hidden border border-white/5 relative group">
+<div class="h-32 w-full bg-surface-variant relative" data-alt="A cinematic, low-angle shot of a blue Volkswagen Golf 8 R parked in an upscale urban environment at night. The lighting is moody, highlighting the car's aggressive front fascia and R badge. The scene is lit with cool blue and stark white tones, fitting a premium, high-performance automotive aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz6PfVjVSL_-ma1ux88XqAWPwS_Qw4hDj4Ad90Pa23l2SqRtajUde_c9eIVWWBWbCbW2kWCD7HAF1uwNMmJ3bOOby2g6Lsv0iMCHRtFzB81XrJxkd0Uog497aVBzGBMmmU8g34yLWjY9V4M4OHvjYXFaMJkpexZFT8R2EUR502hLPxK9Bf_Purt3tUBwEtYDPkgHsI9WKcb-BwbxCPBKPb1A9bc_WOK1mNA0_oPBcZG6S2FAD_VSXVug')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-obsidian to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-3 flex justify-between items-end">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface text-[18px]">VW Golf 8 R</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">2.0 TSI 235kW 4MOTION</div>
+</div>
+<span class="bg-surface-dim/80 backdrop-blur px-2 py-1 rounded text-[10px] text-on-surface-variant border border-white/10 uppercase tracking-wider">In Stock</span>
+</div>
+</div>
+</div>
+<!-- Scoring Explanation -->
+<div class="bg-surface-bright rounded-lg p-4 border border-white/5 mt-2">
+<div class="font-label-md text-label-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-gold-dim">psychology</span> Why this score?
+                </div>
+<div class="flex flex-col gap-2">
+<div class="flex items-start gap-2 text-[14px]">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span class="text-on-surface-variant">Selected specific model in stock (+30 pts)</span>
+</div>
+<div class="flex items-start gap-2 text-[14px]">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span class="text-on-surface-variant">Completed realistic budget field (+25 pts)</span>
+</div>
+<div class="flex items-start gap-2 text-[14px]">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span class="text-on-surface-variant">Verified contact number provided (+20 pts)</span>
+</div>
+<div class="flex items-start gap-2 text-[14px]">
+<span class="material-symbols-outlined text-[16px] text-primary mt-0.5">check_circle</span>
+<span class="text-on-surface-variant">Recent site activity (within 1 hr) (+19 pts)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel (Bottom Sticky) -->
+<div class="p-4 bg-surface-container border-t border-white/10 grid grid-cols-2 gap-3 mt-auto">
+<button class="bg-surface-bright hover:bg-surface-variant border border-white/10 text-on-surface rounded py-2.5 font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">call</span> Call
+            </button>
+<button class="bg-surface-bright hover:bg-surface-variant border border-white/10 text-on-surface rounded py-2.5 font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+            </button>
+<button class="col-span-2 gold-gradient-bg text-on-primary-container rounded py-3 font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span> Start Application
+            </button>
+</div>
+</div>
+<!-- Overlay for Drawer -->
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden" id="drawer-overlay" onclick="document.getElementById('lead-drawer').classList.add('translate-x-full'); this.classList.add('hidden')"></div>
+<script>
+        // Simple logic to show overlay when drawer opens
+        const drawer = document.getElementById('lead-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        
+        // Observer to toggle overlay based on drawer class
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    if (drawer.classList.contains('translate-x-full')) {
+                        overlay.classList.add('hidden');
+                    } else {
+                        overlay.classList.remove('hidden');
+                    }
+                }
+            });
+        });
+        
+        observer.observe(drawer, { attributes: true });
+    </script>
+</body></html>

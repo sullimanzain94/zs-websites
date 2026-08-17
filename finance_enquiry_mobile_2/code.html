@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Finance Enquiry</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#1e2020",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-container-lowest": "#0d0f0f",
+                        "outline": "#99907c",
+                        "on-secondary": "#2d3134",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#2e3131",
+                        "surface-container-high": "#282a2a",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "primary-container": "#d4af37",
+                        "surface-variant": "#333535",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#444747",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e1e3e2",
+                        "inverse-primary": "#735c00",
+                        "tertiary": "#cdcece",
+                        "primary": "#f2ca50",
+                        "primary-fixed": "#ffe088",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b6b8bc",
+                        "on-secondary-fixed": "#191c1f",
+                        "secondary-container": "#46494d",
+                        "on-primary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "background": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b1b3b3",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#c4c7ca",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-container": "#434545",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#c5c7c6",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e0e2e6",
+                        "surface-dim": "#121414",
+                        "on-tertiary-fixed": "#191c1c",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "unit": "8px",
+                        "section-gap": "80px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "button-text": ["Manrope"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "button-text": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles mapped from guidance */
+        .executive-btn {
+            background: linear-gradient(180deg, #D4AF37 0%, #B69121 100%);
+            color: #000000;
+        }
+        .executive-btn:active {
+            transform: scale(0.98);
+        }
+        .input-metallic {
+            background-color: #1e2020; /* surface-container */
+            border: 1px solid #4d4635; /* outline-variant */
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+            min-height: 48px; /* Mobile touch target */
+        }
+        .input-metallic:focus {
+            border-color: #d4af37;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2), 0 0 0 1px #d4af37;
+            outline: none;
+        }
+        
+        /* Wizard Transitions */
+        .step-container {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .step-container.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Transactional variant - heavily suppressed) -->
+<header class="w-full flex items-center justify-between px-margin-mobile py-4 border-b border-white/5 bg-surface-container-lowest z-10 sticky top-0">
+<button aria-label="Go Back" class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-[48px] h-[48px] -ml-2">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary tracking-tight">PLM Finance</div>
+<div class="w-[48px]"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Progress Track -->
+<div class="w-full h-1 bg-surface-variant">
+<div class="h-full bg-gradient-to-r from-primary-container to-primary transition-all duration-500 ease-out" id="progressBar" style="width: 25%;"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile py-8 md:max-w-md md:mx-auto md:w-full">
+<form class="flex flex-col gap-6" id="financeForm" onsubmit="event.preventDefault();">
+<!-- STEP 1: Personal Details -->
+<div class="step-container active" id="step1">
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Your Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Let's start with the basics to open your file.</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="fullName">Full Legal Name</label>
+<input class="input-metallic w-full rounded px-4 text-on-surface font-body-md text-body-md" id="fullName" placeholder="e.g. Zain Sulliman" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="mobile">Mobile Number</label>
+<input class="input-metallic w-full rounded px-4 text-on-surface font-body-md text-body-md" id="mobile" placeholder="+27 00 000 0000" required="" type="tel"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="email">Email Address</label>
+<input class="input-metallic w-full rounded px-4 text-on-surface font-body-md text-body-md" id="email" placeholder="zain@example.com" required="" type="email"/>
+</div>
+</div>
+</div>
+<!-- STEP 2: Vehicle Interest -->
+<div class="step-container" id="step2">
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">The Vehicle</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Which premium model are you acquiring?</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="vehicle">Vehicle of Interest</label>
+<div class="relative">
+<input class="input-metallic w-full rounded pl-4 pr-12 text-on-surface font-body-md text-body-md" id="vehicle" placeholder="e.g. 2023 Porsche 911 GT3" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">directions_car</span>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="deposit">Planned Deposit (Optional)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">R</span>
+<input class="input-metallic w-full rounded pl-8 pr-4 text-on-surface font-body-md text-body-md" id="deposit" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 3: Financial Profile -->
+<div class="step-container" id="step3">
+<div class="mb-8 flex items-start justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Financial Profile</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Required for preliminary assessment.</p>
+</div>
+<div class="flex flex-col items-center justify-center bg-surface-container p-2 rounded border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 20px;">lock</span>
+<span class="font-label-sm text-[10px] uppercase text-on-surface-variant mt-1 text-center leading-none">Bank-Grade<br/>Security</span>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="employment">Employment Status</label>
+<div class="relative">
+<select class="input-metallic w-full rounded pl-4 pr-10 text-on-surface font-body-md text-body-md appearance-none" id="employment">
+<option disabled="" selected="" value="">Select Status</option>
+<option value="employed">Employed Full-Time</option>
+<option value="self_employed">Self-Employed / Business Owner</option>
+<option value="contractor">Independent Contractor</option>
+<option value="retired">Retired</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="income">Gross Monthly Income</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">R</span>
+<input class="input-metallic w-full rounded pl-8 pr-4 text-on-surface font-body-md text-body-md" id="income" placeholder="0.00" required="" type="number"/>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP 4: Preferences & Consent -->
+<div class="step-container" id="step4">
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Final Step</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">How should our executive team reach you?</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2 block" for="contactMethod">Preferred Contact Method</label>
+<div class="relative">
+<select class="input-metallic w-full rounded pl-4 pr-10 text-on-surface font-body-md text-body-md appearance-none" id="contactMethod">
+<option value="phone">Phone Call</option>
+<option value="whatsapp">WhatsApp</option>
+<option value="email">Email</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-high p-4 rounded border border-white/5 space-y-4 mt-8">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center mt-0.5">
+<input class="peer appearance-none w-5 h-5 border border-outline rounded bg-surface-container checked:bg-primary checked:border-primary transition-colors min-w-[20px]" required="" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-black opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" style="font-size: 16px; font-weight: 700;">check</span>
+</div>
+<span class="font-body-md text-[14px] text-on-surface-variant leading-tight group-hover:text-on-surface transition-colors">
+                                I consent to Prime Lane Motors conducting a preliminary credit assessment and processing my personal data in accordance with the <a class="text-primary underline hover:text-primary-fixed" href="#">Privacy Policy</a>.
+                            </span>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Area (Sticky Bottom Mobile) -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-surface-container-lowest/90 backdrop-blur-md border-t border-white/5 z-20 md:static md:bg-transparent md:border-none md:p-0 md:mt-8">
+<button class="executive-btn w-full rounded-full font-button-text text-button-text uppercase tracking-wider min-h-[56px] flex items-center justify-center transition-all shadow-[0_0_15px_rgba(212,175,55,0.15)]" id="nextBtn" onclick="nextStep()" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined ml-2" style="font-size: 20px;">arrow_forward</span>
+</button>
+<button class="executive-btn w-full rounded-full font-button-text text-button-text uppercase tracking-wider min-h-[56px] items-center justify-center transition-all shadow-[0_0_20px_rgba(212,175,55,0.2)] hidden" id="submitBtn" type="submit">
+<span class="material-symbols-outlined mr-2" style="font-size: 20px;">send</span>
+<span>SUBMIT FINANCE ENQUIRY</span>
+</button>
+</div>
+</form>
+</main>
+<!-- Spacer for fixed bottom bar on mobile -->
+<div class="h-[88px] w-full md:hidden"></div>
+<script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateUI() {
+            // Hide all steps
+            for(let i=1; i<=totalSteps; i++) {
+                document.getElementById(`step${i}`).classList.remove('active');
+            }
+            // Show current step
+            document.getElementById(`step${currentStep}`).classList.add('active');
+
+            // Update progress bar
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            // Toggle buttons
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                nextBtn.classList.remove('flex');
+                
+                submitBtn.classList.remove('hidden');
+                submitBtn.classList.add('flex');
+            } else {
+                nextBtn.classList.remove('hidden');
+                nextBtn.classList.add('flex');
+                
+                submitBtn.classList.add('hidden');
+                submitBtn.classList.remove('flex');
+            }
+        }
+
+        function nextStep() {
+            // Basic validation check before moving (conceptual for this mock)
+            const currentContainer = document.getElementById(`step${currentStep}`);
+            const requiredInputs = currentContainer.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredInputs.forEach(input => {
+                if(!input.value) isValid = false;
+            });
+
+            // If valid (or if we bypass for the mock), go to next
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize UI
+        updateUI();
+    </script>
+</body></html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lead Record Management - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#99907c",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "surface-container": "#1e2020",
+                      "primary-fixed": "#ffe088",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-container": "#b8b8b8",
+                      "error": "#ffb4ab",
+                      "on-background": "#e2e2e2",
+                      "on-surface": "#e2e2e2",
+                      "surface-container-highest": "#333535",
+                      "primary-container": "#d4af37",
+                      "inverse-surface": "#e2e2e2",
+                      "surface-container-lowest": "#0c0f0f",
+                      "surface-variant": "#333535",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-bright": "#37393a",
+                      "surface-container-low": "#1a1c1c",
+                      "on-tertiary-container": "#454544",
+                      "on-tertiary": "#313030",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "surface-dim": "#121414",
+                      "on-secondary": "#2f3131",
+                      "outline-variant": "#4d4635",
+                      "on-primary-fixed": "#241a00",
+                      "surface-tint": "#e9c349",
+                      "secondary-container": "#484949",
+                      "tertiary-container": "#b4b2b2",
+                      "inverse-on-surface": "#2f3131",
+                      "primary": "#f2ca50",
+                      "secondary": "#c6c6c6",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-container-high": "#282a2b",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-primary": "#3c2f00",
+                      "tertiary": "#d0cdcd",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-error": "#690005",
+                      "surface": "#121414",
+                      "inverse-primary": "#735c00",
+                      "tertiary-fixed": "#e5e2e1",
+                      "background": "#121414",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-primary-container": "#554300",
+                      "secondary-fixed": "#e3e2e2",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-surface-variant": "#d0c5af",
+                      "error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Montserrat"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "title-md": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Custom scrollbar for data tables */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f2ca50; 
+        }
+        
+        .gold-gradient-border {
+            border: 1px solid transparent;
+            background: linear-gradient(#121414, #121414) padding-box, 
+                        linear-gradient(135deg, #f2ca50 0%, transparent 100%) border-box;
+        }
+        
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(198, 198, 198, 0.1);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-xl docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full h-full">
+<div class="flex items-center gap-4">
+<!-- Branding -->
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-surface-container-highest border border-primary/30">
+<img alt="PLM Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHIWTWbwe8-hh5NpyWgmoJiRcqnVR67-1wCGge-qZz22UCEyT7MX0ENXLnl0tuiYWuq2JrmIqyKDfuKHRa6omjZ9aO2SuJZiE1OZlqJp0ORaQZHn7ytD6vDNZV28EDxTk70Rs7xz0Xl1mDcM67DJhN3zPT3KGn1w4qx062oDfaSPSVWw0QikBOZ6dvV_47AcoqjQ2mrU_yNdifgJWyZsm0HS6mQqCykQqtMKCPoibpkxGRz9abtUv71DCUvYvScai1DbQ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-display-lg text-primary uppercase tracking-tighter text-2xl leading-none">Prime Lane Motors</span>
+<span class="font-label-md text-on-surface-variant text-[10px]">Lead Management Portal</span>
+</div>
+</div>
+<!-- Desktop Nav Cluster -->
+<nav class="hidden md:flex items-center ml-12 gap-8">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Dashboard</a>
+<a class="text-primary font-bold hover:text-primary-container transition-colors font-label-md text-label-md border-b-2 border-primary pb-1" href="#">Leads</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Inventory</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 bg-transparent border border-outline px-4 py-2 rounded font-label-md text-on-surface hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    NEW LEAD
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-6">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Active Leads</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage and track finance applications.</p>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full md:w-64 transition-all" placeholder="Search leads..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-surface-container-high border border-outline-variant/50 px-4 py-2 rounded-lg font-label-md text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+<button class="flex items-center gap-2 bg-surface-container-high border border-outline-variant/50 px-4 py-2 rounded-lg font-label-md text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export
+                </button>
+</div>
+</div>
+<!-- Management Alerts -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="glass-panel p-4 rounded-xl border border-error/30 bg-error/5 flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-bold text-error text-[14px]">Uncontacted Hot Leads</span>
+<span class="text-on-surface-variant text-[12px]">3 leads need immediate attention</span>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl border border-error/30 bg-error/5 flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-bold text-error text-[14px]">Overdue Follow-ups</span>
+<span class="text-on-surface-variant text-[12px]">5 tasks past due</span>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl border border-primary/30 bg-primary/5 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">priority_high</span>
+<div class="flex flex-col">
+<span class="font-bold text-primary text-[14px]">High-intent Enquiry</span>
+<span class="text-on-surface-variant text-[12px]">2 leads missing next action</span>
+</div>
+</div>
+<div class="glass-panel p-4 rounded-xl border border-outline-variant/50 bg-surface-container-high/50 flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">person_add</span>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-[14px]">Unassigned Leads</span>
+<span class="text-on-surface-variant text-[12px]">8 new leads pending assignment</span>
+</div>
+</div>
+</div>
+<!-- Executive KPI Bar -->
+<div class="glass-panel p-6 rounded-xl border border-primary/20 bg-primary/5 mb-2">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 pb-4 border-b border-outline-variant/20">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30"><span class="material-symbols-outlined text-primary">analytics</span></div>
+<div><h3 class="font-title-md text-primary">Executive Performance Overview</h3><p class="text-on-surface-variant text-[12px]">Real-time pipeline metrics</p></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 overflow-x-auto pb-2">
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Avg Response</span><span class="text-xl font-bold text-on-surface">14m</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">New Leads</span><span class="text-xl font-bold text-primary">12</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Hot Leads</span><span class="text-xl font-bold text-error">18</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Qualified</span><span class="text-xl font-bold text-primary-container">32</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Overdue</span><span class="text-xl font-bold text-error">3</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Enquiries</span><span class="text-xl font-bold text-on-surface">45</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Applications</span><span class="text-xl font-bold text-blue-400">8</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Sold</span><span class="text-xl font-bold text-green-400">24</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Conversion</span><span class="text-xl font-bold text-green-400">18.4%</span></div>
+<div class="flex flex-col min-w-[100px]"><span class="text-on-surface-variant text-[10px] uppercase font-label-md whitespace-nowrap">Revenue</span><span class="text-xl font-bold text-primary">R8.4M</span></div>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="flex flex-wrap gap-2 mb-4 overflow-x-auto pb-2"><button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-[12px] whitespace-nowrap">All Leads</button><button class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary font-label-md text-[12px] whitespace-nowrap">Zain S.</button><button class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary font-label-md text-[12px] whitespace-nowrap">Unassigned</button><button class="px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 font-label-md text-[12px] whitespace-nowrap">Hot</button><button class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary font-label-md text-[12px] whitespace-nowrap">Warm</button><button class="px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-on-surface-variant hover:text-primary font-label-md text-[12px] whitespace-nowrap">Developing</button><button class="px-4 py-1.5 rounded-full bg-error/10 border border-error/30 text-error font-label-md text-[12px] whitespace-nowrap">Follow-up Overdue</button></div>
+<div class="glass-panel rounded-xl overflow-hidden flex flex-col flex-grow">
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left whitespace-nowrap border-collapse">
+<thead class="bg-surface-container-high/50 border-b border-outline-variant/20 font-label-md text-on-surface-variant">
+<tr>
+<th class="px-4 py-3 sticky left-0 bg-surface-container-highest/90 z-10">Lead Info</th>
+<th class="px-4 py-3">Source</th>
+<th class="px-4 py-3">Workflow Stage</th>
+<th class="px-4 py-3">Vehicle / Profile</th>
+<th class="px-4 py-3">Owner / Next Action</th>
+<th class="px-4 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md divide-y divide-outline-variant/10 text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high/30 transition-colors group cursor-pointer">
+<td class="px-4 py-4 sticky left-0 bg-surface/90 group-hover:bg-surface-container-high/90 z-10 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-2 h-10 rounded-full bg-red-500 mt-1" title="High Priority"></div>
+<div class="flex flex-col">
+<span class="font-title-md text-[16px] text-primary">L-9042</span>
+<span class="font-bold text-on-surface">James Robertson</span>
+<span class="text-on-surface-variant text-[12px]">Oct 24, 09:15 AM</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface text-[14px]">Facebook</span>
+<span class="text-on-surface-variant text-[12px]">Ad: GTI_Promo</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center px-2 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30 font-label-md text-[10px] w-fit">SPEED - URGENT</span>
+<span class="text-on-surface-variant text-[12px] bg-red-500/10 text-red-400 px-1 rounded w-fit">HOT</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">2019 VW Golf R</span>
+<span class="text-on-surface-variant text-[12px]">Employed | R35k/mo</span>
+</div>
+</td>
+<td class="px-4 py-4"><div class="flex flex-col gap-1"><span class="text-primary font-bold text-[11px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 w-fit">🔥 ZAIN S.</span><div class="text-on-surface text-[13px] leading-tight font-bold">Call immediately to qualify</div><div class="text-error text-[12px] font-semibold">Overdue by 15m</div></div></td>
+<td class="px-4 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high/30 transition-colors group cursor-pointer">
+<td class="px-4 py-4 sticky left-0 bg-surface/90 group-hover:bg-surface-container-high/90 z-10 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-2 h-10 rounded-full bg-primary mt-1" title="Medium Priority"></div>
+<div class="flex flex-col">
+<span class="font-title-md text-[16px] text-primary">L-9041</span>
+<span class="font-bold text-on-surface">Sarah Jenkins</span>
+<span class="text-on-surface-variant text-[12px]">Oct 23, 14:30 PM</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface text-[14px]">Google Search</span>
+<span class="text-on-surface-variant text-[12px]">Organic</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center px-2 py-1 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30 font-label-md text-[10px] w-fit">APPLICATION</span>
+<span class="text-on-surface-variant text-[12px] bg-primary/10 text-primary px-1 rounded w-fit">WARM</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">2021 Toyota Hilux</span>
+<span class="text-on-surface-variant text-[12px]">Self Employed | R80k/mo</span>
+</div>
+</td>
+<td class="px-4 py-4"><div class="flex flex-col gap-1"><span class="text-primary font-bold text-[11px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 w-fit">ZAIN S.</span><div class="text-on-surface text-[13px] leading-tight font-bold">Review Finance Docs</div><div class="text-on-surface-variant text-[12px]">Due: Today 15:00</div></div></td>
+<td class="px-4 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high/30 transition-colors group cursor-pointer opacity-80">
+<td class="px-4 py-4 sticky left-0 bg-surface/90 group-hover:bg-surface-container-high/90 z-10 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-2 h-10 rounded-full bg-green-500 mt-1" title="Approved"></div>
+<div class="flex flex-col">
+<span class="font-title-md text-[16px] text-primary">L-9038</span>
+<span class="font-bold text-on-surface">Michael Botha</span>
+<span class="text-on-surface-variant text-[12px]">Oct 20, 11:00 AM</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface text-[14px]">Instagram</span>
+<span class="text-on-surface-variant text-[12px]">Reel: Ranger_Showcase</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30 font-label-md text-[10px] w-fit">SALE - APPROVED</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">2018 Ford Ranger</span>
+<span class="text-on-surface-variant text-[12px]">Employed | R25k/mo</span>
+</div>
+</td>
+<td class="px-4 py-4"><div class="flex flex-col gap-1"><span class="text-primary font-bold text-[11px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 w-fit">ZAIN S.</span><div class="text-on-surface text-[13px] leading-tight font-bold">Schedule Delivery</div><div class="text-on-surface-variant text-[12px]">Due: Oct 26</div></div></td>
+<td class="px-4 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-high/30 transition-colors group cursor-pointer">
+<td class="px-4 py-4 sticky left-0 bg-surface/90 group-hover:bg-surface-container-high/90 z-10 transition-colors">
+<div class="flex items-start gap-3">
+<div class="w-2 h-10 rounded-full bg-primary mt-1" title="Medium Priority"></div>
+<div class="flex flex-col">
+<span class="font-title-md text-[16px] text-primary">L-9037</span>
+<span class="font-bold text-on-surface">Lerato Mofokeng</span>
+<span class="text-on-surface-variant text-[12px]">Oct 19, 10:15 AM</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface text-[14px]">Website</span>
+<span class="text-on-surface-variant text-[12px]">Direct</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center px-2 py-1 rounded bg-primary-container/20 text-primary-container border border-primary-container/30 font-label-md text-[10px] w-fit">FOLLOW-UP</span>
+<span class="text-on-surface-variant text-[12px] bg-primary/10 text-primary px-1 rounded w-fit">WARM</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">2022 BMW 320i</span>
+<span class="text-on-surface-variant text-[12px]">Employed | R55k/mo</span>
+</div>
+</td>
+<td class="px-4 py-4"><div class="flex flex-col gap-1"><span class="text-primary font-bold text-[11px] bg-primary/10 px-2 py-0.5 rounded border border-primary/20 w-fit">ZAIN S.</span><div class="text-on-surface text-[13px] leading-tight font-bold">Confirm Test Drive</div><div class="text-on-surface-variant text-[12px]">Due: Tomorrow 09:00</div></div></td>
+<td class="px-4 py-4 text-right">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="border-t border-outline-variant/20 p-4 flex items-center justify-between bg-surface-container-highest/30">
+<span class="text-on-surface-variant font-label-md text-[12px]">Showing 1-10 of 124 leads</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant hover:text-primary transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center font-label-md text-[12px]">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant hover:text-primary transition-colors font-label-md text-[12px]">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:bg-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on Desktop, Visible on Mobile as per JSON rules) -->
+<nav class="md:hidden bg-surface-container/80 backdrop-blur-xl fixed bottom-0 w-full z-50 pb-safe border-t border-outline-variant/10 shadow-[0_-10px_30px_rgba(0,0,0,0.4)]">
+<div class="flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md uppercase mt-1 text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+<span class="font-label-md text-label-md uppercase mt-1 text-[10px]">Vehicles</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 -mt-4 shadow-[0_0_15px_rgba(242,202,80,0.5)] scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-md text-label-md uppercase mt-1 text-[10px]">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat</span>
+<span class="font-label-md text-label-md uppercase mt-1 text-[10px]">Chat</span>
+</a>
+</div>
+</nav>
+</body></html>

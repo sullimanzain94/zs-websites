@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Vehicle Finance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#1e2020",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "on-background": "#e2e2e2",
+                      "inverse-on-surface": "#2f3131",
+                      "surface-container-lowest": "#0d0f0f",
+                      "outline": "#99907c",
+                      "on-secondary": "#2d3134",
+                      "outline-variant": "#4d4635",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-tertiary": "#2e3131",
+                      "surface-container-high": "#282a2a",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "primary-container": "#d4af37",
+                      "surface-variant": "#333535",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-fixed-variant": "#444747",
+                      "on-primary-container": "#554300",
+                      "tertiary-fixed": "#e1e3e2",
+                      "inverse-primary": "#735c00",
+                      "tertiary": "#cdcece",
+                      "primary": "#f2ca50",
+                      "primary-fixed": "#ffe088",
+                      "surface": "#121414",
+                      "on-secondary-container": "#b6b8bc",
+                      "on-secondary-fixed": "#191c1f",
+                      "secondary-container": "#46494d",
+                      "on-primary-fixed": "#241a00",
+                      "surface-tint": "#e9c349",
+                      "background": "#121414",
+                      "on-surface-variant": "#d0c5af",
+                      "on-error": "#690005",
+                      "tertiary-container": "#b1b3b3",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-surface": "#e2e2e2",
+                      "secondary": "#c4c7ca",
+                      "surface-container-highest": "#333535",
+                      "secondary-fixed-dim": "#c4c7ca",
+                      "on-primary": "#3c2f00",
+                      "on-tertiary-container": "#434545",
+                      "surface-bright": "#383939",
+                      "tertiary-fixed-dim": "#c5c7c6",
+                      "error": "#ffb4ab",
+                      "secondary-fixed": "#e0e2e6",
+                      "surface-dim": "#121414",
+                      "on-tertiary-fixed": "#191c1c",
+                      "surface-container-low": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "section-gap": "80px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Manrope"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Manrope"
+                      ],
+                      "button-text": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "34px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "button-text": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .metallic-glow {
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+        .metallic-text {
+            background: linear-gradient(to bottom, #D4AF37, #B69121);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .metallic-bg {
+             background: linear-gradient(to bottom, #D4AF37, #B69121);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background docked full-width top-0 border-b border-white/10 shadow-md sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<!-- Brand -->
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Prime Lane Motors
+            </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Inventory</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-primary border-b-2 border-primary pb-1 hover:opacity-90 Active: scale-95 transition-all" href="#">Finance</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">About</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Contact</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-unit*2">
+<button class="hidden md:flex items-center justify-center metallic-bg text-on-primary-container font-button-text text-button-text uppercase tracking-wider px-6 py-3 rounded hover:opacity-90 transition-opacity">
+                    Apply for Finance
+                </button>
+<button class="flex items-center justify-center border border-secondary text-secondary font-button-text text-button-text uppercase tracking-wider px-4 py-3 rounded hover:border-primary hover:text-primary transition-colors gap-2">
+<span class="material-symbols-outlined" data-icon="chat" style="font-variation-settings: 'FILL' 0;">chat</span>
+                    WhatsApp
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full py-section-gap px-margin-desktop md:px-margin-desktop px-margin-mobile flex flex-col items-center justify-center text-center overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-30 bg-cover bg-center" data-alt="A sleek, dimly lit luxury car showroom interior. Spotlights shine down on highly polished, dark metallic surfaces of high-end vehicles. The lighting creates a sophisticated, premium atmosphere with deep blacks and subtle gold reflections, emphasizing modern automotive engineering and wealth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPMKm_196ovABpsIKaK65RUT2zaNQCYkhgoOOzzKUucRHkAeJyu0IvmaZBwmRyiGsVysLUAPeuH97QBf_F0Ew_kpzMBD8IxJEW5rWSSxZzAVYPPhDyodcb-TTMIBxjqi4IE6qjnyO4eIXSo34O2VHqnRQ09HiSvggoeJTuMLJNEgvnpAsYHFKFmby5RyU0r6l1xY0uEUqqBDgTwAPn9RydH87cqN0HB5ZCAs8c3ByFyAqEVua0s1hcHg')"></div>
+<div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-unit*3">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="account_balance">account_balance</span>
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
+                Drive Your Ambition with <br/><span class="metallic-text">Tailored Finance</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                We provide seamless, discreet, and competitive vehicle finance solutions designed for the discerning buyer. Experience a streamlined path to ownership.
+            </p>
+<div class="flex flex-col sm:flex-row gap-gutter mt-unit*4 w-full justify-center">
+<button class="flex-1 sm:flex-none items-center justify-center metallic-bg text-on-primary-container font-button-text text-button-text uppercase tracking-wider px-8 py-4 rounded hover:opacity-90 transition-opacity shadow-lg">
+                    Enquire Now
+                </button>
+</div>
+</div>
+</header>
+<!-- Process Section -->
+<section class="w-full py-section-gap px-margin-desktop md:px-margin-desktop px-margin-mobile bg-surface-container-low border-t border-white/5">
+<div class="max-w-container-max mx-auto flex flex-col gap-unit*6">
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg font-headline-md text-headline-md text-on-surface mb-unit*2">The Path to Ownership</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A transparent, structured approach to securing your vehicle finance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-gutter relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-surface-variant -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 bg-surface-container border border-white/10 rounded-xl p-unit*3 flex flex-col items-center text-center gap-unit*2 hover:metallic-glow transition-all">
+<div class="w-12 h-12 rounded-full metallic-bg flex items-center justify-center text-on-primary-container font-bold text-lg">1</div>
+<h3 class="font-headline-md text-headline-md text-primary">Enquire</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Submit your initial details and vehicle interest securely.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 bg-surface-container border border-white/10 rounded-xl p-unit*3 flex flex-col items-center text-center gap-unit*2 hover:metallic-glow transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-bold text-lg">2</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Qualification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We assess your profile against our premium lender network.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 bg-surface-container border border-white/10 rounded-xl p-unit*3 flex flex-col items-center text-center gap-unit*2 hover:metallic-glow transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-bold text-lg">3</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Application</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Formalize your request with required documentation.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 bg-surface-container border border-white/10 rounded-xl p-unit*3 flex flex-col items-center text-center gap-unit*2 hover:metallic-glow transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-bold text-lg">4</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Verification</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Rigorous checks ensure compliance and security.</p>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 bg-surface-container border border-white/10 rounded-xl p-unit*3 flex flex-col items-center text-center gap-unit*2 hover:metallic-glow transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-bold text-lg">5</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Decision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Receive your tailored finance offer and proceed to delivery.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQs & Disclaimer -->
+<section class="w-full py-section-gap px-margin-desktop md:px-margin-desktop px-margin-mobile bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-section-gap">
+<!-- FAQs -->
+<div class="flex flex-col gap-unit*4">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg font-headline-md text-headline-md text-on-surface">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-unit*2">
+<details class="bg-surface-container border border-white/10 rounded-lg p-unit*3 group">
+<summary class="font-headline-md text-headline-md text-on-surface cursor-pointer flex justify-between items-center list-none">
+                            What documents do I need?
+                            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit*2 pt-unit*2 border-t border-white/5">
+                            Typically, we require proof of identity, recent bank statements, and proof of address. Specific requirements will be detailed during the qualification stage.
+                        </p>
+</details>
+<details class="bg-surface-container border border-white/10 rounded-lg p-unit*3 group">
+<summary class="font-headline-md text-headline-md text-on-surface cursor-pointer flex justify-between items-center list-none">
+                            How long does the process take?
+                            <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit*2 pt-unit*2 border-t border-white/5">
+                            Initial qualification can take as little as a few hours. A final decision usually follows within 24-48 hours of submitting all verified documentation.
+                        </p>
+</details>
+</div>
+</div>
+<!-- Trust & Disclaimer -->
+<div class="flex flex-col gap-unit*4 bg-surface-container border border-white/10 rounded-xl p-unit*4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg font-headline-md text-headline-md text-primary relative z-10">Bank-Grade Security</h3>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">
+                    Your data is protected by industry-leading encryption. We partner exclusively with authorized financial institutions to ensure your information remains confidential and secure throughout the process.
+                </p>
+<div class="mt-auto pt-unit*4 border-t border-white/5 relative z-10">
+<p class="font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-widest">Important Disclaimer</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit*1 text-sm">
+                        Prime Lane Motors acts as an intermediary. All vehicle finance is subject to individual status, credit checks, and final assessment by our partner financial providers. Terms and conditions apply. Over 18s only.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10 mt-auto">
+<div class="w-full py-section-gap px-margin-desktop md:px-margin-desktop px-margin-mobile grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md text-primary mb-4">
+                    Prime Lane Motors
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Prime Lane Motors. Authorized Financial Services Provider.
+                </p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Use</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">FSP Disclosure</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</body></html>

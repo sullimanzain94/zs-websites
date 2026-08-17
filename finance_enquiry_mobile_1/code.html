@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - Finance Enquiry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#3c2f00",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-variant": "#333535",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cdcd",
+                        "on-tertiary-container": "#454544",
+                        "surface-container": "#1e2020",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "secondary": "#c6c6c6",
+                        "tertiary-container": "#b4b2b2",
+                        "surface": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#d4af37",
+                        "surface-tint": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "on-background": "#e2e2e2",
+                        "on-secondary": "#2f3131",
+                        "secondary-container": "#484949",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-container": "#b8b8b8",
+                        "surface-dim": "#121414",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed": "#ffe088",
+                        "background": "#121414",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#282a2b",
+                        "surface-bright": "#37393a",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(153, 144, 124, 0.1);
+        }
+        .form-well {
+            background: rgba(18, 20, 20, 0.5);
+            border: 1px solid rgba(153, 144, 124, 0.3);
+            transition: all 0.3s ease;
+        }
+        .form-well:focus-within {
+            border-color: #f2ca50;
+            box-shadow: 0 0 10px rgba(242, 202, 80, 0.2);
+        }
+        .progress-track {
+            height: 4px;
+            background: rgba(153, 144, 124, 0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #f2ca50;
+            transition: width 0.3s ease;
+        }
+        
+        /* Hide steps initially */
+        .form-step {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .form-step.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Header (Transactional Intent: No Nav Shell) -->
+<header class="w-full flex justify-center py-6">
+<img alt="Prime Lane Motors Logo" class="w-32 h-32 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO9FDRMs05qnMlpXTg04aLq0Hz9uK73KNEkWqutNl3eXxF8gzx9mDMnw7AjMNmWU_9pHUY4e5BP-O_7OOt3ll6za7Gb2c1kRd1xz5UaYWHT-SI0VhBOYhc7A7WMEtmEXdrZ6FxRVxmW24rYcZXfQPnqifRppveN26G9_4EjAN88hIoy-FQbgbNiMPMFlXxJdVtjl8dUIVJm5HHU-LYNS9Weisw5jrrFv9I0NGr9e9FBws9TNVoAzfFCrQ9hDRGie7Fk4I"/>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 flex justify-center items-start">
+<!-- Multi-Step Form Container -->
+<div class="w-full max-w-[600px] glass-panel rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-6 relative">
+<!-- Progress Track -->
+<div class="mb-8">
+<div class="flex justify-between text-label-md font-label-md text-on-surface-variant mb-2 uppercase">
+<span id="step-indicator">Step 1 of 4</span>
+<span class="text-primary" id="step-title">Vehicle Search</span>
+</div>
+<div class="progress-track">
+<div class="progress-fill" id="progress-bar" style="width: 25%;"></div>
+</div>
+</div>
+<form class="space-y-6" id="finance-enquiry-form">
+<!-- Step 1: WHAT ARE YOU LOOKING FOR? -->
+<div class="form-step active" id="step-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase">WHAT ARE YOU LOOKING FOR?</h2>
+<div class="space-y-6">
+<!-- Vehicle Preference -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Vehicle Preference</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="preference" type="radio" value="vw"/>
+<div class="form-well p-4 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">VW</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="preference" type="radio" value="other"/>
+<div class="form-well p-4 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Other</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="preference" type="radio" value="not_sure"/>
+<div class="form-well p-4 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Not Sure</div>
+</label>
+</div>
+</div>
+<!-- Vehicle Type -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Vehicle Type</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option disabled="" selected="" value="">Select Type</option>
+<option value="hatchback">Hatchback</option>
+<option value="sedan">Sedan</option>
+<option value="suv">SUV</option>
+<option value="bakkie">Bakkie</option>
+<option value="mpv">MPV</option>
+<option value="other">Other</option>
+</select>
+</div>
+<!-- Condition -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Condition</label>
+<div class="form-well p-4 rounded-lg text-on-surface-variant bg-surface-container-low">
+                                New (Default)
+                                <input name="condition" type="hidden" value="new"/>
+</div>
+</div>
+<!-- Preferred Model -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Model (Optional)</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="e.g. Golf GTI" type="text"/>
+</div>
+</div>
+</div>
+<!-- Step 2: YOUR BUDGET -->
+<div class="form-step" id="step-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase">YOUR BUDGET</h2>
+<div class="space-y-6">
+<!-- Price Range -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Price Range</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option disabled="" selected="" value="">Select Range</option>
+<option value="under_200k">Under R200,000</option>
+<option value="200k_400k">R200,000 - R400,000</option>
+<option value="400k_600k">R400,000 - R600,000</option>
+<option value="600k_plus">R600,000+</option>
+</select>
+</div>
+<!-- Deposit -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Do you have a deposit?</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" type="radio" value="yes"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Yes</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" type="radio" value="no"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">No</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="deposit" type="radio" value="not_sure"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Not Sure</div>
+</label>
+</div>
+</div>
+<!-- Trade-in -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Do you have a trade-in?</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="trade_in" type="radio" value="yes"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Yes</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="trade_in" type="radio" value="no"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">No</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="trade_in" type="radio" value="not_sure"/>
+<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Not Sure</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Initial Finance Enquiry Information -->
+<div class="form-step" id="step-3">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase">Initial Finance Enquiry</h2>
+<div class="space-y-6">
+<!-- Employment Status -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Employment Status</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option disabled="" selected="" value="">Select Status</option>
+<option value="employed">Employed Full-Time</option>
+<option value="self_employed">Self Employed</option>
+<option value="contract">Contract Worker</option>
+<option value="retired">Retired</option>
+</select>
+</div>
+<!-- Monthly Income -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Monthly Income Range (Net)</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option disabled="" selected="" value="">Select Income</option>
+<option value="under_10k">Under R10,000</option>
+<option value="10k_20k">R10,000 - R20,000</option>
+<option value="20k_30k">R20,000 - R30,000</option>
+<option value="30k_plus">R30,000+</option>
+</select>
+</div>
+<!-- Preferred Budget -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Monthly Instalment (Optional)</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="e.g. 5000" type="number"/>
+</div>
+</div>
+</div>
+<!-- Step 4: CUSTOMER CONTACT -->
+<div class="form-step" id="step-4">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase">CUSTOMER CONTACT</h2>
+<div class="space-y-6">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Full Name</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="John Doe" type="text"/>
+</div>
+<!-- Contact Info Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Mobile -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Mobile Number</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="082 123 4567" type="tel"/>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Email Address</label>
+<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<!-- Preferred Contact -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Method</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option value="phone">Phone Call</option>
+<option value="whatsapp">WhatsApp</option>
+<option value="email">Email</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Time</label>
+<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0">
+<option value="morning">Morning</option>
+<option value="afternoon">Afternoon</option>
+<option value="evening">Evening</option>
+</select>
+</div>
+</div>
+<!-- Consent Checkboxes -->
+<div class="space-y-4 pt-4 border-t border-outline-variant/30">
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="mt-1 flex-shrink-0">
+<input class="w-5 h-5 rounded border-outline-variant bg-surface-container-low text-primary focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">I consent to Prime Lane Motors processing my information for this enquiry.</span>
+</label>
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="mt-1 flex-shrink-0">
+<input class="w-5 h-5 rounded border-outline-variant bg-surface-container-low text-primary focus:ring-primary focus:ring-offset-background" type="checkbox"/>
+</div>
+<span class="text-body-md font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">I would like to receive marketing communications about future deals.</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="pt-8 flex justify-between items-center mt-auto">
+<button class="font-label-md text-label-md text-primary hover:text-primary-container px-4 py-2 hidden transition-colors uppercase" id="prev-btn" type="button">
+<span class="material-symbols-outlined align-middle mr-1 text-[18px]">arrow_back</span> Back
+                    </button>
+<button class="ml-auto bg-primary text-on-primary font-label-md text-label-md uppercase px-8 py-4 rounded-lg font-bold hover:bg-primary-container transition-colors shadow-[0_0_20px_rgba(242,202,80,0.3)]" id="next-btn" type="button">
+                        Next Step
+                    </button>
+<button class="ml-auto bg-primary text-on-primary font-label-md text-label-md uppercase px-8 py-4 rounded-lg font-bold hover:bg-primary-container transition-colors shadow-[0_0_20px_rgba(242,202,80,0.3)] hidden" id="submit-btn" type="submit">
+                        Submit Enquiry
+                    </button>
+</div>
+</form>
+<!-- Disclaimer -->
+<div class="mt-8 text-[12px] leading-relaxed text-outline-variant text-center opacity-60 px-4">
+                "Prime Lane Motors assists customers with their vehicle and finance journey. Finance approval, interest rates, instalments and other credit terms are determined by the applicable finance provider and are subject to its assessment, affordability requirements, credit criteria and approval. Finance approval is not guaranteed."
+            </div>
+</div>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = document.querySelectorAll('.form-step');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const stepIndicator = document.getElementById('step-indicator');
+            const stepTitle = document.getElementById('step-title');
+            
+            let currentStep = 0;
+            const totalSteps = steps.length;
+            const stepTitles = ["Vehicle Search", "Your Budget", "Finance Info", "Contact Details"];
+
+            function updateForm() {
+                // Hide all steps
+                steps.forEach(step => step.classList.remove('active'));
+                
+                // Show current step
+                steps[currentStep].classList.add('active');
+                
+                // Update Progress Bar
+                const progressPercentage = ((currentStep + 1) / totalSteps) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+                
+                // Update Text Indicators
+                stepIndicator.textContent = `Step ${currentStep + 1} of ${totalSteps}`;
+                stepTitle.textContent = stepTitles[currentStep];
+
+                // Button Logic
+                if (currentStep === 0) {
+                    prevBtn.classList.add('hidden');
+                } else {
+                    prevBtn.classList.remove('hidden');
+                }
+
+                if (currentStep === totalSteps - 1) {
+                    nextBtn.classList.add('hidden');
+                    submitBtn.classList.remove('hidden');
+                } else {
+                    nextBtn.classList.remove('hidden');
+                    submitBtn.classList.add('hidden');
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < totalSteps - 1) {
+                    currentStep++;
+                    updateForm();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateForm();
+                }
+            });
+
+            // Prevent default form submission for demo
+            document.getElementById('finance-enquiry-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Enquiry Submitted Successfully!');
+            });
+        });
+    </script>
+</body></html>

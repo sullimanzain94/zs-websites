@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-width=1.0" name="viewport"/>
+<title>Prime Lane Motors - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#3c2f00",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-low": "#1a1c1c",
+                        "surface-variant": "#333535",
+                        "outline-variant": "#4d4635",
+                        "on-primary-container": "#554300",
+                        "tertiary": "#d0cdcd",
+                        "on-tertiary-container": "#454544",
+                        "surface-container": "#1e2020",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "secondary": "#c6c6c6",
+                        "tertiary-container": "#b4b2b2",
+                        "surface": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#d4af37",
+                        "surface-tint": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "on-background": "#e2e2e2",
+                        "on-secondary": "#2f3131",
+                        "secondary-container": "#484949",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-container": "#b8b8b8",
+                        "surface-dim": "#121414",
+                        "on-error": "#690005",
+                        "on-primary-fixed": "#241a00",
+                        "primary-fixed": "#ffe088",
+                        "background": "#121414",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#282a2b",
+                        "surface-bright": "#37393a",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#99907c",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "title-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+        }
+        
+        .glass-card {
+            background: rgba(30, 32, 32, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(242, 202, 80, 0.1);
+        }
+        
+        .glass-border-gold {
+            border: 1px solid transparent;
+            background-image: linear-gradient(rgba(30, 32, 32, 0.8), rgba(30, 32, 32, 0.8)), linear-gradient(to right, #f2ca50, transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col relative pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="hidden md:flex justify-between items-center px-margin-desktop py-4 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-xl docked full-width top-0 sticky">
+<div class="flex items-center gap-4">
+<img alt="Prime Lane Motors Logo" class="h-12 w-12 rounded-full object-cover border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqpsSpMRNI3ddM6tIRiN9dJGvlwDo11QlsJRmrVKt2YO2LwJQbU7BP2MRLeCvbbQuXURk6ij3fGBz-1S9qmrn20Ied3vsNnnDTGFw0t0MfLjHKZuL3De84_PuWOzfdrpwf-RU9o1ouaj-DjrV6q7QLTdOhgx9O0u9Bi0nu7oH7dVrOXohxzgryr0jTkoruDZnHYtvCWHdCvAev7Yg-ZTOBElXSzxxukF7dQJeQbFST-B4dbS0F3ymUiHdxVHg2wdYPomk"/>
+<h1 class="font-display-lg text-primary uppercase tracking-tighter text-headline-lg hidden lg:block">Prime Lane Motors</h1>
+</div>
+<nav class="flex gap-8">
+<a class="text-primary font-bold font-label-md text-label-md uppercase hover:text-primary-container transition-colors opacity-80 duration-200" href="#">Home</a>
+<a class="text-on-surface-variant font-label-md text-label-md uppercase hover:text-primary-container transition-colors" href="#">Vehicles</a>
+<a class="text-on-surface-variant font-label-md text-label-md uppercase hover:text-primary-container transition-colors" href="#">Finance</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md uppercase px-6 py-3 rounded-full hover:bg-primary-container transition-colors shadow-[0_0_15px_rgba(242,202,80,0.3)]">START ENQUIRY</button>
+</header>
+<!-- Mobile Header -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-4 w-full z-50 bg-surface/90 backdrop-blur-xl sticky top-0 border-b border-outline-variant/10 shadow-xl">
+<div class="flex items-center gap-3">
+<img alt="Prime Lane Motors Logo" class="h-10 w-10 rounded-full object-cover border border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr68cUwfzdRBjhzkkuxN6YoHoiAfPWHEiDZSIwgRE4Vsbb7TAdY2_2OL-f_oqBz2SFCB-2DMwauZbdBLvTRrpUGw0NabcfrH_F0l2-0LNNB13BAlb3ywPgLZ8fKjVDz4dirb9gYDsmmE9CSb4MUiCUyZvWEssFoGFkMuVux4ptXsjpdeCkT2hdgyMH_asLnCke991lkzRYbbqM01S-0yzkJCtITzgcduEkXjPIxJUrZ19eDLEYB6Gc04BHcLeeBdYeuZ0"/>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary uppercase tracking-tighter">P.L.M</h1>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center pt-8 pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-40 mix-blend-luminosity" data-alt="A sleek, modern dark showroom featuring a high-end, polished dark grey metallic luxury sedan. The car is dramatically lit with cool blue and warm gold studio lighting, reflecting off the wet-looking floor. The atmosphere is premium, exclusive, and automotive-focused, evoking a sense of elite finance and luxury vehicle sales. Dark mode aesthetic with high contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgGpG8-y3aVpCNzRl6Ey-yxwkCUPMjxIrarqvaZKnOfxulscO3Kxbei1RXutMhm6Otw-qHza90HhefVgSOM4nXtQ2atFk-9rVr8wYr6-vbnqP-NW02GIZncGjwyRSFk2c2s4-5IvljDfI974K3sbwB7zw6h_IBk7iPGTJuGCipST2Jf7F-W3PGOcBuxNqwaQr1Cy8Iue-JZmv68HmsF441VbyVLnW6cqONILZhpFSFSC7AW5N8tYw5hQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-0"></div>
+<div class="relative z-10 max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1 flex flex-col gap-6 w-full">
+<div class="inline-block px-4 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary font-label-md text-label-md self-start uppercase tracking-wider mb-2">Automotive Sales Industry</div>
+<h2 class="font-display-lg text-display-lg text-on-background max-w-2xl text-4xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-tight drop-shadow-lg">
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Your Next Vehicle</span> <br/>Starts Here.
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl border-l-2 border-primary pl-4 py-1">
+                        Tell Prime Lane Motors what you're looking for and we'll help guide you through your vehicle and finance journey.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+<button class="bg-primary text-on-primary font-label-md text-label-md uppercase px-8 py-4 rounded-full font-bold shadow-[0_0_20px_rgba(242,202,80,0.4)] hover:scale-105 transition-transform flex items-center justify-center gap-2 w-full sm:w-auto">
+<span>START FINANCE ENQUIRY</span>
+<span class="material-symbols-outlined font-bold">arrow_forward</span>
+</button>
+<button class="bg-transparent text-on-background border-2 border-outline-variant font-label-md text-label-md uppercase px-8 py-4 rounded-full hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2 w-full sm:w-auto">
+<span class="material-symbols-outlined">search</span>
+<span>EXPLORE VEHICLES</span>
+</button>
+</div>
+<button class="bg-surface-container text-primary border border-primary/30 font-label-md text-label-md uppercase px-8 py-4 rounded-full hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2 w-full sm:w-max mt-2">
+<span class="material-symbols-outlined">chat</span>
+<span>WHATSAPP PLM</span>
+</button>
+<div class="mt-8 p-4 rounded-xl glass-card flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-xl shrink-0 mt-0.5">info</span>
+<p class="font-body-md text-[12px] leading-relaxed text-outline">
+                            Finance is subject to the applicable finance provider's assessment, affordability requirements and lending criteria.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Finance Assistance Section -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-12">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase tracking-tight mb-4">Vehicle Finance Assistance</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                        Prime Lane Motors is dedicated to helping customers understand and navigate the complex journey of automotive finance.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Find Card -->
+<div class="glass-border-gold p-8 rounded-2xl flex flex-col items-center text-center group hover:bg-surface-container/80 transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(242,202,80,0.2)]">
+<span class="material-symbols-outlined text-primary text-3xl">search</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-background mb-3 uppercase tracking-wide">Find</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We help you locate the perfect vehicle that matches your lifestyle and budget requirements.</p>
+</div>
+<!-- Understand Card -->
+<div class="glass-border-gold p-8 rounded-2xl flex flex-col items-center text-center group hover:bg-surface-container/80 transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(242,202,80,0.2)]">
+<span class="material-symbols-outlined text-primary text-3xl">menu_book</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-background mb-3 uppercase tracking-wide">Understand</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Clear, transparent breakdowns of finance terms, rates, and exactly what you are paying for.</p>
+</div>
+<!-- Progress Card -->
+<div class="glass-border-gold p-8 rounded-2xl flex flex-col items-center text-center group hover:bg-surface-container/80 transition-colors">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(242,202,80,0.2)]">
+<span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-background mb-3 uppercase tracking-wide">Progress</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Seamlessly move forward with your application through our streamlined digital process.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Volkswagen Promo Section -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop relative border-y border-primary/20">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-30 mix-blend-luminosity" data-alt="A striking frontal shot of a sleek, dark grey Volkswagen Golf R or similar performance VW model, parked on a wet, reflective surface in an urban night setting. Neon lights reflect off the car's metallic paint. The scene emphasizes high performance, modern automotive design, and premium German engineering, fitting the elite dark mode style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEMKWjSkQvxfhksf_i3uIV3rTIZqD-gmI26o6SOyxSVvgwP2devlxpztBkdYoESXlUFThmKNqO46BrowcY7QADk57cFQZ94MQK5Ob9Q3hxxMAGFKG2nHifgUe7ppVq-3ld3DEwbUFX_SKjds87sl71nCVlXsDELAVusRHI1M2jJ4rjy1X6KoOyKa9UI7o6lWt4c1qanSNNOCavvl3oMpEzkS99NhEuq9xWSMySBd9NUuXpiCb0XQs_zg')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-0"></div>
+<div class="max-w-container-max mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl">
+<h3 class="font-display-lg text-4xl md:text-5xl text-on-background uppercase tracking-tighter mb-4 leading-tight">
+                        Looking for a <br/><span class="text-primary">Volkswagen?</span>
+</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Discover our premium selection of VW models. From reliable hatchbacks to luxury SUVs, we have the perfect German-engineered vehicle for you.
+                    </p>
+<button class="bg-transparent text-primary border-2 border-primary font-label-md text-label-md uppercase px-8 py-4 rounded-full hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-2 w-full sm:w-auto shadow-[0_0_15px_rgba(242,202,80,0.2)]">
+<span>EXPLORE VOLKSWAGEN OPTIONS</span>
+<span class="material-symbols-outlined">directions_car</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden flex justify-around items-center h-20 px-4 bg-surface-container/80 backdrop-blur-xl fixed bottom-0 w-full z-50 pb-safe shadow-[0_-10px_30px_rgba(0,0,0,0.4)] border-t border-outline-variant/10">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full px-4 py-1 -mt-4 shadow-[0_0_15px_rgba(242,202,80,0.5)] scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-md text-[10px] uppercase font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">directions_car</span>
+<span class="font-label-md text-[10px] uppercase">Vehicles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">payments</span>
+<span class="font-label-md text-[10px] uppercase">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">chat</span>
+<span class="font-label-md text-[10px] uppercase">WhatsApp</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 bg-surface-container-lowest border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-base text-center md:text-left mb-24 md:mb-0">
+<p class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 Prime Lane Motors. Elite Automotive Finance.
+        </p>
+<div class="flex gap-4 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span>|</span>
+<a class="hover:text-primary transition-colors" href="#">Terms &amp; Conditions</a>
+<span>|</span>
+<a class="hover:text-primary transition-colors" href="#">Finance Disclaimer</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Internal Lead Detail Workspace</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS & Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-primary": "#735c00",
+                        "surface-bright": "#37393a",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-container": "#484949",
+                        "on-surface-variant": "#d0c5af",
+                        "tertiary-fixed": "#e5e2e1",
+                        "outline-variant": "#4d4635",
+                        "surface-variant": "#333535",
+                        "surface-container-high": "#282a2b",
+                        "on-primary-container": "#554300",
+                        "on-tertiary-container": "#454544",
+                        "secondary": "#c6c6c6",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#b8b8b8",
+                        "tertiary-container": "#b4b2b2",
+                        "outline": "#99907c",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-lowest": "#0c0f0f",
+                        "primary": "#f2ca50",
+                        "surface-tint": "#e9c349",
+                        "on-primary-fixed": "#241a00",
+                        "primary-container": "#d4af37",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary": "#2f3131",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "background": "#121414",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#333535",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed-variant": "#464747",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#d0cdcd",
+                        "surface": "#121414",
+                        "on-background": "#e2e2e2",
+                        "surface-container": "#1e2020"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "title-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Utility styles for specific component interactions not covered by generic tailwind classes */
+        .glass-panel {
+            background-color: rgba(26, 28, 28, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(198, 198, 198, 0.1);
+        }
+        .glass-panel-glow {
+            border: 1px solid rgba(242, 202, 80, 0.3);
+            box-shadow: inset 0 0 20px rgba(242, 202, 80, 0.05);
+        }
+        
+        /* Step Line connecting journey steps */
+        .journey-step-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(50% + 16px);
+            width: calc(100% - 32px);
+            height: 2px;
+            background-color: var(--color-outline-variant, #4d4635);
+            z-index: -1;
+            transform: translateY(-50%);
+        }
+        @media (min-width: 768px) {
+            .journey-step-line:last-child::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-surface/70 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant/10 shadow-xl flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<div class="font-display-lg text-primary uppercase tracking-tighter text-xl md:text-2xl">
+                Prime Lane Motors
+            </div>
+</div>
+<button class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded uppercase font-bold hover:bg-primary-container transition-colors shadow-lg">
+            START ENQUIRY
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12 flex flex-col gap-gutter">
+<!-- Action Banner -->
+<div class="glass-panel glass-panel-glow rounded-xl p-4 md:p-6 flex items-start md:items-center gap-4 border-l-4 border-l-primary animate-pulse">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0">local_fire_department</span>
+<div>
+<h2 class="font-title-md text-title-md text-primary mb-1">🔥 ACTION NOW</h2>
+<p class="font-body-md text-body-md text-on-surface">TEST LEAD: High-intent enquiry for Golf 8 R. Verify data flow.</p>
+</div>
+</div>
+<!-- Header Profile & Actions -->
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 border-b border-outline-variant/10 pb-8">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-primary/20 text-primary border border-primary/30 px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Status: NEW</span>
+<span class="bg-surface-bright text-on-surface px-2 py-1 rounded text-xs font-bold tracking-wider">Score: 98/100</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">SARAH MILLER <span class="text-on-surface-variant font-normal">[TEST]</span></h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span> Assigned To: Zain Sulliman
+                </p>
+</div>
+<div class="flex flex-wrap gap-3 w-full lg:w-auto">
+<button class="flex-1 lg:flex-none glass-panel hover:border-primary text-on-surface px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-xl">forum</span>
+<span class="font-label-md text-label-md">WhatsApp</span>
+</button>
+<button class="flex-1 lg:flex-none glass-panel hover:border-primary text-on-surface px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-xl">call</span>
+<span class="font-label-md text-label-md">Call</span>
+</button>
+<button class="flex-1 lg:flex-none glass-panel hover:border-primary text-on-surface px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors text-xl">mail</span>
+<span class="font-label-md text-label-md">Email</span>
+</button>
+<button class="w-full lg:w-auto bg-primary text-on-primary px-6 py-2 rounded-lg flex items-center justify-center gap-2 font-bold hover:brightness-110 transition-all shadow-[0_0_15px_rgba(242,202,80,0.3)]">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+<span class="font-label-md text-label-md">Mark Contacted</span>
+</button>
+</div>
+</div>
+<!-- Journey Tracker -->
+<div class="glass-panel rounded-xl p-6 overflow-x-auto hide-scrollbar">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">route</span> Lead Journey
+            </h3>
+<div class="flex justify-between relative min-w-[600px]">
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(242,202,80,0.5)] z-10 mb-2 border-2 border-background">
+<span class="material-symbols-outlined text-on-primary text-sm font-bold">fiber_new</span>
+</div>
+<span class="font-label-md text-label-md text-primary uppercase text-center">New</span>
+</div>
+<!-- Step 2: Upcoming -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant flex items-center justify-center z-10 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">communication</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase text-center">Contacted</span>
+</div>
+<!-- Step 3: Upcoming -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant flex items-center justify-center z-10 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">verified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase text-center">Qualified</span>
+</div>
+<!-- Step 4: Upcoming -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant flex items-center justify-center z-10 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">request_quote</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase text-center">Finance Process</span>
+</div>
+<!-- Step 5: Upcoming -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant flex items-center justify-center z-10 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">description</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase text-center">Application</span>
+</div>
+<!-- Step 6: Upcoming -->
+<div class="flex flex-col items-center flex-1 relative journey-step-line">
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant flex items-center justify-center z-10 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">handshake</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase text-center">Sale</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Vehicle Interest Card -->
+<div class="lg:col-span-2 glass-panel rounded-xl overflow-hidden flex flex-col group relative">
+<div class="h-48 md:h-64 w-full relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out" data-alt="A sleek, modern dark metallic 2021 VW Golf 8 R parked in an upscale urban industrial setting under moody night lighting with dramatic shadows and subtle golden street lamp reflections outlining its aerodynamic profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZwPB8TZMlLWQu_jpXpPWdgcs98uFYQnXn_ubTHb1lsfi4m_lzpK4gPokHEQKiu6qWvkMfMCrgg-hzyD4V2pMzmhEJQUVMM8WLSex7Yoho_-XP6slbWVBg7r-f1ahg51VQ-xx2c_wpjLq4rXsJY0kX-0zp8lEGRY8y7iybsdl5rh1hp7i3kUS405mXig4k50q_J8zDUpVmaBdACOBibSNLYta0wwYX6m6J_U8_FP7W72n2Mlan4ruQcQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4 bg-background/80 backdrop-blur px-3 py-1 rounded text-on-surface font-label-md text-label-md border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">directions_car</span> Interest
+                    </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">2021 VW Golf 8 R</h3>
+<p class="font-title-md text-title-md text-primary mb-4">R 899,900</p>
+</div>
+<div class="flex gap-4 border-t border-outline-variant/10 pt-4">
+<button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-1">
+                            View Inventory Listing <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Financial Profile Card -->
+<div class="glass-panel rounded-xl p-6 flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span> Financial Profile
+                </h3>
+<div class="flex-grow flex flex-col gap-4">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex justify-between items-center group hover:border-primary/50 transition-colors">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-1">Declared Deposit</p>
+<p class="font-title-md text-title-md text-on-surface">R 100,000</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">payments</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex justify-between items-center group hover:border-primary/50 transition-colors">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-1">Monthly Income</p>
+<p class="font-title-md text-title-md text-on-surface">R 40,000</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">monetization_on</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-lg p-4 flex justify-between items-center group hover:border-primary/50 transition-colors">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase mb-1">Employment</p>
+<p class="font-title-md text-title-md text-on-surface">Full-time</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors">work</span>
+</div>
+</div>
+<button class="w-full mt-6 border border-primary/50 text-primary font-label-md text-label-md px-4 py-3 rounded-lg hover:bg-primary/10 transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit_document</span> Edit Profile Data
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 px-margin-mobile md:px-margin-desktop mt-20 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-base text-center md:text-left z-10 relative">
+<div class="font-body-md text-body-md text-secondary">
+<span class="text-primary font-bold">Prime Lane Motors</span> | © 2024 Prime Lane Motors. Elite Automotive Finance.
+        </div>
+<div class="flex gap-6 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-primary transition-colors" href="#">Finance Disclaimer</a>
+</div>
+</footer>
+</body></html>

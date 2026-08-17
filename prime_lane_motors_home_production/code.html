@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Hanken+Grotesk:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#303030",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#343535",
+                        "outline-variant": "#4d4635",
+                        "surface": "#121414",
+                        "primary": "#f2ca50",
+                        "on-background": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#474746",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e3e2e2",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-tint": "#e9c349",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-container": "#b4b2b2",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed": "#e4e2e1",
+                        "background": "#121414",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#343535",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "tertiary": "#d0cdcd",
+                        "outline": "#99907c",
+                        "surface-bright": "#383939",
+                        "surface-container": "#1e2020",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary-container": "#454545",
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f2ca50, #d4af37);
+            color: #121414;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #ffe088, #f2ca50);
+        }
+        .btn-ghost {
+            border: 1px solid #f2ca50;
+            color: #f2ca50;
+            background: transparent;
+        }
+        .btn-ghost:hover {
+            background: rgba(242, 202, 80, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 shadow-sm fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-container-padding py-stack-sm max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<img alt="Prime Lane Motors" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgaYtUsNAvlVeEdZyJVNyp73MewgCj74amYu7hKioBIf6JRbwuyrr_3_yjH5Yu6ns9mnrl1hxRCT9lnHF124o_fGFNGVDDKW2FJ57wcIQNr-pvVPKidtFxbNGC7giN9BsTrmgBRxtsvSVx7W1BCLWL6ncTcj49neQ1Oqlmth32xytigTCqiPDNVRQWMwjh2N7UkAuQATrghdfYSPcnbnd_MhTCu0aHBTC8lghMN_5fk-oziWqr6ywKD8k-iPu7feskwSQ"/>
+<span class="font-headline-md text-headline-md text-primary tracking-tight uppercase">Prime Lane Motors</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Inventory</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Showroom</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300" href="#">Concierge</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex btn-ghost font-label-sm text-label-sm px-4 py-2 rounded-lg active:scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">chat</span> WhatsApp
+                </button>
+<button class="btn-primary font-label-sm text-label-sm px-6 py-2 rounded-lg font-bold active:scale-95 transition-transform">
+                    Apply for Finance
+                </button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center px-container-padding">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-30" data-alt="A sleek, high-end dark luxury car interior at night. The dashboard is illuminated with warm gold ambient lighting, contrasting against deep obsidian leather textures. Modern minimalism with a tactile, expensive feel, evoking prestige and absolute trust in a private concierge automotive setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiXawctJdcpmOdHE5hSOJN-Ri0SkuNDcQiBsBdd2IcCVJhXFtDzxbTiD7RcjaAoylNe2E0dYlr2aF1zTgriTqorLa98udHkhQla0c_tzj9LI-L71admhCz2Xgs6zQ50tS3nxhsPLbhkBc8AUPHyfU0S4XZxfp1IXdylWKa36_-hRPI_RGFesFDezDcGCI2kukxxa8FLvd3VDjx-9U1OjuOUEw0FTkA1VVGgw18cEhRJ5NLIT-nRUHbwQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col gap-stack-md">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Your Next Vehicle Starts With <span class="text-primary">Prime Lane Motors</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Explore premium vehicles and professional finance assistance.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<button class="btn-primary px-8 py-4 rounded-xl font-label-sm text-label-sm font-bold flex items-center justify-center gap-2">
+                            Find Your Vehicle <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="btn-ghost px-8 py-4 rounded-xl font-label-sm text-label-sm flex items-center justify-center gap-2">
+                            Get Finance Assistance
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose PLM -->
+<section class="py-24 px-container-padding bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto">
+<h2 class="font-headline-md text-headline-md text-primary mb-12 text-center">Why Choose Prime Lane Motors</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Trust -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-[inset_0_0_0_1px_rgba(242,202,80,0.05)] hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">verified_user</span>
+<h3 class="font-headline-md text-[20px] text-on-background mb-4">Trust</h3>
+<p class="text-on-surface-variant font-body-md">Transparent history, rigorous inspections, and guaranteed quality on every vehicle.</p>
+</div>
+<!-- Expertise -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-[inset_0_0_0_1px_rgba(242,202,80,0.05)] hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">workspace_premium</span>
+<h3 class="font-headline-md text-[20px] text-on-background mb-4">Expertise</h3>
+<p class="text-on-surface-variant font-body-md">Decades of combined experience in luxury automotive acquisition and finance.</p>
+</div>
+<!-- Speed -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/10 shadow-[inset_0_0_0_1px_rgba(242,202,80,0.05)] hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">speed</span>
+<h3 class="font-headline-md text-[20px] text-on-background mb-4">Speed</h3>
+<p class="text-on-surface-variant font-body-md">Streamlined approval processes getting you behind the wheel faster.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Vehicles -->
+<section class="py-24 px-container-padding">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Featured Collection</h2>
+<p class="text-on-surface-variant">Exceptional performance meets refined design.</p>
+</div>
+<button class="btn-ghost px-6 py-2 rounded-lg font-label-sm text-label-sm hidden md:block">View All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Polo GTI -->
+<div class="bg-surface-container rounded-xl overflow-hidden group">
+<div class="h-48 bg-surface-container-high relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A side profile shot of a sleek Volkswagen Polo GTI parked in an exclusive, dimly lit luxury garage. Deep shadows contrast with dramatic, warm gold spotlighting highlighting the metallic paint and alloy wheels. Premium, modern aesthetic emphasizing high performance and prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPPIqhPm2w3bgJj4viLNB4JZC4EPQewTWLId_dxgXXgKyXR4fxR1M1KitFycnY1zori2jeIbwCPhSg_NLFw3mWDqrU95XoJphdcb92vCy14UCAqfGOE-DVTtWoaYE2-IZ8UKTzIaFAk3dLFzVrErpt_Tl2UOMVao4TSzCiWvYsV1MrtGgC2yJqYBt0isuBij-vBGjFe2odFnp9CNB85aq-R3GEs2WaKurterAK0T3O--Kf0eociOA8hw"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-on-background">Polo GTI</h3>
+<p class="text-on-surface-variant mb-6">Dynamic agility.</p>
+<button class="w-full btn-ghost py-3 rounded-lg font-label-sm text-label-sm">Explore Details</button>
+</div>
+</div>
+<!-- Golf 8 R -->
+<div class="bg-surface-container rounded-xl overflow-hidden group">
+<div class="h-48 bg-surface-container-high relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A front three-quarter view of a menacing Volkswagen Golf 8 R parked on wet tarmac at night. Reflected city lights in deep blues and subtle golds gleam off the pristine obsidian bodywork. The atmosphere is tense, premium, and focused on pure driving exhilaration and luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx1vIr3qgHaxWJLCOCqVxU1VlQbia2iuiEOEqQSdmmo37FDMRNnRe8kx_gylNmXDhekny8o49ANTeu-8YJlbtw2T3mjPVBOblf7q7MS1KRG8A0USgih8vC5cRElyHFqfUnWKU1HLUWs9IJbYcJ-fHE7I3kHQcSKQDV2Qb9uoJuQwR9rXpueQloEqADFUn96M-YYpza3nCJo3W3U0atGLaUbGDLMAzvEUSc_0RD3u_qE7xVOUZt1zZK7Q"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-on-background">Golf 8 R</h3>
+<p class="text-on-surface-variant mb-6">Uncompromising power.</p>
+<button class="w-full btn-ghost py-3 rounded-lg font-label-sm text-label-sm">Explore Details</button>
+</div>
+</div>
+<!-- Tiguan R -->
+<div class="bg-surface-container rounded-xl overflow-hidden group">
+<div class="h-48 bg-surface-container-high relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A dramatic low-angle shot of a luxurious Volkswagen Tiguan R parked outside a modern architectural masterpiece. The scene is lit by warm sunset hues and soft gold architectural lighting, contrasting with the deep dark tones of the vehicle. Exudes a sense of commanding presence and refined comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5TANotx6IxkfY5cNZqs6-xaAyM2RgCl6j4gtoLroHcmg_Jm5fv-v90BUiKbHbacwU6ePahPIjZMHTwuVwUuFijQoA9pHKj5ZxXS_02C4RFNyWBsth5dDeBhTdOiclnSucAxDLdTUACMSNa_XMEd9k9PF_L8aoDEtnAjA-Zup1FVP6_dzHOgf3bg8Q-5_atO24ZeK3c3iJ61ja576oA_F5ZX7tMDmPOvfIjtV2lCAJfJPoT4EHj-Y6w"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-[20px] text-on-background">Tiguan R</h3>
+<p class="text-on-surface-variant mb-6">Elevated versatility.</p>
+<button class="w-full btn-ghost py-3 rounded-lg font-label-sm text-label-sm">Explore Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full relative border-t border-outline-variant/10 py-stack-lg px-container-padding flex flex-col items-center gap-stack-md mt-auto">
+<span class="font-headline-md text-headline-md text-primary mb-4">Prime Lane Motors</span>
+<div class="flex flex-wrap justify-center gap-6 mb-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Financial Disclosure</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+<p class="text-on-surface-variant/50 text-sm text-center">© 2024 Prime Lane Motors. All rights reserved. Private Concierge Automotive Group.</p>
+</footer>
+</body></html>

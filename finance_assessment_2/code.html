@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finance Assessment | Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e2e2e2",
+                        "on-secondary-fixed": "#1b1c1b",
+                        "tertiary": "#ebeaea",
+                        "on-tertiary-container": "#575858",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed-variant": "#574400",
+                        "gold-dim": "#d4af37",
+                        "primary-container": "#f2ca50",
+                        "secondary-container": "#474746",
+                        "metallic-silver": "#c8c6c5",
+                        "on-tertiary": "#2f3131",
+                        "on-background": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "inverse-primary": "#745b00",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#cfcece",
+                        "on-primary": "#3d2f00",
+                        "surface-bright": "#383939",
+                        "gold-accent": "#f2ca50",
+                        "surface-container-highest": "#333535",
+                        "primary-fixed": "#ffe08a",
+                        "surface-dim": "#121414",
+                        "on-secondary": "#303030",
+                        "background": "#121414",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-container": "#b6b5b4",
+                        "primary-fixed-dim": "#eac249",
+                        "on-primary-fixed": "#241a00",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container": "#1e2020",
+                        "tertiary-fixed": "#e3e2e2",
+                        "on-surface": "#e2e2e2",
+                        "surface": "#121414",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#4d4635",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-obsidian": "#121414",
+                        "outline": "#99907c",
+                        "surface-container-low": "#1a1c1c",
+                        "on-primary-container": "#6b5500",
+                        "primary": "#ffe9b0",
+                        "secondary": "#c8c6c5",
+                        "surface-container-high": "#282a2a",
+                        "surface-container-lowest": "#0d0f0f",
+                        "surface-tint": "#eac249",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.surface-obsidian'); color: theme('colors.on-surface'); }
+        
+        /* Inner Glows & Glassmorphism */
+        .glass-panel {
+            background-color: rgba(51, 53, 53, 0.4); /* surface-variant */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(242, 202, 80, 0.15); /* gold inner glow */
+            box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.05);
+        }
+        
+        .input-glow:focus {
+            border-color: theme('colors.gold-accent');
+            box-shadow: 0 1px 0 0 theme('colors.gold-accent');
+            outline: none;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, theme('colors.gold-accent') 0%, theme('colors.gold-dim') 100%);
+            color: theme('colors.on-primary');
+        }
+        
+        .btn-gradient:hover {
+            opacity: 0.9;
+        }
+
+        .step-active { color: theme('colors.gold-accent'); border-color: theme('colors.gold-accent'); }
+        .step-inactive { color: theme('colors.on-surface-variant'); border-color: theme('colors.surface-variant'); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md selection:bg-gold-accent selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-surface-variant/30 shadow-sm hidden md:block">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-7xl mx-auto">
+<div class="text-headline-md font-headline-md text-gold-accent tracking-tight">Prime Lane Motors</div>
+<nav class="flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Inventory</a>
+<a class="font-label-md text-label-md text-gold-accent border-b-2 border-gold-accent pb-1 active:scale-95 duration-200" href="#">Finance</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Sell</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-6">
+<a class="font-label-md text-label-md btn-gradient px-6 py-2 rounded-full font-semibold active:scale-95 transition-transform" href="#">Apply for Finance</a>
+<img alt="Customer Avatar" class="w-10 h-10 rounded-full border border-gold-accent/30 object-cover" data-alt="A professional headshot of a luxury car dealership customer, styled as an avatar. The image features a confident individual in elegant, understated attire against a dark, moody background with subtle warm gold rim lighting. High fidelity, minimalist corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeP9Wsq5_zyOZluWQnc6kTF6Ot7rF--aabUn0oXGiSEzxkJWpAzVmUAR9Hqds2VXVn4DELgWUD0tDAQ8S1mZppa_f1kiMEFhvhbzKrksVne2bczfdjX7CP_vUC3IO5qmtGfPMwzbVSxPKv39kaL9A6pOHCFhJ_lTWQwF-JMYIzjg1k2O3CxepTPK6Ru82WoLVFQwtw5DON-XWtcmThKqLTKBF47wfTYGSfYJz1GAnux5sp6teuAoj_Ng"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop w-full max-w-5xl mx-auto flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Context / Brand Identity -->
+<div class="md:w-5/12 flex flex-col justify-center gap-stack-lg sticky top-32 h-fit">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-stack-md">Bespoke Finance Solutions.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our concierge finance team secures tailored structuring for premium acquisitions. Begin your confidential assessment.</p>
+</div>
+<div class="glass-panel p-6 rounded-xl hidden md:block">
+<div class="flex items-start gap-4 mb-4">
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Strictly Confidential</h3>
+<p class="text-on-surface-variant">Your personal data is encrypted and managed with utmost discretion.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: The Form -->
+<div class="md:w-7/12 w-full mt-stack-lg md:mt-0">
+<div class="glass-panel p-6 md:p-10 rounded-2xl relative overflow-hidden">
+<!-- Progress Indicator -->
+<div class="flex justify-between items-center mb-10 relative">
+<div class="absolute left-0 top-1/2 w-full h-[1px] bg-surface-variant -z-10"></div>
+<div class="flex flex-col items-center gap-2 bg-surface-obsidian px-2">
+<div class="w-8 h-8 rounded-full border-2 step-active flex items-center justify-center bg-surface-obsidian font-label-md">1</div>
+<span class="font-label-sm text-label-sm step-active">Details</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface-obsidian px-2">
+<div class="w-8 h-8 rounded-full border-2 step-inactive flex items-center justify-center bg-surface-obsidian font-label-md">2</div>
+<span class="font-label-sm text-label-sm step-inactive">Vehicle</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface-obsidian px-2">
+<div class="w-8 h-8 rounded-full border-2 step-inactive flex items-center justify-center bg-surface-obsidian font-label-md">3</div>
+<span class="font-label-sm text-label-sm step-inactive">Budget</span>
+</div>
+<div class="flex flex-col items-center gap-2 bg-surface-obsidian px-2">
+<div class="w-8 h-8 rounded-full border-2 step-inactive flex items-center justify-center bg-surface-obsidian font-label-md">4</div>
+<span class="font-label-sm text-label-sm step-inactive">Confirm</span>
+</div>
+</div>
+<!-- Step 1 Form -->
+<form class="flex flex-col gap-stack-md" id="finance-form">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Personal Details</h2>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant" for="fullName">Full Legal Name</label>
+<input class="bg-surface-container-high border-0 border-b border-surface-variant text-on-surface px-4 py-3 rounded-t-md input-glow focus:ring-0 transition-colors" id="fullName" placeholder="e.g. John Doe" type="text"/>
+</div>
+<div class="flex flex-col md:flex-row gap-gutter">
+<div class="flex flex-col gap-2 w-full">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<input class="bg-surface-container-high border-0 border-b border-surface-variant text-on-surface px-4 py-3 rounded-t-md input-glow focus:ring-0 transition-colors" id="email" placeholder="contact@domain.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2 w-full">
+<label class="font-label-md text-label-md text-on-surface-variant" for="mobile">Mobile Number</label>
+<input class="bg-surface-container-high border-0 border-b border-surface-variant text-on-surface px-4 py-3 rounded-t-md input-glow focus:ring-0 transition-colors" id="mobile" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="mt-stack-md p-4 bg-surface-container rounded-lg border border-surface-variant/50">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-3">
+<span class="material-symbols-outlined text-gold-accent align-middle text-[16px] mr-1">info</span>
+                            Submission of this form does not constitute a formal credit application or guarantee of approval. It serves as an initial assessment by Prime Lane Motors.
+                        </p>
+<label class="flex items-start gap-3 cursor-pointer group">
+<input class="mt-1 w-4 h-4 rounded border-surface-variant bg-surface-obsidian text-gold-accent focus:ring-gold-accent focus:ring-offset-surface-obsidian" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-hover:text-on-surface transition-colors">I consent to Prime Lane Motors processing my data to provide a preliminary finance assessment.</span>
+</label>
+</div>
+<div class="mt-stack-lg flex justify-end">
+<button class="btn-gradient px-8 py-3 rounded-full font-label-md text-label-md flex items-center gap-2 transition-all" type="button">
+                            Proceed to Vehicle
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-xl z-50 bg-surface-obsidian/90 backdrop-blur-lg border-t border-surface-variant/30 shadow-lg flex justify-around items-center px-margin-mobile py-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined">minor_crash</span>
+<span class="font-label-sm text-label-sm mt-1">Inventory</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-gold-accent rounded-xl px-4 py-1 active:bg-surface-bright scale-110 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

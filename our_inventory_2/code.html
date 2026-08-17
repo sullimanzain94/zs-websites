@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Inventory - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "inverse-surface": "#e2e2e2",
+                            "on-secondary-fixed": "#1b1c1b",
+                            "tertiary": "#ebeaea",
+                            "on-tertiary-container": "#575858",
+                            "on-surface-variant": "#d0c5af",
+                            "on-primary-fixed-variant": "#574400",
+                            "gold-dim": "#d4af37",
+                            "primary-container": "#f2ca50",
+                            "secondary-container": "#474746",
+                            "metallic-silver": "#c8c6c5",
+                            "on-tertiary": "#2f3131",
+                            "on-background": "#e2e2e2",
+                            "surface-variant": "#333535",
+                            "inverse-primary": "#745b00",
+                            "secondary-fixed": "#e4e2e1",
+                            "on-error-container": "#ffdad6",
+                            "tertiary-container": "#cfcece",
+                            "on-primary": "#3d2f00",
+                            "surface-bright": "#383939",
+                            "gold-accent": "#f2ca50",
+                            "surface-container-highest": "#333535",
+                            "primary-fixed": "#ffe08a",
+                            "surface-dim": "#121414",
+                            "on-secondary": "#303030",
+                            "background": "#121414",
+                            "on-secondary-fixed-variant": "#474746",
+                            "inverse-on-surface": "#2f3131",
+                            "on-secondary-container": "#b6b5b4",
+                            "primary-fixed-dim": "#eac249",
+                            "on-primary-fixed": "#241a00",
+                            "on-tertiary-fixed": "#1a1c1c",
+                            "surface-container": "#1e2020",
+                            "tertiary-fixed": "#e3e2e2",
+                            "on-surface": "#e2e2e2",
+                            "surface": "#121414",
+                            "error": "#ffb4ab",
+                            "outline-variant": "#4d4635",
+                            "on-error": "#690005",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "on-tertiary-fixed-variant": "#464747",
+                            "tertiary-fixed-dim": "#c7c6c6",
+                            "surface-obsidian": "#121414",
+                            "outline": "#99907c",
+                            "surface-container-low": "#1a1c1c",
+                            "on-primary-container": "#6b5500",
+                            "primary": "#ffe9b0",
+                            "secondary": "#c8c6c5",
+                            "surface-container-high": "#282a2a",
+                            "surface-container-lowest": "#0d0f0f",
+                            "surface-tint": "#eac249",
+                            "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "margin-mobile": "16px",
+                            "unit": "4px",
+                            "gutter": "16px",
+                            "stack-md": "16px",
+                            "stack-lg": "32px",
+                            "margin-desktop": "32px",
+                            "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": [
+                                    "Manrope"
+                            ],
+                            "label-sm": [
+                                    "JetBrains Mono"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "headline-md": [
+                                    "Manrope"
+                            ],
+                            "headline-lg": [
+                                    "Manrope"
+                            ],
+                            "label-md": [
+                                    "JetBrains Mono"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": [
+                                    "26px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "letterSpacing": "-0.01em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-md": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.02em",
+                                            "fontWeight": "500"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-surface-obsidian text-on-surface font-body-md min-h-screen selection:bg-gold-accent/30 selection:text-gold-accent">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-surface-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md text-gold-accent tracking-tight hover:text-gold-dim transition-colors" href="#">Prime Lane Motors</a>
+<div class="flex gap-6">
+<a class="text-gold-accent border-b-2 border-gold-accent pb-1 font-label-md text-label-md hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Inventory</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Finance</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Sell</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-gold-dim transition-colors active:scale-95 duration-200" href="#">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="relative group">
+<input class="bg-surface-container-highest border-0 border-b border-surface-variant text-on-surface focus:ring-0 focus:border-gold-accent placeholder:text-on-surface-variant/50 px-4 py-2 w-64 transition-all bg-transparent focus:bg-surface-container font-body-md text-body-md" placeholder="Search inventory..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-on-surface-variant group-focus-within:text-gold-accent transition-colors pointer-events-none" data-icon="search">search</span>
+</div>
+<button class="bg-gradient-to-r from-gold-accent to-gold-dim text-on-primary font-label-md text-label-md px-6 py-2.5 rounded hover:opacity-90 transition-opacity active:scale-95 shadow-[0_0_15px_rgba(242,202,80,0.1)]">
+                    Apply for Finance
+                </button>
+<img alt="Customer Avatar" class="w-10 h-10 rounded-full object-cover border border-surface-variant/30" data-alt="A professional headshot of a customer service representative in a dark, high-end studio setting. The lighting is moody with subtle gold rim lights. The style is modern corporate photography, fitting a luxury automotive brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpK-IxED7fPMnvmYhRtOV_6uWQyzd6Eqou_Y4LINbPv4GptYIvyRcMuxOPnM0eQtjKSoV7BBIRloTsF2uU7sXktJmLGH3NfaiwlEhe9KbnBwdljCWMZXWCNHgmTzSZaDdZsNKILu4bAI0ZAwFIM0rSBJwtPuhtPgeQX9cNbgLwYUMEJ8wnI6k1EfaG58rb9y3XS_Sg9F81e9AjVymxz_wBk185hWHDWZOFgwidcfUEnyGPcTebW777YQ"/>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 md:pt-32 pb-32 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-6 border-b border-surface-variant/20">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">Our Inventory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Browse our meticulously curated selection of premium Volkswagen vehicles. Each model undergoes a rigorous inspection to ensure absolute excellence.</p>
+</div>
+<!-- Mobile Filters Toggle -->
+<button class="md:hidden w-full flex items-center justify-center gap-2 border border-surface-variant/50 rounded py-3 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="tune">tune</span>
+                Filters
+            </button>
+</header>
+<div class="flex flex-col lg:flex-row gap-8 items-start">
+<!-- Filters Sidebar -->
+<aside class="hidden md:flex flex-col w-64 shrink-0 gap-8 sticky top-32">
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-label-md text-gold-accent uppercase tracking-wider">Models</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-surface-variant text-gold-accent focus:ring-gold-accent/50 rounded-sm" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-gold-dim transition-colors">Golf R</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-surface-variant text-gold-accent focus:ring-gold-accent/50 rounded-sm" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-gold-dim transition-colors">Polo GTI</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox bg-surface-container border-surface-variant text-gold-accent focus:ring-gold-accent/50 rounded-sm" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-gold-dim transition-colors">Tiguan</span>
+</label>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant/20"></div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-label-md text-gold-accent uppercase tracking-wider">Price Range</h3>
+<div class="flex flex-col gap-4">
+<input class="w-full accent-gold-accent bg-surface-container h-1 rounded-full appearance-none" max="1500000" min="300000" type="range" value="1500000"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>R300k</span>
+<span>R1.5m</span>
+</div>
+</div>
+</div>
+<div class="w-full h-px bg-surface-variant/20"></div>
+<div class="flex flex-col gap-4">
+<h3 class="font-label-md text-label-md text-gold-accent uppercase tracking-wider">Sort By</h3>
+<select class="bg-surface-container-highest border-0 border-b border-surface-variant text-on-surface focus:ring-0 focus:border-gold-accent w-full py-2 font-body-md text-body-md">
+<option>Price: High to Low</option>
+<option>Price: Low to High</option>
+<option>Mileage: Lowest First</option>
+<option>Year: Newest First</option>
+</select>
+</div>
+</aside>
+<!-- Inventory Grid -->
+<div class="flex-1 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Vehicle Card 1: Golf R -->
+<article class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant/20 hover:border-gold-accent/30 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, modern Volkswagen Golf R parked in a dimly lit, high-end industrial garage. The lighting emphasizes the car's aggressive lines and metallic blue paint. Subtle gold reflections bounce off the concrete floor, maintaining the luxurious, corporate obsidian aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5g-9r2viq9pEBMqVdVvdXZLyCk-9f3entNxdfq-NmD6IPlRxLxp1Tj8xw7nMgVSX8HFdf3jzjDI656s3BvjX4XcaW0VMai738zxZJi-j15GVViik-t6UbCPouZJXRZcKAwSwxURGUYZRwEqn-n61Q3yACeUHsvYAnCpBmQmXD3CIDVWAz2DP_NsUmRHtilIPctOu9gfydqYN9T960JDVp0oxqIKtdtpyMk7aVw-KtWqDzwpBz5rPZDQ')"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-obsidian/80 backdrop-blur border border-surface-variant/50 text-gold-accent font-label-sm text-label-sm px-3 py-1 rounded flex items-center gap-1.5 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-gold-accent animate-pulse"></span>
+                                Premium Selected
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">2023 Volkswagen Golf R</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">2.0 TSI 4Motion DSG</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-gold-accent">R 980,000</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 py-4 border-y border-surface-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="speed">speed</span>
+<span class="font-label-md text-label-md text-on-surface">15,400 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface">2023</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-label-md text-label-md text-on-surface">Petrol</span>
+</div>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-4">
+<div class="bg-surface-container-highest/50 rounded p-3 border border-surface-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-gold-accent text-[20px] mt-0.5" data-icon="account_balance">account_balance</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-0.5">Finance Available</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[13px]">Estimated monthly payment from R14,500/month*</p>
+</div>
+</div>
+<button class="w-full py-3 border border-gold-accent text-gold-accent font-label-md text-label-md rounded hover:bg-gold-accent hover:text-on-primary transition-all duration-200 active:scale-[0.98]">
+                                Enquire Now
+                            </button>
+</div>
+</div>
+</article>
+<!-- Vehicle Card 2: Polo GTI -->
+<article class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant/20 hover:border-gold-accent/30 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A pristine white Volkswagen Polo GTI captured in a moody, high-end studio setting. Dramatic directional lighting highlights the red GTI accents and sporty silhouette against a deep charcoal background, evoking a sense of precision and speed." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_dgGzzfAPskYTj3F7CSw4ymZlBuqTM7ddRhwEoRqDeyTsd0lVIfnHvBFXr7YvLTEewQCKT_dhMb5wtY3tY3j2_mL0A-YIefaxyGUwKtDUnpOCoPt35NLZ4ts4Fvtqia0IIJ-Ru7H-Z0kixhirEyQjUkdSw5KrY5M46bdZBkJymJL0706SPGzhYedmV4dH_rjHU_3rdyGGgxfCSfy8t4p__kNtWblLWtOTCCu0ZZGGxcqSv-C7YvGGaQ')"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">2022 Volkswagen Polo GTI</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">2.0 TSI DSG</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-gold-accent">R 520,000</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 py-4 border-y border-surface-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="speed">speed</span>
+<span class="font-label-md text-label-md text-on-surface">32,000 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface">2022</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-label-md text-label-md text-on-surface">Petrol</span>
+</div>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-4">
+<div class="bg-surface-container-highest/50 rounded p-3 border border-surface-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-gold-accent text-[20px] mt-0.5" data-icon="account_balance">account_balance</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-0.5">Finance Available</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[13px]">Estimated monthly payment from R8,200/month*</p>
+</div>
+</div>
+<button class="w-full py-3 border border-gold-accent text-gold-accent font-label-md text-label-md rounded hover:bg-gold-accent hover:text-on-primary transition-all duration-200 active:scale-[0.98]">
+                                Enquire Now
+                            </button>
+</div>
+</div>
+</article>
+<!-- Vehicle Card 3: Tiguan -->
+<article class="group flex flex-col bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant/20 hover:border-gold-accent/30 transition-all duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+<div class="relative aspect-[16/10] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious metallic grey Volkswagen Tiguan R-Line shown in a night city environment. The reflections of city lights play across the sharp body lines. The image is color graded with deep blacks and cool undertones, fitting the modern corporate aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-sy5SrV6jIhhMPaALxzulWxJrp743uPR2Xd549NFejveWkcBxB301aGV3Yn2TXAV4SwVnvTlUoJz5SA0E0SksrWzMqb1mBqiBGPzRV7grO00EO-kq10XaaQrOYgzho-5-hKyTWu5Vjq5qqMNpsl0H8sfI7UCX1xY6xh2qRPSPBfY9IUQP5FwZgFFVoeCbRA9y0EXlVvN9Ei_0niO8Jze-z0IW3o1n_N_QFUyM48Z2X115fenuMg3dnA')"></div>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-1">
+<div class="flex justify-between items-start gap-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">2024 Volkswagen Tiguan</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">2.0 TSI R-Line 4Motion DSG</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-gold-accent">R 890,000</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-x-6 gap-y-2 py-4 border-y border-surface-variant/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="speed">speed</span>
+<span class="font-label-md text-label-md text-on-surface">5,000 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface">2024</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant/70 text-[18px]" data-icon="local_gas_station">local_gas_station</span>
+<span class="font-label-md text-label-md text-on-surface">Petrol</span>
+</div>
+</div>
+<div class="mt-auto pt-2 flex flex-col gap-4">
+<div class="bg-surface-container-highest/50 rounded p-3 border border-surface-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-gold-accent text-[20px] mt-0.5" data-icon="account_balance">account_balance</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-0.5">Finance Available</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-[13px]">Estimated monthly payment from R13,100/month*</p>
+</div>
+</div>
+<button class="w-full py-3 border border-gold-accent text-gold-accent font-label-md text-label-md rounded hover:bg-gold-accent hover:text-on-primary transition-all duration-200 active:scale-[0.98]">
+                                Enquire Now
+                            </button>
+</div>
+</div>
+</article>
+<!-- Empty State Example (Hidden by default, used for search logic) -->
+<div class="hidden flex-col items-center justify-center p-12 col-span-1 md:col-span-2 bg-surface-container-low rounded-lg border border-surface-variant/20 border-dashed">
+<span class="material-symbols-outlined text-[48px] text-surface-variant mb-4" data-icon="search_off">search_off</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">No vehicles found</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-center max-w-md">Try adjusting your filters or search terms to find the perfect vehicle.</p>
+</div>
+</div>
+</div>
+<!-- Finance Disclaimer Section -->
+<section class="mt-8 p-6 bg-surface-container-lowest rounded border border-surface-variant/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
+<h4 class="font-label-md text-label-md text-on-surface mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="info">info</span>
+                * Finance Disclaimer
+            </h4>
+<div class="font-body-md text-body-md text-on-surface-variant/70 text-[12px] leading-relaxed space-y-2">
+<p>Estimated monthly payments are calculated based on a 72-month term, 10% deposit, and an illustrative interest rate of 11.75% (linked to prime). These figures are indicative only and do not constitute a formal quotation or an offer of finance. Actual rates and terms may vary subject to the applicant's credit profile and final approval by the financial institution.</p>
+<p>Prices shown include VAT but exclude licensing, registration, and delivery fees. Finance is subject to approval by an authorized Financial Services Provider. Prime Lane Motors acts as an intermediary in arranging vehicle finance.</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface-obsidian/90 backdrop-blur-lg fixed bottom-0 w-full rounded-t-xl z-50 border-t border-surface-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-2 pb-6">
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+            Home
+        </a>
+<a class="flex flex-col items-center justify-center bg-secondary-container text-gold-accent rounded-xl px-4 py-1 font-label-sm text-label-sm active:bg-surface-bright scale-110 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="minor_crash">minor_crash</span>
+            Inventory
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="payments">payments</span>
+            Finance
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant font-label-sm text-label-sm active:bg-surface-bright scale-110 duration-150 p-2 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

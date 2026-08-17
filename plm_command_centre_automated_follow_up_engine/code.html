@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Command Centre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "gold-dim": "#d4af37",
+                        "surface-container-lowest": "#0d0f0f",
+                        "on-primary-container": "#6b5500",
+                        "on-secondary-fixed": "#1b1c1b",
+                        "tertiary-fixed": "#e3e2e2",
+                        "on-tertiary-container": "#575858",
+                        "secondary-container": "#474746",
+                        "on-tertiary": "#2f3131",
+                        "inverse-on-surface": "#2f3131",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#282a2a",
+                        "primary-fixed-dim": "#eac249",
+                        "surface-container-low": "#1a1c1c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "metallic-silver": "#c8c6c5",
+                        "surface-obsidian": "#121414",
+                        "gold-accent": "#f2ca50",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary": "#ffe9b0",
+                        "tertiary-container": "#cfcece",
+                        "on-primary-fixed": "#241a00",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-tint": "#eac249",
+                        "surface-bright": "#343535",
+                        "outline": "#99907c",
+                        "secondary": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-variant": "#333535",
+                        "tertiary": "#ebeaea",
+                        "surface-container": "#1e2020",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e2e2e2",
+                        "background": "#121414",
+                        "surface-dim": "#121414",
+                        "on-primary": "#3d2f00",
+                        "outline-variant": "#4d4635",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#121414",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed": "#e4e2e1",
+                        "inverse-primary": "#745b00",
+                        "on-secondary-container": "#b6b5b4",
+                        "surface-container-highest": "#333535",
+                        "primary-container": "#f2ca50",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-secondary": "#303030",
+                        "primary-fixed": "#ffe08a",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#574400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .inner-glow { box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1); }
+        .inner-glow-gold { box-shadow: inset 0 1px 0 0 rgba(242, 202, 80, 0.15); }
+        .glass-panel { background: rgba(30, 32, 32, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .gold-gradient-bg { background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b6b5b4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body class="bg-surface-obsidian text-on-surface font-body-md h-screen flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Live Alert Toast -->
+<div class="fixed top-20 right-6 z-50 transform translate-x-full opacity-0 transition-all duration-500 ease-out bg-surface-container-high border-l-4 border-l-primary rounded-lg shadow-2xl p-4 max-w-sm" id="live-alert-toast">
+<div class="flex items-start gap-3">
+<div class="p-2 bg-primary-container/10 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<h4 class="font-headline-md text-sm text-on-surface mb-1">HOT LEAD ARRIVAL: Sipho M.</h4>
+<p class="text-xs text-on-surface-variant font-body-md mb-3">2024 VW Polo 1.0 TSI | R4,000/mo | Score: 88</p>
+<div class="flex flex-col gap-2">
+<button class="w-full py-1.5 px-3 rounded text-xs font-label-md bg-surface-variant text-on-surface hover:bg-surface-bright transition-colors text-left flex items-center justify-between">
+                    Assign to Agent <span class="material-symbols-outlined text-[14px]">person_add</span>
+</button>
+<button class="w-full py-1.5 px-3 rounded text-xs font-label-md bg-surface-variant text-on-surface hover:bg-surface-bright transition-colors text-left flex items-center justify-between" onclick="document.getElementById('drawer').classList.remove('translate-x-full'); document.getElementById('live-alert-toast').classList.add('translate-x-full', 'opacity-0');">
+                    Open Drawer <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+<button class="w-full py-1.5 px-3 rounded text-xs font-label-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors text-left flex items-center justify-between">
+                    Send Instant WhatsApp <span class="material-symbols-outlined text-[14px]">chat</span>
+</button>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 shrink-0" onclick="document.getElementById('live-alert-toast').classList.add('translate-x-full', 'opacity-0')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Lead Score Weighting Modal -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4" id="scoring-modal">
+<div class="bg-surface-container-high rounded-xl border border-white/10 shadow-2xl w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300" id="scoring-modal-content">
+<div class="p-6 border-b border-white/10 flex justify-between items-center bg-surface-container">
+<h2 class="font-headline-md text-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tune</span> Scoring Weights
+            </h2>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 bg-surface-variant rounded-full" onclick="document.getElementById('scoring-modal').classList.remove('opacity-100', 'pointer-events-auto'); document.getElementById('scoring-modal-content').classList.remove('scale-100')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-6 space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Model Match</span>
+<span class="text-primary font-medium">+30 pts</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="30"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Budget Viability</span>
+<span class="text-primary font-medium">+25 pts</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="25"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Verified Contact</span>
+<span class="text-primary font-medium">+20 pts</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="20"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Digital Engagement</span>
+<span class="text-primary font-medium">+25 pts</span>
+</div>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="25"/>
+</div>
+</div>
+<div class="p-6 border-t border-white/10 bg-surface-container">
+<button class="w-full py-3 px-4 rounded-lg gold-gradient-bg text-on-primary-container font-label-md text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity font-bold" onclick="document.getElementById('scoring-modal').classList.remove('opacity-100', 'pointer-events-auto'); document.getElementById('scoring-modal-content').classList.remove('scale-100')">
+                Save &amp; Recalculate
+            </button>
+</div>
+</div>
+</div>
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-white/5 h-full w-64 left-0 pt-4 z-20 shrink-0">
+<div class="px-6 mb-8 flex flex-col gap-1">
+<h1 class="font-headline-md text-headline-md text-primary">Command Centre</h1>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Internal Operations</span>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full py-2 px-4 rounded-lg gold-gradient-bg text-on-primary-container font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Application
+            </button>
+</div>
+<ul class="flex-1 flex flex-col gap-1 px-2 font-label-sm text-label-sm font-medium overflow-y-auto hide-scrollbar">
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 bg-primary-container text-on-primary-container rounded-lg mx-2 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">person_search</span>
+                    Leads
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+                    Pipeline
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                    Applications
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+                    Verification
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+                    Decisions
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                    Follow-ups
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 py-2.5 px-4 text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[18px]">analytics</span>
+                    Analytics
+                </a>
+</li>
+</ul>
+<div class="p-6 border-t border-white/5 flex items-center gap-3 mt-auto">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A macro shot of a sleek, polished obsidian badge with a subtly glowing gold 'PLM' logo embedded within, representing high-end automotive luxury branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBryB2D7Z2YeaItGlod5-4JkbfVFRUsXkoLM9aDiRSyH2GI-WIayKuzw_HW2w93AjmiqRtzwP1gchFKDmiNmTg_N1Clw6Wmdht9TleRLxyX0ST2BxUl9jNQ9PuzQ85TqXQqIQCEe0gMBUO0oYJeSJSX5NdztcWXBsaT2uTmqrKOCs8onFAs787vHPYYhYjP3WEYhQ_p4Gg40s0BJPkoytdnqOiYAkrcoX0LBbDqjVLcqscFLPlhSYolhw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PLM Official Logo</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 relative">
+<!-- TopNavBar (Shared Component - Small) -->
+<header class="bg-surface-container dark:bg-surface-container border-b border-white/10 shadow-sm flex justify-between items-center w-full px-gutter py-2 sticky top-0 z-10 glass-panel">
+<div class="flex items-center gap-4 flex-1">
+<span class="md:hidden font-headline-md text-headline-md text-primary">Command Centre</span>
+<!-- Search -->
+<div class="hidden md:flex relative max-w-md w-full items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-lowest border-b border-white/10 text-on-surface pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary focus:border-b-2 transition-colors rounded-t" placeholder="Search leads, vehicles, VIN..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 shrink-0 font-body-md text-body-md text-on-surface-variant">
+<button class="text-xs font-label-md py-1 px-3 border border-primary/30 text-primary rounded hover:bg-primary/10 transition-colors" onclick="document.getElementById('live-alert-toast').classList.remove('translate-x-full', 'opacity-0')">
+    Simulate Lead
+</button>
+<button class="relative hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full ring-2 ring-surface-container"></span>
+</button>
+<button class="hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-6 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-8 h-8 rounded-full object-cover ring-1 ring-white/10" data-alt="Professional headshot of a well-dressed executive manager in a dark tailored suit, subtle dramatic lighting against an obsidian background, exuding trust and high competence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMZ1S3fHu2opbWBRD0RGrumeZUSYM4hpr2blMvBsefh717esr6F50xOQ9H_UQ5wTsgtnXIE09WQNoFT80I78fltDRj2hMiZMJi3oo5Q67VZYYZ2GeCF9eLGEuYyqFpVnD-n9qXJN_qrIhVSFbIKNAX3UlWMoENy10C_sHJAwviwjwa2vqPbNasr0Zfzdl7UtHVzbh37MiGTdeWIEEEmbZx7qIzgrOrHCFpiMD2-jUDgeebP6vFSjgLg"/>
+<span class="text-sm font-medium hidden sm:block">Zain Sulliman</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Canvas -->
+<div class="flex-1 overflow-y-auto p-gutter md:p-margin-desktop">
+<!-- Bento Grid: Lead Quality Breakdown -->
+<section class="mb-stack-lg">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                        Lead Quality Breakdown
+                    </h2>
+<button class="text-xs font-label-md text-on-surface-variant hover:text-primary flex items-center gap-1 transition-colors border border-white/10 rounded py-1 px-3 bg-surface-container" onclick="document.getElementById('scoring-modal').classList.add('opacity-100', 'pointer-events-auto'); document.getElementById('scoring-modal-content').classList.add('scale-100')">
+<span class="material-symbols-outlined text-[16px]">tune</span> Scoring Weights
+    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-high rounded-xl p-4 inner-glow flex flex-col justify-between h-32 hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider group-hover:text-on-surface transition-colors">Total Leads</span>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">1,248</div>
+<div class="text-xs text-primary flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12% vs LW
+                            </div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-high rounded-xl p-4 inner-glow flex flex-col justify-between h-32 hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider group-hover:text-on-surface transition-colors">Qualified</span>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">892</div>
+<div class="text-xs text-on-surface-variant">71.4% Rate</div>
+</div>
+</div>
+<!-- Card 3: Hot -->
+<div class="bg-surface-container-highest rounded-xl p-4 inner-glow-gold flex flex-col justify-between h-32 relative overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-primary-container/5"></div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider relative z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> Hot Leads
+                        </span>
+<div class="relative z-10">
+<div class="font-headline-lg text-headline-lg text-primary mb-1">345</div>
+<div class="text-xs text-on-surface-variant font-label-sm">Score 80-100</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-high rounded-xl p-4 inner-glow flex flex-col justify-between h-32 hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> Action Req
+                        </span>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">412</div>
+<div class="text-xs text-on-surface-variant">Pending follow-up</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-high rounded-xl p-4 inner-glow flex flex-col justify-between h-32 hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider group-hover:text-on-surface transition-colors">Conv. Rate</span>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">18.5<span class="text-lg">%</span></div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-high rounded-xl p-4 inner-glow flex flex-col justify-between h-32 hover:bg-surface-bright transition-colors cursor-pointer group">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider group-hover:text-on-surface transition-colors">Avg. Response</span>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-1">14<span class="text-lg">m</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Table Section -->
+<section class="bg-surface-container-high rounded-xl inner-glow border border-white/5 overflow-hidden flex flex-col">
+<div class="p-4 border-b border-white/10 flex justify-between items-center bg-surface-container">
+<h3 class="font-headline-md text-headline-md text-on-surface text-lg">Active Leads Queue</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 text-sm font-medium">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="border-b border-white/5 bg-surface-obsidian text-xs uppercase font-label-md text-on-surface-variant tracking-wider">
+<th class="py-3 px-4 font-medium">Lead Name</th>
+<th class="py-3 px-4 font-medium">Target Vehicle</th>
+<th class="py-3 px-4 font-medium text-right">Price/Budget</th>
+<th class="py-3 px-4 font-medium">Score</th>
+<th class="py-3 px-4 font-medium">Status</th>
+<th class="py-3 px-4 font-medium text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body-md divide-y divide-white/5" id="leads-table-body">
+<!-- Row 1: Active Drawer Trigger -->
+<tr class="hover:bg-surface-bright transition-colors bg-surface-container-highest border-l-4 border-l-primary group">
+<td class="py-3 px-4 flex items-center gap-3 cursor-pointer" onclick="document.getElementById('drawer').classList.remove('translate-x-full')">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center font-bold text-on-surface-variant text-xs">MR</div>
+<span class="font-semibold text-on-surface">Marcus R.</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant group-hover:text-on-surface transition-colors cursor-pointer" onclick="document.getElementById('drawer').classList.remove('translate-x-full')">VW Golf 8 R</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface cursor-pointer" onclick="document.getElementById('drawer').classList.remove('translate-x-full')">R850,000</td>
+<td class="py-3 px-4 cursor-pointer" onclick="document.getElementById('drawer').classList.remove('translate-x-full')">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden w-16">
+<div class="bg-primary h-full w-[92%]"></div>
+</div>
+<span class="text-primary font-bold">92</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<select class="bg-surface-variant text-xs font-label-sm text-on-surface border border-white/10 rounded py-1 pl-2 pr-6 focus:outline-none focus:ring-1 focus:ring-primary w-full max-w-[140px]" onchange="this.closest('tr').className = `hover:bg-surface-bright transition-colors bg-surface-container-highest border-l-4 group ${this.value === 'Lost' ? 'border-l-error bg-error/5' : this.value === 'Finance Approved' ? 'border-l-green-500 bg-green-500/5' : 'border-l-primary'}`">
+<option selected="" value="New Lead">New Lead</option>
+<option value="Contacted">Contacted</option>
+<option value="Qualified">Qualified</option>
+<option value="Vehicle Selected">Vehicle Selected</option>
+<option value="Finance Application">Finance Application</option>
+<option value="Awaiting Approval">Awaiting Approval</option>
+<option value="Finance Approved">Finance Approved</option>
+<option value="Deal Preparation">Deal Preparation</option>
+<option value="Vehicle Ready">Vehicle Ready</option>
+<option value="Sale Completed">Sale Completed</option>
+<option value="Post-Sale Follow-Up">Post-Sale Follow-Up</option>
+<option value="Lost">Lost</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center cursor-pointer" onclick="document.getElementById('drawer').classList.remove('translate-x-full')">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chevron_right</span></button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors border-l-4 border-l-transparent">
+<td class="py-3 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center font-bold text-on-surface-variant text-xs">SB</div>
+<span class="font-medium text-on-surface">Sarah B.</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">VW Tiguan 1.4 TSI</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface-variant">R580,000</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden w-16">
+<div class="bg-primary h-full w-[85%] opacity-80"></div>
+</div>
+<span class="text-primary font-medium opacity-90">85</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<select class="bg-surface-variant text-xs font-label-sm text-on-surface-variant border border-white/10 rounded py-1 pl-2 pr-6 focus:outline-none focus:ring-1 focus:ring-primary w-full max-w-[140px]" onchange="this.closest('tr').className = `hover:bg-surface-bright transition-colors border-l-4 ${this.value === 'Lost' ? 'border-l-error bg-error/5' : this.value === 'Finance Approved' ? 'border-l-green-500 bg-green-500/5' : 'border-l-transparent'}`">
+<option value="New Lead">New Lead</option>
+<option selected="" value="Contacted">Contacted</option>
+<option value="Qualified">Qualified</option>
+<option value="Vehicle Selected">Vehicle Selected</option>
+<option value="Finance Application">Finance Application</option>
+<option value="Awaiting Approval">Awaiting Approval</option>
+<option value="Finance Approved">Finance Approved</option>
+<option value="Deal Preparation">Deal Preparation</option>
+<option value="Vehicle Ready">Vehicle Ready</option>
+<option value="Sale Completed">Sale Completed</option>
+<option value="Post-Sale Follow-Up">Post-Sale Follow-Up</option>
+<option value="Lost">Lost</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors border-l-4 border-l-transparent">
+<td class="py-3 px-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center font-bold text-on-surface-variant text-xs">JM</div>
+<span class="font-medium text-on-surface">James M.</span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">VW Polo GTI</td>
+<td class="py-3 px-4 text-right font-label-md text-on-surface-variant">R450,000</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden w-16">
+<div class="bg-on-surface-variant h-full w-[78%]"></div>
+</div>
+<span class="text-on-surface-variant font-medium">78</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<select class="bg-surface-variant text-xs font-label-sm text-on-surface-variant border border-white/10 rounded py-1 pl-2 pr-6 focus:outline-none focus:ring-1 focus:ring-primary w-full max-w-[140px]" onchange="this.closest('tr').className = `hover:bg-surface-bright transition-colors border-l-4 ${this.value === 'Lost' ? 'border-l-error bg-error/5' : this.value === 'Finance Approved' ? 'border-l-green-500 bg-green-500/5' : 'border-l-transparent'}`">
+<option value="New Lead">New Lead</option>
+<option value="Contacted">Contacted</option>
+<option selected="" value="Qualified">Qualified</option>
+<option value="Vehicle Selected">Vehicle Selected</option>
+<option value="Finance Application">Finance Application</option>
+<option value="Awaiting Approval">Awaiting Approval</option>
+<option value="Finance Approved">Finance Approved</option>
+<option value="Deal Preparation">Deal Preparation</option>
+<option value="Vehicle Ready">Vehicle Ready</option>
+<option value="Sale Completed">Sale Completed</option>
+<option value="Post-Sale Follow-Up">Post-Sale Follow-Up</option>
+<option value="Lost">Lost</option>
+</select>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<div class="h-32"></div> <!-- Spacer for scrolling -->
+</div>
+</main>
+<!-- Slide-out Drawer: Lead Detail -->
+<!-- Drawer backdrop (hidden by default in this demo unless wired up, but structuring it correctly) -->
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop"></div>
+<aside class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-surface-container-lowest border-l border-white/10 shadow-2xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col" id="drawer">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-white/10 flex justify-between items-start bg-surface-container-high/50">
+<div>
+<div class="inline-flex items-center gap-1.5 py-1 px-2 rounded bg-primary-container/10 border border-primary/20 text-[10px] font-label-sm text-primary mb-3">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span> 92/100 - HOT LEAD
+                </div>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface">Marcus R.</h2>
+<div class="text-xs text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span> High Probability
+                </div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 bg-surface-variant rounded-full" onclick="document.getElementById('drawer').classList.add('translate-x-full')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Content (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6 hide-scrollbar">
+<!-- Contact Details -->
+<div class="bg-surface-container rounded-xl p-4 inner-glow border border-white/5 space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div class="flex-1">
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label-sm">Email</div>
+<div class="text-sm font-medium text-on-surface">primelanemotors2@gmail.com</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">phone_iphone</span>
+</div>
+<div class="flex-1">
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label-sm">WhatsApp / Phone</div>
+<div class="text-sm font-medium text-on-surface">+27 65 757 2632</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex-1">
+<div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label-sm">Target Budget</div>
+<div class="text-sm font-medium text-primary font-label-md">R850,000</div>
+</div>
+</div>
+<div class="flex items-center gap-3"><div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">photo_camera</span></div><div class="flex-1"><div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label-sm">Instagram</div><a class="text-sm font-medium text-primary hover:underline" href="https://instagram.com/Powered_by_primelane" target="_blank">@Powered_by_primelane</a></div></div></div>
+<!-- Vehicle Card Preview -->
+<div>
+<h4 class="text-xs uppercase tracking-wider text-on-surface-variant font-label-sm mb-3">Vehicle of Interest</h4>
+<div class="bg-surface-container rounded-xl overflow-hidden inner-glow border border-white/5 group relative">
+<div class="h-32 w-full relative">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A dramatic studio shot of a Lapiz Blue Volkswagen Golf 8 R under stark, moody lighting, showcasing its aggressive front grille and modern LED lightbar against a pitch-black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANHLZqsCBOrzgNGecynnU_Nd5o7hGL9PWSlDLeMbky5ygWMElYvfjH1VU0v9cqc0mxWiB1FodVFEJieLvYXWZ3O7CGhpbjNutngPn6DEvDOHlNrAgioNiaErBOb08Lb4iFRhi1JoaRt587IlFEw2zbCu-qOxN34zausEZ0VACwtFcEBMVZoYauu9TrAjxGxhSDcrPhAQPV5B5rOEGQbXTxG2jXE_M609voqOmR1V5GSkoc0ZSXF6rkGA"/>
+<span class="absolute top-2 right-2 z-20 bg-surface-obsidian/80 backdrop-blur text-[10px] px-2 py-1 rounded text-on-surface font-label-sm border border-white/10">In Stock</span>
+</div>
+<div class="p-4 relative z-20 -mt-8">
+<h3 class="font-headline-md text-lg text-on-surface mb-1">VW Golf 8 R</h3>
+<p class="text-xs text-on-surface-variant line-clamp-1">2.0 TSI 235kW 4MOTION DSG</p>
+</div>
+</div>
+</div>
+<!-- Scoring Breakdown -->
+<div>
+<h4 class="text-xs uppercase tracking-wider text-on-surface-variant font-label-sm mb-3 flex items-center justify-between">
+                    Scoring Breakdown
+                    <span class="text-primary font-bold">92 Total</span>
+</h4>
+<div class="bg-surface-container rounded-xl p-4 inner-glow border border-white/5 space-y-3 font-label-sm text-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">directions_car</span>
+                            VW Model Match
+                        </div>
+<span class="text-primary font-medium">+30 pts</span>
+</div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calculate</span>
+                            Calculated Budget
+                        </div>
+<span class="text-primary font-medium">+25 pts</span>
+</div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">how_to_reg</span>
+                            Verified Contact
+                        </div>
+<span class="text-on-surface-variant font-medium">+15 pts</span>
+</div>
+<div class="w-full h-px bg-white/5"></div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">mouse</span>
+                            Direct Site Activity
+                        </div>
+<span class="text-primary font-medium">+22 pts</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer / Actions -->
+<div class="p-6 border-t border-white/10 bg-surface-container-highest flex flex-col gap-3 mt-auto"><div class="space-y-4 mb-4"><div class="text-xs font-label-sm text-on-surface-variant uppercase tracking-wider">Internal Activity Log</div><textarea class="w-full bg-surface-container-lowest border border-white/10 rounded-lg p-3 text-xs text-on-surface focus:ring-1 focus:ring-primary focus:outline-none h-20 resize-none" placeholder="Add internal call note or stage update..."></textarea><div class="flex flex-wrap gap-2"><button class="px-2 py-1 rounded bg-surface-variant text-[10px] text-on-surface-variant hover:text-primary transition-colors border border-white/5">[Left Voicemail]</button><button class="px-2 py-1 rounded bg-surface-variant text-[10px] text-on-surface-variant hover:text-primary transition-colors border border-white/5">[Verified Budget]</button><button class="px-2 py-1 rounded bg-surface-variant text-[10px] text-on-surface-variant hover:text-primary transition-colors border border-white/5">[Bank Docs Requested]</button></div><button class="w-full py-2 px-4 rounded-lg border border-primary/30 text-primary font-label-md text-xs hover:bg-primary/10 transition-colors">Save to Supabase Activity Log</button></div><div class="flex flex-col gap-2"><button class="w-full py-3 px-4 rounded-lg gold-gradient-bg text-on-primary-container font-label-md text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity font-bold" onclick="document.getElementById('whatsapp-modal').classList.add('opacity-100', 'pointer-events-auto'); document.getElementById('whatsapp-modal-content').classList.add('scale-100')"><span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp Follow-Up</button><button class="w-full py-2 px-4 rounded-lg bg-transparent text-error font-label-md text-xs flex items-center justify-center gap-2 hover:bg-error/10 transition-colors"><span class="material-symbols-outlined text-[18px]">cancel</span> Mark as Lost</button></div></div>
+</aside>
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4" id="whatsapp-modal"><div class="bg-surface-container-high rounded-xl border border-white/10 shadow-2xl w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300" id="whatsapp-modal-content"><div class="p-6 border-b border-white/10 flex justify-between items-center bg-surface-container"><h2 class="font-headline-md text-lg text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">chat</span> WhatsApp Follow-Up</h2><button class="text-on-surface-variant hover:text-on-surface transition-colors p-1 bg-surface-variant rounded-full" onclick="document.getElementById('whatsapp-modal').classList.remove('opacity-100', 'pointer-events-auto'); document.getElementById('whatsapp-modal-content').classList.remove('scale-100')"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-6 space-y-4"><div class="p-3 bg-surface-container rounded-lg border border-white/5"><div class="text-[10px] uppercase tracking-wider text-on-surface-variant font-label-sm mb-1">Lead Context</div><div class="text-sm font-medium text-on-surface">Marcus R. | VW Golf 8 R | R850,000</div></div><div class="space-y-3"><div class="text-xs font-label-sm text-on-surface-variant uppercase tracking-wider">Select Template</div><label class="block p-3 rounded-lg border border-white/10 bg-surface-variant/30 hover:bg-surface-variant/50 cursor-pointer transition-colors"><input checked="" class="hidden peer" name="wa-template" type="radio"/><div class="text-xs font-medium text-primary mb-1">Template 1: Welcome &amp; Specs</div><p class="text-[11px] text-on-surface-variant leading-relaxed">Hi Marcus, thanks for reaching out to Prime Lane Motors! Here are the details for the 2024 VW Golf 8 R...</p></label><label class="block p-3 rounded-lg border border-white/10 bg-surface-variant/30 hover:bg-surface-variant/50 cursor-pointer transition-colors"><input class="hidden peer" name="wa-template" type="radio"/><div class="text-xs font-medium text-primary mb-1">Template 2: Document Request</div><p class="text-[11px] text-on-surface-variant leading-relaxed">Hi Marcus, to move your finance application forward, please reply with your ID copy, latest payslip...</p></label></div></div><div class="p-6 border-t border-white/10 bg-surface-container"><a class="w-full py-3 px-4 rounded-lg gold-gradient-bg text-on-primary-container font-label-md text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity font-bold" href="https://wa.me/27657572632" target="_blank"><span class="material-symbols-outlined text-[18px]">send</span> Send via WhatsApp</a></div></div></div></body></html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finance Enquiry - Prime Lane Motors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#303030",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-highest": "#343535",
+                        "outline-variant": "#4d4635",
+                        "surface": "#121414",
+                        "primary": "#f2ca50",
+                        "on-background": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#474746",
+                        "inverse-on-surface": "#2f3131",
+                        "on-surface": "#e3e2e2",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-tint": "#e9c349",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-primary": "#735c00",
+                        "surface-container-low": "#1a1c1c",
+                        "tertiary-container": "#b4b2b2",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed": "#e4e2e1",
+                        "background": "#121414",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#343535",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "tertiary": "#d0cdcd",
+                        "outline": "#99907c",
+                        "surface-bright": "#383939",
+                        "surface-container": "#1e2020",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary-container": "#454545",
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#d0c5af",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-surface": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope", "sans-serif"],
+                        "headline-lg": ["Manrope", "sans-serif"],
+                        "headline-lg-mobile": ["Manrope", "sans-serif"],
+                        "label-sm": ["JetBrains Mono", "monospace"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(153, 144, 124, 0.1);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(242, 202, 80, 0.1);
+        }
+        
+        .input-field {
+            background-color: theme('colors.surface-container-highest');
+            border: 1px solid transparent;
+            border-bottom: 1px solid theme('colors.outline-variant');
+            color: theme('colors.on-surface');
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary');
+            box-shadow: 0 1px 0 0 theme('colors.primary');
+            background-color: theme('colors.surface-container');
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, theme('colors.primary-fixed'), theme('colors.primary-container'));
+            color: theme('colors.on-primary');
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid theme('colors.primary');
+            color: theme('colors.primary');
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(242, 202, 80, 0.1);
+        }
+
+        .step-indicator.active .step-dot {
+            background-color: theme('colors.primary');
+            box-shadow: 0 0 10px rgba(242, 202, 80, 0.5);
+        }
+        
+        .step-indicator.active .step-text {
+            color: theme('colors.primary');
+        }
+        
+        .step-indicator.completed .step-dot {
+            background-color: theme('colors.primary-container');
+        }
+
+        .step-line {
+            background-color: theme('colors.surface-container-high');
+        }
+        
+        .step-line.active {
+            background-color: theme('colors.primary-container');
+        }
+
+        /* Hide all steps initially except the first */
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.4s ease-out; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl bg-surface-container-low/90 border-b border-outline-variant/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-container-padding py-stack-sm max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-primary tracking-tight uppercase">Prime Lane Motors</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 font-body-lg text-body-lg" href="#">Inventory</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 font-body-lg text-body-lg" href="#">Showroom</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 font-body-lg text-body-lg" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 font-body-lg text-body-lg" href="#">Concierge</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                    WhatsApp
+                </button>
+<!-- Close action since this is a transactional flow -->
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+<div class="w-full max-w-3xl mb-12 text-center">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Finance Pre-Approval</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Complete this secure form to initiate your private finance concierge service.</p>
+</div>
+<!-- Stepper -->
+<div class="w-full max-w-4xl mb-16 relative">
+<div class="absolute top-1/2 left-0 w-full h-0.5 -translate-y-1/2 z-0 flex">
+<div class="h-full w-1/2 step-line active" id="line-1"></div>
+<div class="h-full w-1/2 step-line" id="line-2"></div>
+</div>
+<div class="relative z-10 flex justify-between">
+<div class="step-indicator active flex flex-col items-center gap-3 w-32" id="indicator-1">
+<div class="w-8 h-8 rounded-full bg-surface-container border-2 border-primary-container step-dot flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold">person</span>
+</div>
+<span class="font-label-sm text-label-sm step-text text-center uppercase">Personal Info</span>
+</div>
+<div class="step-indicator flex flex-col items-center gap-3 w-32" id="indicator-2">
+<div class="w-8 h-8 rounded-full bg-surface-container border-2 border-surface-container-high step-dot flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">account_balance</span>
+</div>
+<span class="font-label-sm text-label-sm step-text text-on-surface-variant text-center uppercase">Financial Profile</span>
+</div>
+<div class="step-indicator flex flex-col items-center gap-3 w-32" id="indicator-3">
+<div class="w-8 h-8 rounded-full bg-surface-container border-2 border-surface-container-high step-dot flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">directions_car</span>
+</div>
+<span class="font-label-sm text-label-sm step-text text-on-surface-variant text-center uppercase">Vehicle Reqs</span>
+</div>
+</div>
+</div>
+<!-- Form Container -->
+<div class="w-full max-w-2xl glass-panel rounded-xl p-8 md:p-12 gold-glow">
+<form id="financeForm" onsubmit="event.preventDefault(); submitForm();">
+<!-- Step 1: Personal Info -->
+<div class="form-step active" id="step1">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-2 border-primary pl-4">Personal Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">First Name</label>
+<input class="input-field rounded-lg px-4 py-3 w-full" placeholder="Enter first name" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Last Name</label>
+<input class="input-field rounded-lg px-4 py-3 w-full" placeholder="Enter last name" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="input-field rounded-lg pl-12 pr-4 py-3 w-full" placeholder="client@example.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">call</span>
+<input class="input-field rounded-lg pl-12 pr-4 py-3 w-full" placeholder="+27 XX XXX XXXX" required="" type="tel"/>
+</div>
+</div>
+<div class="flex justify-end pt-4">
+<button class="btn-primary rounded-full px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-2" onclick="nextStep(2)" type="button">
+                            Continue to Financials
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Financial Profile -->
+<div class="form-step" id="step2">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-2 border-primary pl-4">Financial Profile</h2>
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Employment Status</label>
+<select class="input-field rounded-lg px-4 py-3 w-full appearance-none cursor-pointer" required="">
+<option disabled="" selected="" value="">Select status</option>
+<option value="employed">Full-time Employed</option>
+<option value="self">Self-Employed / Business Owner</option>
+<option value="contract">Contractor</option>
+<option value="retired">Retired</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant mt-8">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Gross Monthly Income</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-label-sm">R</span>
+<input class="input-field rounded-lg pl-8 pr-4 py-3 w-full" placeholder="0.00" required="" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Monthly Expenses</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-label-sm">R</span>
+<input class="input-field rounded-lg pl-8 pr-4 py-3 w-full" placeholder="0.00" required="" type="number"/>
+</div>
+</div>
+</div>
+<div class="flex justify-between pt-4">
+<button class="btn-secondary rounded-full px-6 py-3 font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-2" onclick="prevStep(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                            Back
+                        </button>
+<button class="btn-primary rounded-full px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-2" onclick="nextStep(3)" type="button">
+                            Continue to Vehicle
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Vehicle Requirements -->
+<div class="form-step" id="step3">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-l-2 border-primary pl-4">Vehicle Requirements</h2>
+<div class="flex flex-col gap-2 mb-8">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Target Vehicle / Model (Optional)</label>
+<input class="input-field rounded-lg px-4 py-3 w-full" placeholder="e.g. Porsche 911 GT3" type="text"/>
+</div>
+<div class="flex flex-col gap-4 mb-10">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider flex justify-between">
+<span>Target Monthly Installment</span>
+<span class="text-primary font-bold" id="installment-display">R 4,000</span>
+</label>
+<input class="w-full h-1 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary" max="50000" min="2000" oninput="document.getElementById('installment-display').innerText = 'R ' + Number(this.value).toLocaleString()" step="500" type="range" value="4000"/>
+<div class="flex justify-between text-xs text-on-surface-variant font-label-sm mt-1">
+<span>R 2,000</span>
+<span>R 50,000+</span>
+</div>
+</div>
+<div class="flex items-start gap-3 mb-8 p-4 rounded-lg bg-surface-container-low border border-outline-variant/30">
+<input class="mt-1 rounded bg-surface border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface" id="consent" required="" type="checkbox"/>
+<label class="text-sm text-on-surface-variant leading-relaxed" for="consent">
+                            I consent to Prime Lane Motors processing my personal information for the purpose of a finance pre-approval check. I understand this is not a final credit offer.
+                        </label>
+</div>
+<div class="flex justify-between pt-4">
+<button class="btn-secondary rounded-full px-6 py-3 font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-2" onclick="prevStep(2)" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                            Back
+                        </button>
+<button class="btn-primary rounded-full px-8 py-3 font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-2 shadow-[0_0_15px_rgba(242,202,80,0.3)]" type="submit">
+                            Submit Enquiry
+                            <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bg-surface-container-lowest border-t border-outline-variant/10 py-stack-lg px-container-padding flex flex-col items-center gap-stack-md mt-auto">
+<div class="font-headline-md text-headline-md text-primary mb-2">Prime Lane Motors</div>
+<div class="flex flex-wrap justify-center gap-6 mb-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Financial Disclosure</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 text-center max-w-3xl text-sm">
+            © 2024 Prime Lane Motors. All rights reserved. Private Concierge Automotive Group. <br/><br/>
+            Finance is subject to credit approval and terms and conditions. Prime Lane Motors acts as an intermediary for selected financial service providers. The indicated monthly installments are estimates based on standard parameters and do not constitute a binding offer.
+        </p>
+</footer>
+<script>
+        function updateStepper(step) {
+            // Update Indicators
+            for(let i=1; i<=3; i++) {
+                const ind = document.getElementById(`indicator-${i}`);
+                const dot = ind.querySelector('.step-dot');
+                const icon = ind.querySelector('span');
+                const text = ind.querySelector('.step-text');
+                
+                ind.classList.remove('active', 'completed');
+                dot.classList.remove('border-primary-container', 'bg-primary-container');
+                dot.classList.add('border-surface-container-high');
+                icon.classList.remove('text-surface', 'text-on-primary');
+                icon.classList.add('text-on-surface-variant');
+                text.classList.remove('text-primary');
+                text.classList.add('text-on-surface-variant');
+
+                if (i < step) {
+                    ind.classList.add('completed');
+                    dot.classList.remove('border-surface-container-high');
+                    dot.classList.add('bg-primary-container', 'border-primary-container');
+                    icon.classList.remove('text-on-surface-variant');
+                    icon.classList.add('text-on-primary');
+                    icon.innerText = 'check';
+                } else if (i === step) {
+                    ind.classList.add('active');
+                    dot.classList.remove('border-surface-container-high');
+                    dot.classList.add('border-primary-container');
+                    icon.classList.remove('text-on-surface-variant');
+                    icon.classList.add('text-surface');
+                    text.classList.remove('text-on-surface-variant');
+                    text.classList.add('text-primary');
+                    
+                    // Reset icons for active step if coming backwards
+                    if(i===1) icon.innerText = 'person';
+                    if(i===2) icon.innerText = 'account_balance';
+                    if(i===3) icon.innerText = 'directions_car';
+                }
+            }
+
+            // Update Lines
+            document.getElementById('line-1').classList.toggle('active', step >= 2);
+            document.getElementById('line-2').classList.toggle('active', step === 3);
+        }
+
+        function nextStep(step) {
+            // Basic validation check for the current step before proceeding
+            const currentStepEl = document.getElementById(`step${step-1}`);
+            const inputs = currentStepEl.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+            inputs.forEach(input => {
+                if(!input.value) {
+                    isValid = false;
+                    input.classList.add('border-error');
+                } else {
+                    input.classList.remove('border-error');
+                }
+            });
+
+            if(!isValid) return; // Prevent moving forward if invalid
+
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            updateStepper(step);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            updateStepper(step);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function submitForm() {
+            const btn = document.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Processing...';
+            btn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Enquiry Sent';
+                btn.classList.remove('btn-primary');
+                btn.style.background = '#4CAF50';
+                btn.style.color = 'white';
+                
+                setTimeout(() => {
+                    alert('Your finance enquiry has been submitted successfully to our private concierge team.');
+                    location.reload();
+                }, 1000);
+            }, 1500);
+        }
+    </script>
+</body></html>

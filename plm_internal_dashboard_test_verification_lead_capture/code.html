@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - Test Mode Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700&amp;family=Hanken+Grotesk:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-highest": "#343535",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#d0c5af",
+                        "primary": "#f2ca50",
+                        "inverse-primary": "#735c00",
+                        "surface-tint": "#e9c349",
+                        "on-secondary": "#313030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "outline-variant": "#4d4635",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface": "#121414",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#474746",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-tertiary": "#303030",
+                        "on-primary": "#3c2f00",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#b4b2b2",
+                        "secondary": "#c8c6c5",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#e3e2e2",
+                        "primary-container": "#d4af37",
+                        "inverse-surface": "#e3e2e2",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary": "#d0cdcd",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-primary-fixed": "#241a00",
+                        "on-background": "#e3e2e2",
+                        "surface-variant": "#343535",
+                        "surface-container": "#1e2020",
+                        "outline": "#99907c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#454545",
+                        "on-error": "#690005",
+                        "background": "#121414",
+                        "surface-bright": "#383939",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-padding": "24px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Manrope"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel { background: rgba(30, 32, 32, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .gold-gradient-btn { background: linear-gradient(135deg, theme('colors.primary'), #B8972E); color: theme('colors.on-primary'); }
+        .inner-glow { box-shadow: inset 0 0 0 1px rgba(233, 195, 73, 0.1); }
+        .status-dot-active { box-shadow: 0 0 8px theme('colors.primary'); }
+    </style>
+</head>
+<body class="min-h-screen flex font-body-md overflow-hidden bg-background text-on-background">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-surface-container-lowest dark:bg-surface-container-lowest h-full w-64 fixed left-0 top-0 pt-4 border-r border-white/5 z-50">
+<div class="px-gutter mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined font-bold">directions_car</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Command Centre</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Internal Operations</p>
+</div>
+</div>
+<div class="mt-4 px-2 py-1 bg-error-container text-on-error rounded font-label-sm text-label-sm text-center tracking-widest border border-error/20">
+                PILOT VERIFICATION
+            </div>
+</div>
+<div class="flex-1 flex flex-col gap-1 overflow-y-auto px-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-sm text-label-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 bg-primary-container text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person_search</span>
+<span class="font-label-sm text-label-sm font-medium">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_tree</span>
+<span class="font-label-sm text-label-sm font-medium">Pipeline</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+<span class="font-label-sm text-label-sm font-medium">Applications</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">verified_user</span>
+<span class="font-label-sm text-label-sm font-medium">Verification</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">gavel</span>
+<span class="font-label-sm text-label-sm font-medium">Decisions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+<span class="font-label-sm text-label-sm font-medium">Follow-ups</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg mx-2 text-on-surface-variant hover:bg-surface-variant/50 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span class="font-label-sm text-label-sm font-medium">Analytics</span>
+</a>
+</div>
+<div class="p-gutter mt-auto border-t border-white/5">
+<button class="w-full gold-gradient-btn rounded py-2 px-4 font-label-sm text-label-sm font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Application
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col h-screen relative bg-surface-dim">
+<!-- TopNavBar (Small) -->
+<header class="h-[72px] flex-shrink-0 bg-surface-container dark:bg-surface-container border-b border-white/10 shadow-sm flex justify-between items-center px-gutter py-2 z-40 sticky top-0">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface-variant p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Search Bar -->
+<div class="flex-1 max-w-md hidden md:flex items-center ml-4">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-0 border-b border-white/10 focus:border-primary text-on-surface pl-10 pr-4 py-2 font-body-md focus:ring-0 transition-colors placeholder:text-on-surface-variant/50" placeholder="Search leads, applications..." type="text"/>
+</div>
+</div>
+<!-- Spacer for mobile -->
+<div class="md:hidden flex-1"></div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-2 hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full status-dot-active"></span>
+</button>
+<button class="p-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-px bg-white/10 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<div class="font-label-sm text-label-sm text-on-surface">Zain Sulliman</div>
+<div class="text-[10px] text-primary tracking-wider uppercase">Dealer Principal</div>
+</div>
+<div class="w-10 h-10 rounded bg-surface-variant flex items-center justify-center border border-white/10 overflow-hidden">
+<img alt="Zain Sulliman" class="w-full h-full object-cover" data-alt="A professional headshot of a confident male automotive executive in his late 30s, wearing a tailored dark suit. He is standing in a modern, dimly lit high-end car showroom with subtle warm lighting reflecting off sleek surfaces. The mood is authoritative yet approachable, shot with a shallow depth of field to emphasize the subject against the sophisticated dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWfhr-QmieE6nZiZTksxZ5jVS0i1d2Lem6AfHekcQAH7G5ZjvWxOulJ1RQPe4iCROK6d1zoaHg2ina2lzPy86C8ZjM3QHPdE3TVA68kN5Pxzh741dDQxGlrv_wBnTWI80kkUbNLUYRubctH5uXiy0fBeksUrnQiVaMhjzVq-JqdEhRt60wBi6HTm3JzW9ilB6e8BE0L0ZFJ7ZhQyWbFWbF4FNqm-TosQTRCncD61XY6c0s1eFrtRUb7A"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto p-gutter md:p-container-padding pb-stack-lg">
+<div class="max-w-7xl mx-auto space-y-stack-md">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-stack-lg">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2 h-2 rounded-full bg-primary status-dot-active"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Active Leads</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Incoming Requests</h2>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded bg-surface-container-high border border-white/10 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2 inner-glow">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            Filter
+                        </button>
+<button class="px-4 py-2 rounded bg-surface-container-high border border-white/10 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2 inner-glow">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+                            Sort: Priority
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Leads List (Left Column, span 8) -->
+<div class="lg:col-span-8 space-y-unit flex flex-col gap-unit">
+<!-- Test Lead Card (Top Priority) -->
+<div class="relative bg-surface-container glass-panel p-5 rounded-xl inner-glow group cursor-pointer transition-all hover:bg-surface-container-high flex flex-col sm:flex-row gap-5 items-start sm:items-center overflow-hidden border-l-[3px] border-l-primary">
+<!-- Animated test mode indicator background -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-error/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Avatar / Initials -->
+<div class="w-14 h-14 rounded-full bg-surface-dim border border-primary/30 flex items-center justify-center flex-shrink-0 relative">
+<span class="font-headline-md text-headline-md text-primary">SM</span>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-primary border-2 border-surface-container rounded-full status-dot-active"></span>
+</div>
+<!-- Content -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface truncate">Test Lead - Sarah Miller</h3>
+<span class="px-2 py-0.5 rounded bg-error/20 text-error font-label-sm text-[10px] tracking-wider uppercase border border-error/30">TEST DATA</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-md text-sm mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">directions_car</span> VW Polo Vivo 1.4</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">payments</span> Budget: R4,000/mo</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 10 mins ago</span>
+</div>
+<!-- Flexible Data Points -->
+<div class="grid grid-cols-2 sm:flex sm:flex-row gap-3">
+<div class="bg-surface-dim px-3 py-1.5 rounded inner-glow">
+<span class="block text-[10px] text-on-surface-variant uppercase font-label-sm">Term</span>
+<span class="block text-on-surface font-medium text-sm">TBC</span>
+</div>
+<div class="bg-surface-dim px-3 py-1.5 rounded inner-glow">
+<span class="block text-[10px] text-on-surface-variant uppercase font-label-sm">Availability</span>
+<span class="block text-on-surface font-medium text-sm">TBC</span>
+</div>
+<div class="bg-primary/10 px-3 py-1.5 rounded inner-glow border border-primary/20">
+<span class="block text-[10px] text-primary uppercase font-label-sm">Target Installment</span>
+<span class="block text-primary font-bold text-sm">R4,000/month</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex sm:flex-col gap-2 w-full sm:w-auto mt-4 sm:mt-0">
+<button class="flex-1 sm:flex-none gold-gradient-btn px-4 py-2 rounded font-label-sm text-label-sm text-on-primary font-bold whitespace-nowrap">
+                                    Review Deal
+                                </button>
+<button class="p-2 rounded bg-surface-dim border border-white/10 text-on-surface-variant hover:text-on-surface inner-glow flex items-center justify-center">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Regular Lead Card -->
+<div class="relative bg-surface-container/50 p-5 rounded-xl border border-white/5 group cursor-pointer transition-all hover:bg-surface-container flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+<div class="w-14 h-14 rounded-full bg-surface-dim border border-white/10 flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+<img alt="Client" class="w-full h-full object-cover opacity-80" data-alt="A professional headshot of a middle-aged male customer, softly lit against a dark studio background, establishing a sophisticated tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA_JUK3suzm3ryxArppPgH6J_B31kPspmVKzFixHXGEUF81u7m8leZJOPeGP4Sq4CaT39brHZ4ykPRaB_kiz_rL3miGjGkFMeH7UxzdlfxuFnCwYQVtK_4Am1FN3TkNtk6VBETTGJ4dQLCCzjGQVPj0GiDnE-H4V7QTTJ6FdOhBishbNRj6qScO4tg8CLLPeSr_RakU9lVUXmjcF5urwwysJmqOHuKQzgjxQkvp0QHO64U62_uUISCXQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface truncate">Marcus Johnson</h3>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-md text-sm mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">directions_car</span> BMW 320i M Sport</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">payments</span> Budget: R8,500/mo</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 2 hours ago</span>
+</div>
+<div class="grid grid-cols-2 sm:flex sm:flex-row gap-3">
+<div class="bg-surface-dim px-3 py-1.5 rounded border border-white/5">
+<span class="block text-[10px] text-on-surface-variant uppercase font-label-sm">Term</span>
+<span class="block text-on-surface font-medium text-sm">72 Months</span>
+</div>
+<div class="bg-surface-dim px-3 py-1.5 rounded border border-white/5">
+<span class="block text-[10px] text-on-surface-variant uppercase font-label-sm">Deposit</span>
+<span class="block text-on-surface font-medium text-sm">R50,000</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col gap-2 w-full sm:w-auto mt-4 sm:mt-0">
+<button class="flex-1 sm:flex-none bg-surface-dim border border-white/10 px-4 py-2 rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-variant transition-colors whitespace-nowrap">
+                                    View
+                                </button>
+</div>
+</div>
+<!-- Regular Lead Card -->
+<div class="relative bg-surface-container/50 p-5 rounded-xl border border-white/5 group cursor-pointer transition-all hover:bg-surface-container flex flex-col sm:flex-row gap-5 items-start sm:items-center opacity-70">
+<div class="w-14 h-14 rounded-full bg-surface-dim border border-white/10 flex items-center justify-center flex-shrink-0 relative">
+<span class="font-headline-md text-headline-md text-on-surface-variant">LN</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface truncate">Lerato Ndlovu</h3>
+<span class="px-2 py-0.5 rounded bg-surface-dim text-on-surface-variant font-label-sm text-[10px] tracking-wider uppercase border border-white/10">Follow Up</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-body-md text-sm mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">directions_car</span> Toyota Fortuner 2.8</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">payments</span> Cash Deal</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 1 day ago</span>
+</div>
+</div>
+<div class="flex sm:flex-col gap-2 w-full sm:w-auto mt-4 sm:mt-0">
+<button class="flex-1 sm:flex-none bg-surface-dim border border-white/10 px-4 py-2 rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-variant transition-colors whitespace-nowrap">
+                                    View
+                                </button>
+</div>
+</div>
+</div>
+<!-- Side Stats / Quick Actions (Right Column, span 4) -->
+<div class="lg:col-span-4 space-y-gutter">
+<!-- System Status -->
+<div class="bg-surface-container rounded-xl p-5 border border-error/20 inner-glow relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-error/5 to-transparent pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h3 class="font-headline-md text-lg text-on-surface">Test Environment</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">
+                                You are currently viewing simulated data in the Pilot Verification sandbox. Dummy leads will be marked with a red tag.
+                            </p>
+<button class="w-full py-2 bg-surface-dim border border-white/10 rounded text-on-surface font-label-sm text-label-sm hover:bg-surface-variant transition-colors">
+                                Exit Sandbox
+                            </button>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-2 gap-unit">
+<div class="bg-surface-container rounded-lg p-4 border border-white/5">
+<span class="material-symbols-outlined text-primary mb-2">trending_up</span>
+<div class="font-headline-lg text-headline-lg text-on-surface">12</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">New Today</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant mb-2">pending_actions</span>
+<div class="font-headline-lg text-headline-lg text-on-surface">8</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase">Awaiting Info</div>
+</div>
+<div class="bg-surface-container rounded-lg p-4 border border-white/5 col-span-2 flex items-center justify-between">
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Avg Response Time</div>
+<div class="font-headline-md text-xl text-on-surface">14 mins</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

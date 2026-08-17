@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PLM Application Verification Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#e9c349",
+                        "on-secondary": "#313030",
+                        "outline-variant": "#4d4635",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#303030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "primary": "#f2ca50",
+                        "surface-bright": "#383939",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-surface-variant": "#d0c5af",
+                        "outline": "#99907c",
+                        "surface-dim": "#121414",
+                        "on-primary-container": "#554300",
+                        "inverse-surface": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#735c00",
+                        "on-primary": "#3c2f00",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container": "#1e2020",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#b4b2b2",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffe088",
+                        "on-background": "#e3e2e2",
+                        "on-tertiary-container": "#454545",
+                        "surface-container-low": "#1a1c1c",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-high": "#292a2a",
+                        "surface": "#121414",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary": "#d0cdcd",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#343535",
+                        "surface-variant": "#343535",
+                        "secondary-container": "#474746",
+                        "background": "#121414",
+                        "primary-container": "#d4af37",
+                        "on-secondary-container": "#b7b5b4",
+                        "secondary": "#c8c6c5",
+                        "on-surface": "#e3e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "container-padding": "24px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex selection:bg-primary/30 selection:text-primary">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-8 bg-surface-container-lowest border-r border-white/5 fixed left-0 top-0 w-[280px] z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<img class="w-10 h-10 object-contain" data-alt="A minimalist, high-end metallic logo for Prime Lane Motors, featuring sharp geometric lines in brushed gold against an obsidian black background, evoking luxury automotive design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKUvr-gluRNqhV7Vmxvo3OnPEaVD78UczVGo7Sfra7TgPCibOpL91_EwpUAEhRXI5fIratZ4AKJTmJasRaScKispSrz8dNCtmwiz1ztVOw9cUCMBpdx-DaNpoNe3FsXBQ3hI00H3vL_C1CWUiSSUBJjYfZmBJtSoXCiJ32r5X2Viif2EhhlgqlR7e-nrpuo9Vi5vqNwPhVkxR5efn5a4ziDHv6i9pUvnfIwNLw_bIfkC7JCV2RlINAog"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Prime Lane Motors</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mt-1">Private Concierge</p>
+</div>
+</div>
+<div class="px-4 mb-8">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-[0_0_15px_rgba(242,202,80,0.2)]">
+<span class="material-symbols-outlined">add</span>
+                New Application
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto px-2 space-y-1">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">person_search</span>
+<span class="font-label-sm text-label-sm">Leads</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-sm text-label-sm">Pipeline</span>
+</a>
+<a class="text-primary font-bold bg-surface-container-high border-l-4 border-primary px-4 py-3 flex items-center gap-3 rounded-r-lg scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label-sm text-label-sm">Applications</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">history_toggle_off</span>
+<span class="font-label-sm text-label-sm">Follow-ups</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-sm text-label-sm">Analytics</span>
+</a>
+</div>
+<div class="px-2 mt-auto space-y-1">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 rounded-lg hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm">Sign Out</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-[280px] min-h-screen flex flex-col relative pt-[72px]">
+<!-- TopNavBar -->
+<header class="bg-background/80 backdrop-blur-xl border-b border-white/5 fixed top-0 right-0 w-full md:w-[calc(100%-280px)] z-40 flex justify-between items-center px-gutter py-4 h-[72px]">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<!-- Mobile Menu Trigger (hidden on md) -->
+<button class="md:hidden p-2 hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-container border border-white/10 overflow-hidden relative inner-glow">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a luxury automotive concierge executive, male, mid-30s, wearing a tailored charcoal suit, subtle dramatic studio lighting against a dark background, projecting trust and exclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9j2zRzJ42rE25s6oW8YgUNxnX2k_6FElBHddsu1tRbUixaX3RSUUKc2otBJ4PHzfKwL2hcUySwWat5CyMyZkSDnWS1rf3OKdp-Yqo6huc4ZncGuPNXXyjE3MjWFG3Vl5tdJBtb_G0u0n8yWBPAvn3i7GNxbN3TKKUZ6GHXCv67prirY_KQqC6cKvvDfFWcFJHHvBpBm1GKeoFJKkfS-pwDoYcD9Uw_q3PhwK0K1dzMUnVGVI9y8fzdQ"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-x-hidden p-gutter md:p-container-padding flex flex-col gap-stack-lg pb-[120px]">
+<!-- Breadcrumbs & Header -->
+<div class="space-y-stack-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Leads</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">L-ORG-001</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Verification</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface tracking-tight">APPLICATION VERIFICATION</h2>
+<div class="flex flex-wrap items-center gap-4 mt-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">App ID:</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2 py-1 rounded">APP-9402</span>
+</div>
+<div class="w-1 h-1 bg-white/20 rounded-full"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Vehicle:</span>
+<span class="font-label-sm text-label-sm text-on-surface">2021 VW Golf 8 R</span>
+</div>
+<div class="w-1 h-1 bg-white/20 rounded-full"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Assignee:</span>
+<span class="font-label-sm text-label-sm text-on-surface">Zain Sulliman</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 rounded-lg border border-white/5 flex items-center gap-3">
+<div class="w-2 h-2 bg-primary rounded-full shadow-[0_0_8px_rgba(242,202,80,0.6)]"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">In Progress (Under Review)</span>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter">
+<!-- Document Review List (Left Column) -->
+<div class="xl:col-span-8 flex flex-col gap-stack-md">
+<!-- Document Table -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-white/5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+<th class="py-4 px-6 font-medium">Document Type</th>
+<th class="py-4 px-6 font-medium">Status</th>
+<th class="py-4 px-6 font-medium">Received</th>
+<th class="py-4 px-6 font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-on-surface divide-y divide-white/5">
+<!-- Row 1: Verified -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<span class="font-medium">Driver's License</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Verified</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label-sm">Oct 26, 11:15 AM</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" title="View">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Under Review (Active) -->
+<tr class="bg-primary/5 border-l-2 border-l-primary hover:bg-primary/10 transition-colors group relative">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<span class="font-medium text-primary">3 Months Bank Statements</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Under Review</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label-sm">Oct 26, 11:15 AM</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant hover:text-green-400 transition-colors" title="Verify">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant hover:text-error transition-colors" title="Request Correction">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" title="Add Note">
+<span class="material-symbols-outlined text-[18px]">note_add</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Correction Required -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">id_card</span>
+</div>
+<div>
+<span class="font-medium block">ID Document</span>
+<span class="font-label-sm text-error/80 text-[10px] block mt-1">Note: Poor image quality, edges cut off</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-error/10 text-error border border-error/20">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Correction Req</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label-sm">Oct 26, 11:15 AM</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-50 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 rounded-md hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Pending -->
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">home_pin</span>
+</div>
+<span class="font-medium text-on-surface-variant">Proof of Residence</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-surface-container-high text-on-surface-variant border border-white/10">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Pending</span>
+</div>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label-sm">-</td>
+<td class="py-4 px-6 text-right">
+<span class="text-on-surface-variant font-label-sm">-</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Contextual Preview & Audit Trail -->
+<div class="xl:col-span-4 flex flex-col gap-stack-md">
+<!-- Review Detail Panel -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 flex flex-col overflow-hidden h-[500px]">
+<div class="p-4 border-b border-white/5 flex items-center justify-between bg-surface-container">
+<h3 class="font-headline-md text-[16px] font-semibold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">preview</span>
+                                Preview: Bank Statements
+                            </h3>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">open_in_new</span>
+</button>
+</div>
+<!-- Document Placeholder -->
+<div class="flex-1 bg-surface-dim relative flex items-center justify-center p-4 overflow-hidden group">
+<!-- Simulated document texture -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e9c349_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-lg shadow-2xl max-w-xs w-full text-center relative z-10">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-2">description</span>
+<p class="font-label-sm text-on-surface-variant mb-4">bank_statement_oct.pdf</p>
+<button class="px-4 py-2 bg-surface-container-high hover:bg-surface-container-highest border border-white/10 rounded-md font-label-sm text-primary transition-colors w-full">View Full Document</button>
+</div>
+</div>
+<!-- Review Action Area -->
+<div class="p-4 bg-surface-container border-t border-white/5 flex flex-col gap-3">
+<div>
+<label class="font-label-sm text-on-surface-variant block mb-1">Review Notes (Optional)</label>
+<input class="w-full bg-surface-dim border-b border-white/10 border-t-0 border-l-0 border-r-0 focus:border-primary focus:ring-0 text-on-surface font-body-md py-2 px-0 transition-colors" placeholder="Add a note before verifying..." type="text"/>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 py-2 px-4 rounded-lg border border-primary text-primary font-bold hover:bg-primary/10 transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                                    Reject
+                                </button>
+<button class="flex-1 py-2 px-4 rounded-lg bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/20 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check</span>
+                                    Verify
+                                </button>
+</div>
+</div>
+</div>
+<!-- Audit Trail -->
+<div class="bg-surface-container-low rounded-xl border border-white/5 p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-[16px] font-semibold text-on-surface mb-6 uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+                            Audit Trail
+                        </h3>
+<div class="relative pl-4 space-y-6 before:absolute before:inset-y-0 before:left-1.5 before:w-px before:bg-white/10">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<div class="absolute -left-[22px] top-1 w-3 h-3 bg-error rounded-full border-2 border-surface-container-low shadow-[0_0_8px_rgba(255,180,171,0.5)]"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-error uppercase tracking-widest text-[10px]">Oct 26, 11:30 AM</span>
+<p class="font-body-md text-sm text-on-surface"><strong class="font-semibold text-primary">Zain S.</strong> flagged ID Document for correction.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<div class="absolute -left-[22px] top-1 w-3 h-3 bg-surface-container-high rounded-full border-2 border-surface-container-low"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Oct 26, 11:15 AM</span>
+<p class="font-body-md text-sm text-on-surface-variant">Documents received from customer.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative">
+<div class="absolute -left-[22px] top-1 w-3 h-3 bg-surface-container-high rounded-full border-2 border-surface-container-low"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Oct 26, 10:45 AM</span>
+<p class="font-body-md text-sm text-on-surface-variant">Application initiated.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Progress Bar -->
+<div class="fixed bottom-0 left-0 md:left-[280px] right-0 bg-surface-container/90 backdrop-blur-xl border-t border-white/5 px-gutter py-4 z-40 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+<div class="max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<!-- Stepper -->
+<div class="hidden lg:flex items-center gap-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-on-surface uppercase tracking-widest text-[10px]">Info</span>
+</div>
+<div class="w-8 h-px bg-primary/30"></div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-sm text-on-surface uppercase tracking-widest text-[10px]">Docs</span>
+</div>
+<div class="w-8 h-px bg-primary/30"></div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary border border-primary text-on-primary flex items-center justify-center shadow-[0_0_10px_rgba(242,202,80,0.4)]">
+<span class="font-label-sm font-bold text-[12px]">3</span>
+</div>
+<span class="font-label-sm text-primary uppercase tracking-widest text-[10px] font-bold">Verification</span>
+</div>
+<div class="w-8 h-px bg-white/10"></div>
+<div class="flex items-center gap-2 opacity-40">
+<div class="w-6 h-6 rounded-full bg-surface-dim border border-white/20 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+</div>
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest text-[10px]">Ready</span>
+</div>
+</div>
+<!-- Summary & Actions -->
+<div class="flex items-center gap-6 w-full md:w-auto justify-between md:justify-end">
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-primary uppercase tracking-widest">3/4 Reviewed</span>
+<span class="font-label-sm text-error text-[10px] uppercase tracking-widest">1 Correction Pending</span>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg border border-white/10 text-on-surface-variant font-label-sm uppercase tracking-widest hover:bg-white/5 transition-colors hidden sm:block">
+                            Set Follow-up
+                        </button>
+<button class="px-6 py-2 rounded-lg bg-surface-container-high text-on-surface-variant font-bold cursor-not-allowed border border-white/5 opacity-50 flex items-center gap-2" disabled="">
+                            Ready for Submission
+                            <span class="material-symbols-outlined text-[18px]">lock</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
