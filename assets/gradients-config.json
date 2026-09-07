@@ -1,0 +1,114 @@
+{
+  "gradients": {
+    "description": "Prime Lane Motors Gradient System Configuration",
+    "version": "1.0.0",
+    "colors": {
+      "primary": "#f2ca50",
+      "primaryDim": "#d4af37",
+      "obsidian": "#121414",
+      "surface": "#282a2a",
+      "silver": "#c8c6c5",
+      "white": "#ffffff",
+      "onSurface": "#e2e2e2",
+      "variant": "#d0c5af"
+    },
+    "presets": {
+      "text": {
+        "whiteToSilver": {
+          "colors": ["#ffffff", "#c8c6c5"],
+          "direction": "to right",
+          "usage": "Subtle text highlight gradient"
+        },
+        "goldToWhite": {
+          "colors": ["#f2ca50", "#ffffff"],
+          "direction": "to right",
+          "usage": "Premium headings and hero text"
+        },
+        "goldToDim": {
+          "colors": ["#f2ca50", "#d4af37"],
+          "direction": "to right",
+          "usage": "Accent text and CTAs"
+        },
+        "diagonal": {
+          "colors": ["#ffffff", "#c8c6c5"],
+          "direction": "135deg",
+          "usage": "Dynamic diagonal text effect"
+        }
+      },
+      "background": {
+        "primary": {
+          "colors": ["#f2ca50", "#d4af37"],
+          "direction": "135deg",
+          "usage": "Primary button and CTA backgrounds"
+        },
+        "goldToDark": {
+          "colors": ["#f2ca50", "#121414"],
+          "direction": "to right",
+          "usage": "Dramatic dark transitions"
+        },
+        "obsidianSurface": {
+          "colors": ["#121414", "#282a2a"],
+          "direction": "to bottom",
+          "usage": "Subtle depth on surfaces"
+        },
+        "subtle": {
+          "colors": ["rgba(242, 202, 80, 0.1)", "rgba(212, 175, 55, 0.05)"],
+          "direction": "135deg",
+          "usage": "Background accents and overlays"
+        }
+      }
+    },
+    "usage": {
+      "cssClasses": {
+        "description": "Apply gradients using CSS classes in HTML",
+        "examples": [
+          {
+            "class": "gradient-text-gold-white",
+            "element": "<h1 class=\"gradient-text-gold-white\">Premium Heading</h1>",
+            "result": "Gold to white text gradient"
+          },
+          {
+            "class": "gradient-bg-primary",
+            "element": "<button class=\"gradient-bg-primary\">Apply Now</button>",
+            "result": "Gold gradient button background"
+          },
+          {
+            "class": "gradient-animated",
+            "element": "<div class=\"gradient-animated\">Animated Content</div>",
+            "result": "Animated shifting gradient effect"
+          }
+        ]
+      },
+      "javascript": {
+        "description": "Apply gradients programmatically using GradientUtils",
+        "examples": [
+          {
+            "method": "applyTextGradient",
+            "code": "GradientUtils.applyTextGradient(element, '#f2ca50', '#ffffff')",
+            "result": "Applies gold-to-white text gradient"
+          },
+          {
+            "method": "applyPreset",
+            "code": "GradientUtils.applyPreset(element, 'textGradients', 'goldToWhite')",
+            "result": "Applies preset gold-to-white text gradient"
+          },
+          {
+            "method": "applyBackgroundGradient",
+            "code": "GradientUtils.applyBackgroundGradient(element, '#f2ca50', '#121414')",
+            "result": "Applies gold-to-dark background gradient"
+          },
+          {
+            "method": "generateMultiStopGradient",
+            "code": "const gradient = GradientUtils.generateMultiStopGradient('90deg', [{color: '#fff', stop: 0}, {color: '#f2ca50', stop: 50}, {color: '#121414', stop: 100}])",
+            "result": "Generates multi-color gradient CSS value"
+          }
+        ]
+      }
+    },
+    "integration": {
+      "html": "Include gradients.css in your HTML head: <link rel=\"stylesheet\" href=\"assets/gradients.css\">",
+      "javascript": "Include gradients.js before using: <script src=\"assets/utils/gradients.js\"></script>",
+      "tailwind": "Use gradient classes alongside Tailwind utilities for consistency"
+    }
+  }
+}

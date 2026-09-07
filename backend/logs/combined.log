@@ -1,0 +1,4 @@
+{"timestamp":"2026-09-01T09:34:09.164Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
+{"timestamp":"2026-09-01T09:34:09.175Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
+{"timestamp":"2026-09-01T09:42:41.981Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
+{"timestamp":"2026-09-01T09:42:41.989Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}

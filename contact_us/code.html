@@ -7,9 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&amp;family=Montserrat:wght@600;700;800&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="../assets/tailwind.css">
 <script id="tailwind-config">
-        tailwind.config = {
+        var tailwind = {}; tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
@@ -130,18 +130,23 @@
             PRIME LANE
         </div>
 <div class="hidden md:flex gap-8 items-center font-label-lg text-label-lg uppercase">
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Inventory</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Finance</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="#">Contact</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="../our_inventory_desktop/code.html">Inventory</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300 scale-95 active:scale-90 transition-transform duration-200" href="code.html">Contact</a>
 </div>
 <div class="hidden md:flex items-center gap-4">
-<button class="bg-gradient-gold text-on-primary-fixed font-label-lg text-label-lg uppercase px-6 py-3 rounded glint-hover transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.2)]">
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="bg-gradient-gold text-on-primary-fixed font-label-lg text-label-lg uppercase px-6 py-3 rounded glint-hover transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.2)] no-underline text-center">
                 Apply for Finance
-            </button>
+            </a>
 </div>
 <button class="md:hidden text-primary">
 <span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
 </button>
+<div class="flex md:hidden gap-4 text-sm">
+<a class="text-on-surface-variant" href="../our_inventory_desktop/code.html">Inventory</a>
+<a class="text-on-surface-variant" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-primary" href="code.html">Contact</a>
+</div>
 </nav>
 <!-- Main Content -->
 <main class="flex-grow pt-32 pb-section-gap px-container-padding max-w-[1200px] mx-auto w-full">
@@ -169,7 +174,7 @@
 </div>
 <div>
 <p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Direct Line</p>
-<p class="font-headline-md text-headline-md text-on-surface">+27 676 219 820</p>
+<a class="font-headline-md text-headline-md text-on-surface" href="tel:+27657572632">+27 657 572 632</a>
 </div>
 </div>
 <div class="flex items-start gap-4">
@@ -199,7 +204,7 @@
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 uppercase">Get Approved</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Fill out the details below for a free, no-obligation finance assessment.</p>
 </div>
-<form class="space-y-6">
+<form class="space-y-6" id="contact-assessment-form">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">First Name</label>
@@ -233,7 +238,7 @@
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Additional Information (Optional)</label>
 <textarea class="input-ghost py-2 w-full font-body-md text-body-md resize-none h-24" placeholder="Tell us about the vehicle you are interested in..."></textarea>
 </div>
-<button class="w-full bg-gradient-gold text-on-primary-fixed font-headline-md text-headline-md uppercase py-4 rounded mt-4 glint-hover transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center gap-2" type="button">
+<button class="w-full bg-gradient-gold text-on-primary-fixed font-headline-md text-headline-md uppercase py-4 rounded mt-4 glint-hover transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center gap-2" type="submit">
                         Submit Assessment
                         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
 </button>
@@ -242,6 +247,7 @@
                         Your information is secure and confidential.
                     </p>
 </form>
+<p class="hidden mt-4 text-center text-primary" id="contact-success" role="status">Thank you. We will contact you shortly.</p>
 </div>
 </div>
 </main>
@@ -252,15 +258,22 @@
                 PRIME LANE
             </div>
 <div class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
-<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Inventory</a>
-<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Finance</a>
-<a class="text-primary hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Contact</a>
-<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="../our_inventory_desktop/code.html">Inventory</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-primary hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="code.html">Contact</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="../privacy.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="../terms.html">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary-fixed underline decoration-primary/30 hover:translate-x-1 transition-transform duration-300" href="../disclaimer.html">Finance Disclaimer</a>
 </div>
 <div class="text-on-surface-variant font-body-md text-body-md mt-4 md:mt-0">
                 © 2024 Prime Lane Motors. The Way To Go.
             </div>
 </div>
 </footer>
+<script>
+document.getElementById('contact-assessment-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    document.getElementById('contact-success').classList.remove('hidden');
+});
+</script>
 </body></html>

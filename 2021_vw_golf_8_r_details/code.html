@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>2021 VW Golf 8 R - Prime Lane Motors</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="../assets/tailwind.css">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
+        var tailwind = {}; tailwind.config = {
           darkMode: "class",
           theme: {
             extend: {
@@ -177,28 +177,32 @@
 <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl bg-surface-container-low/90 border-b border-outline-variant/10 shadow-sm transition-all duration-300">
 <div class="flex justify-between items-center px-container-padding py-stack-sm max-w-screen-2xl mx-auto">
 <!-- Brand Logo -->
-<a class="font-headline-md text-headline-md text-primary tracking-tight uppercase" href="#">Prime Lane Motors</a>
+<a class="font-headline-md text-headline-md text-primary tracking-tight uppercase" href="../index.html">Prime Lane Motors</a>
 <!-- Navigation Links (Desktop) -->
 <nav class="hidden md:flex items-center space-x-8">
-<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Inventory</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Showroom</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Services</a>
-<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="#">Concierge</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="../our_inventory_desktop/code.html">Inventory</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-surface hover:text-primary transition-colors duration-300 active:scale-95 transition-transform" href="../contact_us/code.html">Contact</a>
 </nav>
 <!-- Actions (Desktop) -->
 <div class="hidden md:flex items-center space-x-4">
-<button class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 transition-transform flex items-center gap-2">
+<a href="https://wa.me/27657572632" target="_blank" rel="noopener" class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors duration-300 active:scale-95 transition-transform flex items-center gap-2 no-underline">
 <span class="material-symbols-outlined">chat</span>
                     WhatsApp
-                </button>
-<button class="bg-gradient-primary text-on-primary-fixed font-body-lg text-body-lg px-6 py-2 rounded-full hover:opacity-90 transition-opacity active:scale-95">
+                </a>
+                <a href="../finance_enquiry_final_vw_mobile/code.html" class="bg-gradient-primary text-on-primary-fixed font-body-lg text-body-lg px-6 py-2 rounded-full hover:opacity-90 transition-opacity active:scale-95 no-underline">
                     Apply for Finance
                 </button>
 </div>
 <!-- Mobile Menu Toggle -->
 <button class="md:hidden text-primary">
 <span class="material-symbols-outlined">menu</span>
-</button>
+</a>
+<nav class="md:hidden flex gap-4 text-sm" aria-label="Mobile navigation">
+<a class="text-primary" href="../our_inventory_desktop/code.html">Inventory</a>
+<a class="text-on-surface-variant" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-on-surface-variant" href="../contact_us/code.html">Contact</a>
+</nav>
 </div>
 </header>
 <main class="pt-24 pb-stack-lg max-w-screen-2xl mx-auto px-container-padding lg:grid lg:grid-cols-12 lg:gap-gutter">
@@ -276,20 +280,20 @@
 <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2 flex items-center gap-2">
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Listed Price
                     </p>
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-gradient mb-stack-md">R 899,900</h2>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-gradient mb-stack-md"><a href="tel:+27657572632" class="hover:underline">Price on enquiry</a></h2>
 <div class="space-y-stack-sm mb-stack-lg">
-<button class="w-full bg-gradient-primary text-on-primary-fixed font-body-lg text-body-lg py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-95 shadow-[0_4px_14px_0_rgba(242,202,80,0.2)] font-semibold">
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="w-full bg-gradient-primary text-on-primary-fixed font-body-lg text-body-lg py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity active:scale-95 shadow-[0_4px_14px_0_rgba(242,202,80,0.2)] font-semibold no-underline">
 <span class="material-symbols-outlined">account_balance</span>
                             Apply for Finance
-                        </button>
-<button class="w-full bg-surface-container-high border border-outline-variant/30 text-on-surface font-body-lg text-body-lg py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors active:scale-95">
+                        </a>
+                        <a href="https://wa.me/27657572632" target="_blank" rel="noopener" class="w-full bg-surface-container-high border border-outline-variant/30 text-on-surface font-body-lg text-body-lg py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors active:scale-95 no-underline">
 <span class="material-symbols-outlined text-[#25D366]">chat</span>
                             WhatsApp Enquiry
-                        </button>
-<button class="w-full text-on-surface-variant font-body-md text-body-md py-3 rounded-lg flex items-center justify-center gap-2 hover:text-primary transition-colors hover:bg-surface-container-low">
+                        </a>
+<a href="../sell_or_trade_in_your_vehicle/code.html" class="w-full text-on-surface-variant font-body-md text-body-md py-3 rounded-lg flex items-center justify-center gap-2 hover:text-primary transition-colors hover:bg-surface-container-low no-underline">
 <span class="material-symbols-outlined text-[18px]">currency_exchange</span>
                             Trade-In Your Vehicle
-                        </button>
+                        </a>
 </div>
 </div>
 <!-- Finance Calculator Preview -->
@@ -328,10 +332,11 @@
 </main>
 <!-- Footer -->
 <footer class="w-full relative bg-surface-container-lowest border-t border-outline-variant/10 py-stack-lg px-container-padding flex flex-col items-center gap-stack-md mt-stack-lg">
-<a class="font-headline-md text-headline-md text-primary" href="#">Prime Lane Motors</a>
+<a class="font-headline-md text-headline-md text-primary" href="../index.html">Prime Lane Motors</a>
 <div class="flex flex-wrap justify-center gap-6">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="../privacy.html">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="../terms.html">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="../disclaimer.html">Finance Disclaimer</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Financial Disclosure</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>

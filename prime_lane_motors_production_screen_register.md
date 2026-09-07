@@ -49,7 +49,7 @@ This register documents the current implementation status, paths, and core funct
 - **Website Home**: `/`
 - **Finance Enquiry**: `/enquiry`
 - **Vehicle Listings**: `/inventory`
-- **WhatsApp PLM**: `https://wa.me/27676219820`
+- **WhatsApp PLM**: `https://wa.me/27657572632`
 - **Contact PLM**: `/contact`
 - **Finance Assistance**: `/finance`
 

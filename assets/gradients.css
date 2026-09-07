@@ -1,0 +1,172 @@
+/* ============================================
+   PRIME LANE MOTORS - GRADIENT UTILITIES
+   Reusable gradient classes for consistent styling
+   ============================================ */
+
+/* Text Gradients */
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-white-silver {
+    background: linear-gradient(to right, #ffffff, #c8c6c5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold-white {
+    background: linear-gradient(to right, #f2ca50, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold-dim {
+    background: linear-gradient(to right, #f2ca50, #d4af37);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-diagonal {
+    background: linear-gradient(135deg, #ffffff, #c8c6c5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Background Gradients */
+.gradient-bg-primary {
+    background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+}
+
+.gradient-bg-gold-dark {
+    background: linear-gradient(to right, #f2ca50, #121414);
+}
+
+.gradient-bg-obsidian-surface {
+    background: linear-gradient(to b, #121414, #282a2a);
+}
+
+.gradient-bg-subtle {
+    background: linear-gradient(135deg, rgba(242, 202, 80, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+}
+
+/* Directional Gradients */
+.gradient-rtl {
+    background: linear-gradient(to left, #f2ca50, #121414);
+}
+
+.gradient-ttb {
+    background: linear-gradient(to bottom, #f2ca50, #121414);
+}
+
+.gradient-btt {
+    background: linear-gradient(to top, #f2ca50, #121414);
+}
+
+.gradient-diagonal-135 {
+    background: linear-gradient(135deg, #f2ca50, #121414);
+}
+
+.gradient-diagonal-45 {
+    background: linear-gradient(45deg, #f2ca50, #121414);
+}
+
+/* Multi-color Gradients */
+.gradient-tri-color {
+    background: linear-gradient(90deg, #f2ca50 0%, #c8c6c5 50%, #121414 100%);
+}
+
+.gradient-rainbow-gold {
+    background: linear-gradient(90deg, #ffffff, #f2ca50, #d4af37, #121414);
+}
+
+/* Hover Effect Gradients */
+.gradient-hover-lift {
+    transition: all 0.3s ease;
+}
+
+.gradient-hover-lift:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* Animated Gradients */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animated {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Gradient Overlays */
+.gradient-overlay-dark {
+    position: relative;
+}
+
+.gradient-overlay-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(18, 20, 20, 0.8));
+    pointer-events: none;
+}
+
+.gradient-overlay-gold {
+    position: relative;
+}
+
+.gradient-overlay-gold::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 202, 80, 0.2) 0%, rgba(18, 20, 20, 0.6) 100%);
+    pointer-events: none;
+}
+
+/* Gradient Borders */
+.gradient-border {
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 1px;
+    background: linear-gradient(135deg, #f2ca50, #d4af37);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Utility Modifiers */
+.gradient-intensity-light {
+    opacity: 0.6;
+}
+
+.gradient-intensity-medium {
+    opacity: 0.85;
+}
+
+.gradient-intensity-strong {
+    opacity: 1;
+}

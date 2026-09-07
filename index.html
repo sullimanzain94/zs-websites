@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prime Lane Motors - The Way To Go</title>
+<link rel="stylesheet" href="assets/tailwind.css">
+<link rel="stylesheet" href="assets/gradients.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        var tailwind = {}; tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-obsidian": "#121414",
+                        "on-surface-variant": "#d0c5af",
+                        "on-primary-fixed-variant": "#574400",
+                        "surface-dim": "#121414",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#c8c6c5",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#cfcece",
+                        "on-primary": "#3d2f00",
+                        "primary": "#ffe9b0",
+                        "surface-tint": "#eac249",
+                        "gold-accent": "#f2ca50",
+                        "secondary-fixed": "#e4e2e1",
+                        "background": "#121414",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary-fixed": "#e3e2e2",
+                        "primary-fixed-dim": "#eac249",
+                        "outline-variant": "#4d4635",
+                        "on-primary-fixed": "#241a00",
+                        "surface-container-lowest": "#0d0f0f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#282a2a",
+                        "secondary-container": "#474746",
+                        "surface-bright": "#343535",
+                        "surface": "#121414",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-primary-container": "#6b5500",
+                        "tertiary": "#ebeaea",
+                        "metallic-silver": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "primary-container": "#f2ca50",
+                        "surface-variant": "#333535",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-container": "#575858",
+                        "on-secondary": "#303030",
+                        "on-error": "#690005",
+                        "on-surface": "#e2e2e2",
+                        "inverse-on-surface": "#2f3131",
+                        "gold-dim": "#d4af37",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1b1c1b",
+                        "on-background": "#e2e2e2",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-primary": "#745b00",
+                        "error-container": "#93000a",
+                        "surface-container": "#1e2020",
+                        "primary-fixed": "#ffe08a",
+                        "on-tertiary": "#2f3131",
+                        "outline": "#99907c",
+                        "inverse-surface": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "margin-desktop": "32px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(18, 20, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(242, 202, 80, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+            color: #121414;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(242, 202, 80, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #f2ca50;
+            color: #f2ca50;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(242, 202, 80, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #c8c6c5);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-accent-line {
+            position: relative;
+        }
+        .gold-accent-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #f2ca50;
+            border-radius: 4px 0 0 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-gold-accent selection:text-surface-obsidian">
+<!-- TopNavBar -->
+<header class="bg-surface-obsidian/80 backdrop-blur-xl docked full-width top-0 sticky border-b border-white/10 shadow-md z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-screen-2xl mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-gold-accent flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+                Prime Lane Motors
+            </a>
+<!-- Nav Links (Desktop) -->
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-gold-accent border-b-2 border-gold-accent pb-1" href="our_inventory_desktop/code.html">Inventory</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-gold-accent transition-colors hover:bg-white/5 transition-all duration-300 rounded px-2" href="finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-gold-accent transition-colors hover:bg-white/5 transition-all duration-300 rounded px-2" href="contact_us/code.html">Contact</a>
+</nav>
+<nav class="flex md:hidden items-center gap-3 text-xs" aria-label="Mobile navigation">
+<a class="text-gold-accent" href="our_inventory_desktop/code.html">Inventory</a>
+<a class="text-on-surface-variant" href="finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-on-surface-variant" href="contact_us/code.html">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<a class="hidden lg:flex items-center gap-2 font-label-md text-label-md btn-primary px-4 py-2 rounded-lg font-bold scale-95 active:scale-90 transition-transform" href="finance_enquiry_final_vw_mobile/code.html">
+                    Apply for Finance
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<button class="text-on-surface-variant hover:text-gold-accent transition-colors p-2 hover:bg-white/5 rounded-full">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A cinematic, high-resolution shot of a sleek Volkswagen Golf R and Polo GTI parked in a dramatic, rain-slicked urban setting at night. The scene is illuminated by striking gold and harsh white streetlights reflecting off the dark obsidian wet pavement. The aesthetic is extremely premium, modern corporate, and automotive luxury, featuring deep charcoal tones with vibrant gold accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjlZYFvjbV3HJOd-beJaCgTBObbnbfECxg6iXyIYz6vxLoU1KBfZ9G2p3rz_6fcmF_gEPZS0kT9VGEcVHPzy0KQAP2xFauxvJMEigkLqLkZWipyGabln6hLouo2VyYiiPquxldtI4DUQgGlNpP7aktm3rDrrFmDNPuJcBtKs9JIeZqBLycyzW-rhN9kwUBeDclMqPa_fRsTQQZ2kYLlvY3QVxeTFLCVpZNfgdlMuvTaGR8GiLbWLu-JA')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface-obsidian/40 via-surface-obsidian/60 to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop py-20 flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-gold-accent tracking-widest uppercase mb-4 px-4 py-1 border border-gold-accent/30 rounded-full bg-surface-obsidian/50 backdrop-blur-sm">Exclusive Volkswagen Specialists</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-6 max-w-4xl uppercase">
+                    Prime Lane Motors is <br/>
+<span class="text-gold-accent text-5xl md:text-7xl font-extrabold tracking-tighter drop-shadow-lg block mt-2">The Way To Go.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl">
+                    Your dream car. <span class="text-gold-accent font-semibold">Our finance.</span> Your future. Experience automotive excellence tailored for you.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<a href="finance_enquiry_final_vw_mobile/code.html" class="btn-primary font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-gold-accent/20 text-center no-underline">
+                        APPLY FOR FINANCE
+                        <span class="material-symbols-outlined">credit_score</span>
+</a>
+<a href="our_inventory_desktop/code.html" class="btn-secondary font-label-md text-label-md font-bold px-8 py-4 rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto glass-panel text-center no-underline">
+                        EXPLORE INVENTORY
+                        <span class="material-symbols-outlined">directions_car</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Why Finance With Us & Drive Today -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto relative z-10 -mt-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Why Finance Card -->
+<div class="lg:col-span-4 glass-panel rounded-xl p-8 shadow-xl flex flex-col">
+<h2 class="font-headline-md text-headline-md text-white mb-2">Why Finance</h2>
+<h3 class="font-headline-md text-headline-md text-gold-accent mb-8">With Us?</h3>
+<div class="space-y-6 flex-grow">
+<!-- Feature 1 -->
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-gold-accent/30 text-gold-accent">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-white font-bold mb-1">Competitive Rates</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Get the best deals designed for you.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-gold-accent/30 text-gold-accent">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-white font-bold mb-1">Quick &amp; Easy Approval</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Less waiting, more driving.</p>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-gold-accent/30 text-gold-accent">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-white font-bold mb-1">Personalised Service</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">We guide you every step of the way.</p>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="flex items-start gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-gold-accent/30 text-gold-accent">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-white font-bold mb-1">Trusted &amp; Reliable</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Transparent. Honest. Professional.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Drive Today Banner -->
+<div class="glass-panel rounded-xl p-8 border-l-4 border-l-gold-accent flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-surface-obsidian to-surface-bright/20">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-6xl text-gold-accent drop-shadow-[0_0_15px_rgba(242,202,80,0.4)]">directions_car</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-white uppercase italic tracking-wide">Drive Today</h2>
+<h2 class="font-headline-md text-headline-md text-gold-accent uppercase italic tracking-wide">Pay Your Way</h2>
+</div>
+</div>
+<div class="w-px h-16 bg-white/10 hidden md:block"></div>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-accent text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-md text-label-md text-on-surface uppercase">Flexible Finance Options</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-accent text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="font-label-md text-label-md text-on-surface uppercase">That Fit Your Budget</span>
+</div>
+</div>
+</div>
+<!-- We Make It Possible Grid -->
+<div class="pt-8">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-px bg-white/10 flex-grow"></div>
+<h3 class="font-headline-md text-headline-md text-gold-accent uppercase tracking-widest text-center italic">We Make It Possible</h3>
+<div class="h-px bg-white/10 flex-grow"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Grid Item 1 -->
+<div class="flex flex-col items-center text-center p-4 rounded-lg bg-surface-container-low border border-white/5 hover:border-gold-accent/30 transition-colors">
+<span class="material-symbols-outlined text-4xl text-gold-accent mb-3 drop-shadow-[0_0_10px_rgba(242,202,80,0.3)]">assignment</span>
+<span class="font-label-sm text-label-sm text-white uppercase">All Applications Considered</span>
+</div>
+<!-- Grid Item 2 -->
+<div class="flex flex-col items-center text-center p-4 rounded-lg bg-surface-container-low border border-white/5 hover:border-gold-accent/30 transition-colors">
+<span class="material-symbols-outlined text-4xl text-gold-accent mb-3 drop-shadow-[0_0_10px_rgba(242,202,80,0.3)]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm text-white uppercase">Self Employed Welcome</span>
+</div>
+<!-- Grid Item 3 -->
+<div class="flex flex-col items-center text-center p-4 rounded-lg bg-surface-container-low border border-white/5 hover:border-gold-accent/30 transition-colors">
+<span class="material-symbols-outlined text-4xl text-gold-accent mb-3 drop-shadow-[0_0_10px_rgba(242,202,80,0.3)]">calendar_clock</span>
+<span class="font-label-sm text-label-sm text-white uppercase">Flexible Terms Available</span>
+</div>
+<!-- Grid Item 4 -->
+<div class="flex flex-col items-center text-center p-4 rounded-lg bg-surface-container-low border border-white/5 hover:border-gold-accent/30 transition-colors">
+<span class="material-symbols-outlined text-4xl text-gold-accent mb-3 drop-shadow-[0_0_10px_rgba(242,202,80,0.3)]">car_crash</span>
+<span class="font-label-sm text-label-sm text-white uppercase">New &amp; Quality Vehicles</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-screen-2xl mx-auto mb-20">
+<div class="bg-gradient-to-r from-gold-accent to-gold-dim rounded-xl p-4 md:p-6 text-center transform -skew-x-6 shadow-[0_0_30px_rgba(242,202,80,0.2)]">
+<h3 class="transform skew-x-6 font-headline-md text-headline-md text-surface-obsidian uppercase font-extrabold tracking-tight">
+                    Easy Process. Real Solutions. Drive With Confidence.
+                </h3>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-obsidian full-width mt-stack-lg border-t border-white/5 flat no shadows">
+<div class="w-full px-margin-desktop py-stack-lg max-w-screen-2xl mx-auto">
+<!-- Contact Card overlaying footer slightly -->
+<div class="glass-panel rounded-2xl p-6 md:p-10 mb-12 flex flex-col lg:flex-row items-center justify-between gap-8 border border-gold-accent/50 -mt-16 relative z-20 mx-4 md:mx-0 shadow-2xl bg-surface-obsidian">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-gold-accent flex items-center justify-center text-surface-obsidian shrink-0">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-gold-accent uppercase mb-1">Let's Get You Approved!</h3>
+<p class="font-body-md text-body-md text-white uppercase tracking-wider text-sm">Contact us today for a free finance assessment.</p>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-right w-full lg:w-auto">
+<a class="flex items-center lg:justify-end gap-3 font-headline-md text-headline-md text-white hover:text-gold-accent transition-colors" href="tel:+27657572632">
+<span class="material-symbols-outlined text-gold-accent">call</span>
+                        +27 657572632
+
+                    </a>
+<a class="flex items-center lg:justify-end gap-3 font-body-md text-body-md text-secondary hover:text-gold-accent transition-colors" href="mailto:primelanemotors2@gmail.com">
+<span class="material-symbols-outlined text-gold-accent">mail</span>
+                        primelanemotors2@gmail.com
+                    </a>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter border-t border-white/5 pt-8">
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-gold-accent opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<span class="text-lg">P.L.M</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm text-center md:text-left">
+                    © 2024 Prime Lane Motors. High-Performance Automotive Excellence.
+                </p>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-gold-dim transition-colors opacity-80 hover:opacity-100" href="privacy.html">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-gold-dim transition-colors opacity-80 hover:opacity-100" href="terms.html">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-gold-dim transition-colors opacity-80 hover:opacity-100" href="disclaimer.html">Finance Disclaimer</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-gold-dim transition-colors opacity-80 hover:opacity-100" href="#">Sitemap</a>
+</div>
+</div>
+<div class="mt-8 text-center border-t border-white/5 pt-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant/50 uppercase text-[10px]">Finance subject to approval. Terms and conditions apply.</p>
+</div>
+</div>
+</footer>
+<script src="assets/utils/gradients.js"></script>
+</body></html>

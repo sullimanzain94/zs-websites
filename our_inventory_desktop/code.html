@@ -4,14 +4,14 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Prime Lane Motors - Vehicle Inventory</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="../assets/tailwind.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
+        var tailwind = {}; tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
@@ -163,18 +163,23 @@
                 Prime Lane Motors
             </div>
 <div class="flex space-x-8 items-center">
-<a class="font-button-text text-button-text uppercase tracking-wider text-primary border-b-2 border-primary pb-1 hover:opacity-90 transition-all scale-95" href="#">Inventory</a>
-<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Finance</a>
-<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">About</a>
-<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="#">Contact</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-primary border-b-2 border-primary pb-1 hover:opacity-90 transition-all scale-95" href="code.html">Inventory</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="../about_prime_lane_motors/code.html">About</a>
+<a class="font-button-text text-button-text uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors hover:opacity-90" href="../contact_us/code.html">Contact</a>
 </div>
 <div class="flex space-x-4 items-center">
-<button class="btn-primary font-button-text text-button-text px-6 py-3 rounded-lg uppercase tracking-wider">Apply for Finance</button>
-<button class="btn-secondary font-button-text text-button-text px-4 py-3 rounded-lg uppercase tracking-wider flex items-center gap-2">
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="btn-primary font-button-text text-button-text px-6 py-3 rounded-lg uppercase tracking-wider no-underline text-center">Apply for Finance</a>
+<a href="https://wa.me/27657572632" target="_blank" class="btn-secondary font-button-text text-button-text px-4 py-3 rounded-lg uppercase tracking-wider flex items-center gap-2 no-underline">
 <span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
                     WhatsApp
-                </button>
+                </a>
 </div>
+</div>
+<div class="flex gap-4 px-margin-mobile pb-4 text-sm">
+<a class="text-primary" href="code.html">Inventory</a>
+<a class="text-on-surface-variant" href="../finance_enquiry_final_vw_mobile/code.html">Finance</a>
+<a class="text-on-surface-variant" href="../contact_us/code.html">Contact</a>
 </div>
 </nav>
 <!-- Mobile Top Navigation -->
@@ -287,7 +292,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2023 Volkswagen Golf R 2.0 TSI 4Motion</h3>
 </div>
 <div class="font-headline-lg text-headline-lg text-primary mb-4">
-                            R 899,900
+                            <a href="tel:+27657572632" class="text-primary hover:underline">Price on enquiry</a>
                         </div>
 <div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
 <div class="flex items-center gap-2">
@@ -308,8 +313,8 @@
 </div>
 </div>
 <div class="flex flex-col gap-3 mt-auto">
-<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
-<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">Finance Enquiry</a>
+<a href="../2021_vw_golf_8_r_production_detail/code.html" class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">View Vehicle</a>
 </div>
 </div>
 </div>
@@ -324,7 +329,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2022 Volkswagen Tiguan 2.0 TSI R-Line</h3>
 </div>
 <div class="font-headline-lg text-headline-lg text-primary mb-4">
-                            R 745,000
+                            <a href="tel:+27657572632" class="text-primary hover:underline">Price on enquiry</a>
                         </div>
 <div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
 <div class="flex items-center gap-2">
@@ -345,8 +350,8 @@
 </div>
 </div>
 <div class="flex flex-col gap-3 mt-auto">
-<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
-<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">Finance Enquiry</a>
+<a href="../contact_us/code.html" class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">View Vehicle</a>
 </div>
 </div>
 </div>
@@ -361,7 +366,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2024 Volkswagen Amarok 3.0 V6 TDI Aventura</h3>
 </div>
 <div class="font-headline-lg text-headline-lg text-primary mb-4">
-                            R 1,150,000
+                            <a href="tel:+27657572632" class="text-primary hover:underline">Price on enquiry</a>
                         </div>
 <div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
 <div class="flex items-center gap-2">
@@ -382,8 +387,8 @@
 </div>
 </div>
 <div class="flex flex-col gap-3 mt-auto">
-<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
-<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">Finance Enquiry</a>
+<a href="../contact_us/code.html" class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">View Vehicle</a>
 </div>
 </div>
 </div>
@@ -398,7 +403,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">2021 Volkswagen Polo 2.0 TSI GTI DSG</h3>
 </div>
 <div class="font-headline-lg text-headline-lg text-primary mb-4">
-                            R 429,900
+                            <a href="tel:+27657572632" class="text-primary hover:underline">Price on enquiry</a>
                         </div>
 <div class="grid grid-cols-2 gap-4 mb-6 mt-auto border-t border-white/5 pt-4">
 <div class="flex items-center gap-2">
@@ -419,8 +424,8 @@
 </div>
 </div>
 <div class="flex flex-col gap-3 mt-auto">
-<button class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">Finance Enquiry</button>
-<button class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest">View Vehicle</button>
+<a href="../finance_enquiry_final_vw_mobile/code.html" class="btn-primary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">Finance Enquiry</a>
+<a href="../contact_us/code.html" class="btn-secondary w-full py-3 rounded-lg font-button-text text-button-text uppercase tracking-widest text-center no-underline">View Vehicle</a>
 </div>
 </div>
 </div>
@@ -444,8 +449,9 @@
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">© 2024 Prime Lane Motors. Authorized Financial Services Provider.</p>
 </div>
 <div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Use</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="../privacy.html">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="../terms.html">Terms of Use</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="../disclaimer.html">Finance Disclaimer</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">FSP Disclosure</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary underline transition-all" href="#">Cookie Settings</a>
 </div>
