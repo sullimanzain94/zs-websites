@@ -421,45 +421,6 @@
 </div>
 </div>
 </main>
-
-<!-- Live Lead Details Modal -->
-<div
-  id="lead-details-modal"
-  class="hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm items-center justify-center p-4"
-  aria-hidden="true"
->
-  <div
-    class="glass-panel w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-outline-variant/30 bg-surface-container-high shadow-2xl"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="lead-details-title"
-  >
-    <div class="sticky top-0 z-10 flex items-center justify-between p-5 border-b border-outline-variant/20 bg-surface-container-high/95 backdrop-blur">
-      <div>
-        <p class="text-[11px] uppercase tracking-wider text-primary font-semibold">
-          PLM Lead Details
-        </p>
-        <h2 id="lead-details-title" class="text-xl font-bold text-on-surface mt-1">
-          Lead
-        </h2>
-      </div>
-
-      <button
-        id="lead-details-close"
-        type="button"
-        class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors"
-        aria-label="Close lead details"
-      >
-        <span class="material-symbols-outlined">close</span>
-      </button>
-    </div>
-
-    <div id="lead-details-content" class="p-5">
-      <!-- Lead details are inserted here -->
-    </div>
-  </div>
-</div>
-
 <!-- BottomNavBar (Hidden on Desktop, Visible on Mobile as per JSON rules) -->
 <nav class="md:hidden bg-surface-container/80 backdrop-blur-xl fixed bottom-0 w-full z-50 pb-safe border-t border-outline-variant/10 shadow-[0_-10px_30px_rgba(0,0,0,0.4)]">
 <div class="flex justify-around items-center h-20 px-4">
@@ -494,348 +455,7 @@
 
   const tableBody = document.getElementById('leads-table-body');
   const searchInput = document.getElementById('lead-search');
-
   let allLeads = [];
-
-  function escapeHtml(value) {
-    return String(value ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
-  }
-
-  function renderLeads(leads) {
-    if (!tableBody) {
-      console.error('PLM CRM: leads-table-body not found.');
-      return;
-    }
-
-    if (!Array.isArray(leads) || leads.length === 0) {
-      tableBody.innerHTML = `
-        <tr>
-          <td colspan="7" class="px-6 py-10 text-center text-on-surface-variant">
-            ${allLeads.length === 0 ? 'No live leads found.' : 'No leads match your search.'}
-          </td>
-        </tr>
-      `;
-      return;
-    }
-
-    tableBody.innerHTML = leads.map((lead) => {
-      const name = lead.full_name || 'Unnamed Lead';
-      const phone = lead.phone_number || 'No phone';
-      const email = lead.email || '';
-      const vehicle = lead.target_vehicle_id || 'Not selected';
-      const budget = lead.target_monthly_budget
-        ? `R${Number(lead.target_monthly_budget).toLocaleString('en-ZA')}/mo`
-        : 'Not specified';
-      const stage = lead.stage || 'New Lead';
-      const source = lead.source || 'Unknown';
-      const notes = lead.notes || '';
-
-      return `
-        <tr class="hover:bg-surface-variant/20 transition-colors">
-          <td class="px-6 py-5">
-            <div class="font-body-md font-semibold text-on-surface">
-              ${escapeHtml(name)}
-            </div>
-            <div class="text-[12px] text-on-surface-variant">
-              ${escapeHtml(phone)}
-            </div>
-            ${email ? `
-              <div class="text-[11px] text-on-surface-variant">
-                ${escapeHtml(email)}
-              </div>
-            ` : ''}
-          </td>
-
-          <td class="px-6 py-5 text-on-surface-variant">
-            ${escapeHtml(vehicle)}
-          </td>
-
-          <td class="px-6 py-5 text-on-surface-variant">
-            ${escapeHtml(budget)}
-          </td>
-
-          <td class="px-6 py-5 text-on-surface-variant">
-            <div>${escapeHtml(source)}</div>
-            ${notes ? `
-              <div class="text-[11px] mt-1 line-clamp-2">
-                ${escapeHtml(notes)}
-              </div>
-            ` : ''}
-          </td>
-
-          <td class="px-6 py-5">
-            <span class="text-on-surface-variant text-[12px]">—</span>
-          </td>
-
-          <td class="px-6 py-5">
-            <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold bg-surface-variant text-on-surface">
-              ${escapeHtml(stage)}
-            </span>
-          </td>
-
-          <td class="px-6 py-5">
-            <button
-              type="button"
-              class="text-primary hover:underline text-[12px]"
-              data-lead-id="${escapeHtml(lead.id)}">
-              View
-            </button>
-          </td>
-        </tr>
-      `;
-    }).join('');
-
-    tableBody.querySelectorAll('[data-lead-id]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const lead = allLeads.find(
-          item => String(item.id) === String(button.dataset.leadId)
-        );
-
-        if (lead) {
-          openLeadDetails(lead);
-        }
-      });
-    });
-  }
-
-  const leadModal = document.getElementById('lead-details-modal');
-  const leadModalContent = document.getElementById('lead-details-content');
-  const leadModalTitle = document.getElementById('lead-details-title');
-  const leadModalClose = document.getElementById('lead-details-close');
-
-  function formatDate(value) {
-    if (!value) return 'Not available';
-
-    const date = new Date(value);
-
-    if (Number.isNaN(date.getTime())) {
-      return String(value);
-    }
-
-    return date.toLocaleString('en-ZA', {
-      dateStyle: 'medium',
-      timeStyle: 'short'
-    });
-  }
-
-  function formatCurrency(value) {
-    if (value === null || value === undefined || value === '') {
-      return 'Not specified';
-    }
-
-    const number = Number(value);
-
-    if (Number.isNaN(number)) {
-      return String(value);
-    }
-
-    return `R${number.toLocaleString('en-ZA')}`;
-  }
-
-  function openLeadDetails(lead) {
-    if (!leadModal || !leadModalContent) {
-      console.error('PLM CRM: Lead details modal elements not found.');
-      return;
-    }
-
-    const name = lead.full_name || 'Unnamed Lead';
-    const phone = lead.phone_number || 'Not provided';
-    const email = lead.email || 'Not provided';
-    const stage = lead.stage || 'New Lead';
-    const source = lead.source || 'Unknown';
-    const vehicle = lead.target_vehicle_id || 'Not selected';
-    const budget = formatCurrency(lead.target_monthly_budget);
-    const notes = lead.notes || 'No notes recorded.';
-
-    if (leadModalTitle) {
-      leadModalTitle.textContent = name;
-    }
-
-    leadModalContent.innerHTML = `
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Customer
-          </div>
-          <div class="font-semibold text-on-surface">
-            ${escapeHtml(name)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Status
-          </div>
-          <div class="font-semibold text-primary">
-            ${escapeHtml(stage)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Phone
-          </div>
-          <a
-            href="tel:${escapeHtml(phone)}"
-            class="font-semibold text-on-surface hover:text-primary"
-          >
-            ${escapeHtml(phone)}
-          </a>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Email
-          </div>
-          <div class="font-semibold text-on-surface break-all">
-            ${escapeHtml(email)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Vehicle
-          </div>
-          <div class="font-semibold text-on-surface">
-            ${escapeHtml(vehicle)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Monthly Budget
-          </div>
-          <div class="font-semibold text-on-surface">
-            ${escapeHtml(budget)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Lead Source
-          </div>
-          <div class="font-semibold text-on-surface">
-            ${escapeHtml(source)}
-          </div>
-        </div>
-
-        <div class="rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-          <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-            Created
-          </div>
-          <div class="font-semibold text-on-surface">
-            ${escapeHtml(formatDate(lead.created_at))}
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-4 rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-        <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-2">
-          Notes
-        </div>
-        <div class="text-sm text-on-surface whitespace-pre-wrap">
-          ${escapeHtml(notes)}
-        </div>
-      </div>
-
-      <div class="mt-4 rounded-xl border border-outline-variant/20 bg-surface-container-highest/40 p-4">
-        <div class="text-[10px] uppercase tracking-wider text-on-surface-variant mb-1">
-          Lead ID
-        </div>
-        <div class="text-xs text-on-surface-variant break-all">
-          ${escapeHtml(lead.id || 'Not available')}
-        </div>
-      </div>
-    `;
-
-    leadModal.classList.remove('hidden');
-    leadModal.classList.add('flex');
-    leadModal.setAttribute('aria-hidden', 'false');
-
-    document.body.classList.add('overflow-hidden');
-  }
-
-  function closeLeadDetails() {
-    if (!leadModal) return;
-
-    leadModal.classList.add('hidden');
-    leadModal.classList.remove('flex');
-    leadModal.setAttribute('aria-hidden', 'true');
-
-    document.body.classList.remove('overflow-hidden');
-  }
-
-  if (leadModalClose) {
-    leadModalClose.addEventListener('click', closeLeadDetails);
-  }
-
-  if (leadModal) {
-    leadModal.addEventListener('click', (event) => {
-      if (event.target === leadModal) {
-        closeLeadDetails();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      closeLeadDetails();
-    }
-  });
-
-  function updateKpis(leads) {
-    const countStage = (stage) =>
-      leads.filter(
-        lead => (lead.stage || '').toLowerCase() === stage.toLowerCase()
-      ).length;
-
-    const setKpi = (id, value) => {
-      const element = document.getElementById(id);
-      if (element) element.textContent = value;
-    };
-
-    const totalLeads = leads.length;
-    const newLeads = countStage('New Lead');
-    const qualified = countStage('Qualified');
-
-    const applications =
-      countStage('Finance Application') +
-      countStage('Awaiting Approval') +
-      countStage('Finance Approved');
-
-    const sold = countStage('Sale Completed');
-
-    const hotLeads = leads.filter((lead) => {
-      const text = [
-        lead.stage,
-        lead.notes,
-        lead.source
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase();
-
-      return (
-        text.includes('hot') ||
-        text.includes('urgent') ||
-        text.includes('high intent')
-      );
-    }).length;
-
-    setKpi('kpi-new-leads', newLeads);
-    setKpi('kpi-hot-leads', hotLeads);
-    setKpi('kpi-qualified', qualified);
-    setKpi('kpi-applications', applications);
-    setKpi('kpi-sold', sold);
-    setKpi('kpi-enquiries', totalLeads);
-  }
 
   async function loadLiveLeads() {
     try {
@@ -857,15 +477,119 @@
       }
 
       const result = await response.json();
-
       const leads = result.data?.leads || result.data || [];
-
       allLeads = Array.isArray(leads) ? leads : [];
 
       console.log('PLM CRM: Live leads loaded:', allLeads);
 
-      updateKpis(allLeads);
-      renderLeads(allLeads);
+      // Update live KPI metrics
+      const countStage = (stage) =>
+        leads.filter((lead) => (lead.stage || '').toLowerCase() === stage.toLowerCase()).length;
+
+      const setKpi = (id, value) => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = value;
+      };
+
+      const totalLeads = leads.length;
+      const newLeads = countStage('New Lead');
+      const qualified = countStage('Qualified');
+      const applications =
+        countStage('Finance Application') +
+        countStage('Awaiting Approval') +
+        countStage('Finance Approved');
+      const sold =
+        countStage('Sale Completed');
+
+      const hotLeads = leads.filter((lead) => {
+        const text = [
+          lead.stage,
+          lead.notes,
+          lead.source
+        ].filter(Boolean).join(' ').toLowerCase();
+
+        return text.includes('hot') ||
+               text.includes('urgent') ||
+               text.includes('high intent');
+      }).length;
+
+      setKpi('kpi-new-leads', newLeads);
+      setKpi('kpi-hot-leads', hotLeads);
+      setKpi('kpi-qualified', qualified);
+      setKpi('kpi-applications', applications);
+      setKpi('kpi-sold', sold);
+      setKpi('kpi-enquiries', totalLeads);
+
+      if (!tableBody) {
+        console.error('PLM CRM: leads-table-body not found.');
+        return;
+      }
+
+      if (!Array.isArray(allLeads) || allLeads.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="7" class="px-6 py-10 text-center text-on-surface-variant">
+              No live leads found.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tableBody.innerHTML = allLeads.map((lead) => {
+        const name = lead.full_name || 'Unnamed Lead';
+        const phone = lead.phone_number || 'No phone';
+        const email = lead.email || '';
+        const vehicle = lead.target_vehicle_id || 'Not selected';
+        const budget = lead.target_monthly_budget
+          ? `R${Number(lead.target_monthly_budget).toLocaleString('en-ZA')}/mo`
+          : 'Not specified';
+        const stage = lead.stage || 'New Lead';
+        const source = lead.source || 'Unknown';
+        const notes = lead.notes || '';
+
+        return `
+          <tr class="hover:bg-surface-variant/20 transition-colors">
+            <td class="px-6 py-5">
+              <div class="font-body-md font-semibold text-on-surface">${escapeHtml(name)}</div>
+              <div class="text-[12px] text-on-surface-variant">${escapeHtml(phone)}</div>
+              ${email ? `<div class="text-[11px] text-on-surface-variant">${escapeHtml(email)}</div>` : ''}
+            </td>
+
+            <td class="px-6 py-5 text-on-surface-variant">
+              ${escapeHtml(vehicle)}
+            </td>
+
+            <td class="px-6 py-5 text-on-surface-variant">
+              ${escapeHtml(budget)}
+            </td>
+
+            <td class="px-6 py-5 text-on-surface-variant">
+              <div>${escapeHtml(source)}</div>
+              ${notes ? `<div class="text-[11px] mt-1 line-clamp-2">${escapeHtml(notes)}</div>` : ''}
+            </td>
+
+            <td class="px-6 py-5">
+              <span class="text-on-surface-variant text-[12px]">—</span>
+            </td>
+
+            <td class="px-6 py-5">
+              <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold bg-surface-variant text-on-surface">
+                ${escapeHtml(stage)}
+              </span>
+            </td>
+
+            <td class="px-6 py-5">
+              <button
+                type="button"
+                class="text-primary hover:underline text-[12px]"
+                onclick="console.log('PLM lead:', ${JSON.stringify(lead).replace(/</g, '\\u003c')})">
+                View
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
 
     } catch (error) {
       console.error('PLM CRM: Failed to load live leads:', error);
@@ -882,39 +606,85 @@
     }
   }
 
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
   if (searchInput) {
     searchInput.addEventListener('input', function () {
       const term = this.value.trim().toLowerCase();
 
-      if (!term) {
-        renderLeads(allLeads);
-        return;
-      }
-
       const filteredLeads = allLeads.filter((lead) => {
-        const searchableText = [
-          lead.id,
+        return [
           lead.full_name,
           lead.phone_number,
           lead.email,
           lead.stage,
           lead.source,
-          lead.notes,
-          lead.target_vehicle_id,
-          lead.target_monthly_budget
-        ]
-          .filter(value => value !== null && value !== undefined)
-          .map(value => String(value).toLowerCase())
-          .join(' ');
-
-        return searchableText.includes(term);
+          lead.notes
+        ].filter(Boolean)
+         .some(value => String(value).toLowerCase().includes(term));
       });
 
-      console.log(
-        `PLM CRM: Search "${term}" matched ${filteredLeads.length} lead(s).`
-      );
+      if (!tableBody) return;
 
-      renderLeads(filteredLeads);
+      if (filteredLeads.length === 0) {
+        tableBody.innerHTML = `
+          <tr>
+            <td colspan="7" class="px-6 py-10 text-center text-on-surface-variant">
+              No leads match your search.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tableBody.innerHTML = filteredLeads.map((lead) => {
+        const name = lead.full_name || 'Unnamed Lead';
+        const phone = lead.phone_number || 'No phone';
+        const email = lead.email || '';
+        const vehicle = lead.target_vehicle_id || 'Not selected';
+        const budget = lead.target_monthly_budget
+          ? `R${Number(lead.target_monthly_budget).toLocaleString('en-ZA')}/mo`
+          : 'Not specified';
+        const stage = lead.stage || 'New Lead';
+        const source = lead.source || 'Unknown';
+        const notes = lead.notes || '';
+
+        return `
+          <tr class="hover:bg-surface-variant/20 transition-colors">
+            <td class="px-6 py-5">
+              <div class="font-body-md font-semibold text-on-surface">${escapeHtml(name)}</div>
+              <div class="text-[12px] text-on-surface-variant">${escapeHtml(phone)}</div>
+              ${email ? `<div class="text-[11px] text-on-surface-variant">${escapeHtml(email)}</div>` : ''}
+            </td>
+            <td class="px-6 py-5 text-on-surface-variant">${escapeHtml(vehicle)}</td>
+            <td class="px-6 py-5 text-on-surface-variant">${escapeHtml(budget)}</td>
+            <td class="px-6 py-5 text-on-surface-variant">
+              <div>${escapeHtml(source)}</div>
+              ${notes ? `<div class="text-[11px] mt-1 line-clamp-2">${escapeHtml(notes)}</div>` : ''}
+            </td>
+            <td class="px-6 py-5">
+              <span class="text-on-surface-variant text-[12px]">—</span>
+            </td>
+            <td class="px-6 py-5">
+              <span class="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold bg-surface-variant text-on-surface">
+                ${escapeHtml(stage)}
+              </span>
+            </td>
+            <td class="px-6 py-5">
+              <button type="button" class="text-primary hover:underline text-[12px]">
+                View
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
     });
   }
 

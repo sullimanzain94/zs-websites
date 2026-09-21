@@ -8,45 +8,18 @@ import { logger } from '../utils/logger.js';
 
 const router = express.Router();
 
-// Validation middleware matching the actual PLM leads table
+// Validation middleware
 const validateLeadInput = [
-    body('full_name')
-        .trim()
-        .notEmpty()
-        .withMessage('Full name required'),
-
-    body('phone_number')
-        .trim()
-        .notEmpty()
-        .withMessage('Phone number required'),
-
-    body('email')
-        .optional({ values: 'falsy' })
-        .isEmail()
-        .normalizeEmail()
-        .withMessage('Valid email required'),
-
-    body('target_vehicle_id')
-        .optional({ values: 'falsy' })
-        .isUUID()
-        .withMessage('Valid vehicle ID required'),
-
-    body('target_monthly_budget')
-        .optional({ values: 'falsy' })
-        .isNumeric()
-        .withMessage('Monthly budget must be numeric'),
-
-    body('source')
-        .optional({ values: 'falsy' })
-        .trim()
-        .isLength({ max: 100 })
-        .withMessage('Source is too long'),
-
-    body('notes')
-        .optional({ values: 'falsy' })
-        .trim()
-        .isLength({ max: 5000 })
-        .withMessage('Notes are too long'),
+    body('first_name').trim().notEmpty().withMessage('First name required'),
+    body('surname').trim().notEmpty().withMessage('Surname required'),
+    body('email').isEmail().normalizeEmail().withMessage('Valid email required'),
+    body('phone').trim().notEmpty().withMessage('Phone number required'),
+    body('employment_status').optional().isIn(['Employed Full-Time', 'Self Employed', 'Contract Worker', 'Retired']),
+    body('monthly_income').optional().isIn(['Under R10k', 'R10-20k', 'R20-30k', 'R30k+']),
+    body('vehicle_id').optional().isUUID(),
+    body('deposit_available').optional().isBoolean().toBoolean(),
+    body('finance_intent').optional().isBoolean().toBoolean(),
+    body('lead_source').optional().isIn(['Website', 'Facebook', 'Instagram', 'WhatsApp', 'Google', 'Referral', 'Other']),
 ];
 
 // POST: Create new lead from website form

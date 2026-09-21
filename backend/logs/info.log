@@ -1,17 +1,3 @@
-{"timestamp":"2026-09-01T09:34:09.164Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-01T09:34:09.175Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-01T09:42:41.981Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-01T09:42:41.989Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:14:47.980Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:14:47.998Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:18:24.980Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:18:24.988Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:21:01.793Z","level":"error","message":"Database connection failed","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:21:01.803Z","level":"error","message":"Failed to start server","code":"ECONNREFUSED","env":"development"}
-{"timestamp":"2026-09-08T16:43:54.933Z","level":"error","message":"Database connection failed","errno":-101,"code":"ENETUNREACH","syscall":"connect","address":"2a05:d014:1e9b:b302:f15d:d60f:f100:a565","port":5432,"env":"development"}
-{"timestamp":"2026-09-08T16:43:54.941Z","level":"error","message":"Failed to start server","errno":-101,"code":"ENETUNREACH","syscall":"connect","address":"2a05:d014:1e9b:b302:f15d:d60f:f100:a565","port":5432,"env":"development"}
-{"timestamp":"2026-09-08T17:07:44.774Z","level":"error","message":"Database connection failed","errno":-101,"code":"ENETUNREACH","syscall":"connect","address":"2a05:d014:1e9b:b302:f15d:d60f:f100:a565","port":5432,"env":"development"}
-{"timestamp":"2026-09-08T17:07:44.787Z","level":"error","message":"Failed to start server","errno":-101,"code":"ENETUNREACH","syscall":"connect","address":"2a05:d014:1e9b:b302:f15d:d60f:f100:a565","port":5432,"env":"development"}
 {"timestamp":"2026-09-08T17:15:02.839Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:15:02.859Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T17:15:02.873Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
@@ -31,7 +17,6 @@
 {"timestamp":"2026-09-08T17:35:02.068Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T17:35:02.079Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
 {"timestamp":"2026-09-08T17:35:29.255Z","level":"info","message":"GET /api/vehicles","ip":"::ffff:127.0.0.1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-08T17:46:16.486Z","level":"error","message":"Query execution failed","error":{},"query":"\nSELECT table_name, column_name, data_type, udt_name\nFROM information_schema.columns\nWHERE table_schema='public'\nAND table_name IN ('lead_status_history','lead_notes','sales_activities','follow_ups','users','sales_team')\nORDER BY table_name, ordinal_position\n","env":"development"}
 {"timestamp":"2026-09-08T17:46:57.884Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:49:03.996Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:49:04.023Z","level":"info","message":"Database connected successfully","env":"development"}
@@ -39,41 +24,20 @@
 {"timestamp":"2026-09-08T17:50:46.333Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T17:50:46.352Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","phone":"","env":"development"}
 {"timestamp":"2026-09-08T17:50:46.759Z","level":"info","message":"New customer created","customerId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T17:50:46.959Z","level":"error","message":"Query execution failed","error":{"length":129,"name":"error","severity":"ERROR","code":"42703","position":"37","file":"parse_target.c","line":"1065","routine":"checkInsertTargets"},"query":"INSERT INTO leads \n            (id, customer_id, vehicle_id, lead_source, campaign, finance_intent, \n             deposit_available, status, priority, score, owner_id, assigned_at, created_at)\n            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NOW(), NOW())","env":"development"}
-{"timestamp":"2026-09-08T17:50:46.969Z","level":"error","message":"Failed to create lead","error":"column \"customer_id\" of relation \"leads\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T17:50:46.984Z","level":"warn","message":"Validation error","errors":[{"type":"field","value":"","msg":"First name required","path":"first_name","location":"body"},{"type":"field","value":"","msg":"Surname required","path":"surname","location":"body"},{"type":"field","value":"","msg":"Phone number required","path":"phone","location":"body"}],"env":"development"}
 {"timestamp":"2026-09-08T17:53:23.912Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:53:23.930Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T17:53:46.562Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T17:53:46.566Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:53:47.577Z","level":"warn","message":"Slow query detected (1009ms)","text":"SELECT id, email, phone FROM customers WHERE email = LOWER($1) OR phone = $2","env":"development"}
-{"timestamp":"2026-09-08T17:53:47.586Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:53:47.782Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T17:53:47.792Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T17:53:47.798Z","level":"warn","message":"Validation error","errors":[{"type":"field","value":"","msg":"First name required","path":"first_name","location":"body"},{"type":"field","value":"","msg":"Surname required","path":"surname","location":"body"},{"type":"field","value":"","msg":"Phone number required","path":"phone","location":"body"}],"env":"development"}
 {"timestamp":"2026-09-08T17:57:13.786Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:57:13.814Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T17:57:40.619Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T17:57:40.632Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:57:41.626Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:57:41.836Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T17:57:41.845Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T17:57:41.847Z","level":"warn","message":"Validation error","errors":[{"type":"field","value":"","msg":"First name required","path":"first_name","location":"body"},{"type":"field","value":"","msg":"Surname required","path":"surname","location":"body"},{"type":"field","value":"","msg":"Phone number required","path":"phone","location":"body"}],"env":"development"}
 {"timestamp":"2026-09-08T17:58:30.343Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T17:58:30.347Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:58:31.337Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:58:31.531Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T17:58:31.538Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T17:58:31.541Z","level":"warn","message":"Validation error","errors":[{"type":"field","value":"","msg":"First name required","path":"first_name","location":"body"},{"type":"field","value":"","msg":"Surname required","path":"surname","location":"body"},{"type":"field","value":"","msg":"Phone number required","path":"phone","location":"body"}],"env":"development"}
 {"timestamp":"2026-09-08T17:59:09.720Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T17:59:09.744Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T17:59:23.351Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T17:59:23.354Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:59:25.355Z","level":"warn","message":"Slow query detected (1999ms)","text":"SELECT id, email, phone FROM customers WHERE email = LOWER($1) OR phone = $2","env":"development"}
-{"timestamp":"2026-09-08T17:59:25.361Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","phone":"","env":"development"}
-{"timestamp":"2026-09-08T17:59:25.553Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T17:59:25.564Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T17:59:25.569Z","level":"warn","message":"Validation error","errors":[{"type":"field","value":"","msg":"First name required","path":"first_name","location":"body"},{"type":"field","value":"","msg":"Surname required","path":"surname","location":"body"},{"type":"field","value":"","msg":"Phone number required","path":"phone","location":"body"}],"env":"development"}
 {"timestamp":"2026-09-08T17:59:53.632Z","level":"info","message":"SIGTERM received, shutting down gracefully","env":"development"}
 {"timestamp":"2026-09-08T18:00:35.280Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T18:00:35.297Z","level":"info","message":"Database connected successfully","env":"development"}
@@ -84,16 +48,8 @@
 {"timestamp":"2026-09-08T18:02:38.591Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T18:03:59.538Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T18:03:59.551Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:03:59.752Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:03:59.946Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T18:03:59.953Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T18:03:59.965Z","level":"error","message":"API Error: Failed to create lead","statusCode":500,"path":"/api/leads","method":"POST","details":{"error":"column \"status\" does not exist"},"stack":"Error: Failed to create lead\n    at createLead (file:///root/zs-websites/backend/controllers/leadsController.js:166:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-08T18:04:19.694Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T18:04:19.700Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:04:20.660Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:04:20.856Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T18:04:20.864Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T18:04:20.868Z","level":"error","message":"API Error: Failed to create lead","statusCode":500,"path":"/api/leads","method":"POST","details":{"error":"column \"status\" does not exist"},"stack":"Error: Failed to create lead\n    at createLead (file:///root/zs-websites/backend/controllers/leadsController.js:166:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-08T18:05:16.537Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T18:05:16.550Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T18:05:43.925Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
@@ -109,20 +65,12 @@
 {"timestamp":"2026-09-08T18:09:35.055Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T18:09:35.066Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T18:11:12.480Z","level":"info","message":"SIGINT received, shutting down gracefully","env":"development"}
-{"timestamp":"2026-09-08T18:16:49.062Z","level":"error","message":"Database connection failed","env":"development"}
-{"timestamp":"2026-09-08T18:16:49.084Z","level":"error","message":"Failed to start server","env":"development"}
 {"timestamp":"2026-09-08T18:17:03.220Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T18:17:03.253Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T18:17:03.269Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
 {"timestamp":"2026-09-08T18:17:22.324Z","level":"info","message":"POST /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T18:17:22.341Z","level":"info","message":"Creating new lead","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:17:22.527Z","level":"warn","message":"Duplicate customer detected","existingId":"89ae6c09-84a9-4fd4-ace0-b0294c72bee9","email":"plm-api-test@example.com","env":"development"}
-{"timestamp":"2026-09-08T18:17:22.725Z","level":"error","message":"Query execution failed","error":{"length":164,"name":"error","severity":"ERROR","code":"42703","hint":"Perhaps you meant to reference the column \"leads.stage\".","position":"12","file":"parse_relation.c","line":"3723","routine":"errorMissingColumn"},"query":"SELECT id, status FROM leads WHERE customer_id = $1 ORDER BY created_at DESC LIMIT 1","env":"development"}
-{"timestamp":"2026-09-08T18:17:22.733Z","level":"error","message":"Failed to create lead","error":"column \"status\" does not exist","env":"development"}
-{"timestamp":"2026-09-08T18:17:22.748Z","level":"error","message":"API Error: Failed to create lead","statusCode":500,"path":"/api/leads","method":"POST","details":{"error":"column \"status\" does not exist"},"stack":"Error: Failed to create lead\n    at createLead (file:///root/zs-websites/backend/controllers/leadsController.js:166:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-08T18:19:24.580Z","level":"info","message":"SIGINT received, shutting down gracefully","env":"development"}
-{"timestamp":"2026-09-08T18:26:19.695Z","level":"error","message":"Database connection failed","env":"development"}
-{"timestamp":"2026-09-08T18:26:19.715Z","level":"error","message":"Failed to start server","env":"development"}
 {"timestamp":"2026-09-08T18:26:46.441Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T18:26:46.465Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T18:26:46.485Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
@@ -138,7 +86,7 @@
 {"timestamp":"2026-09-08T18:46:40.333Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
 {"timestamp":"2026-09-08T18:48:59.283Z","level":"info","message":"POST /api/leads","ip":"::ffff:192.168.1.16","userAgent":"Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Mobile Safari/537.36","env":"development"}
 {"timestamp":"2026-09-08T18:48:59.343Z","level":"info","message":"Creating new lead","email":"primelanemotors2@gmail.com","phone_number":"+27820000001","env":"development"}
-{"timestamp":"2026-09-08T18:52:01.644Z","level":"error","message":"Query execution failed","error":{},"query":"SELECT id, full_name, phone_number, email, stage, source, created_at FROM leads ORDER BY created_at DESC LIMIT 5","env":"development"}
+{"timestamp":"2026-09-08T18:51:00.053Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T19:06:15.001Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:07:18.338Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:08:14.292Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
@@ -153,16 +101,10 @@
 {"timestamp":"2026-09-08T19:21:03.894Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:26:43.704Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:28:47.707Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-08T19:28:48.222Z","level":"error","message":"Login failed","error":"secretOrPrivateKey must have a value","env":"development"}
-{"timestamp":"2026-09-08T19:28:48.237Z","level":"error","message":"API Error: Login failed","statusCode":500,"path":"/api/auth/login","method":"POST","details":{},"stack":"Error: Login failed\n    at login (file:///root/zs-websites/backend/controllers/authController.js:127:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-08T19:29:05.289Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-08T19:29:05.501Z","level":"error","message":"Query execution failed","error":{"length":200,"name":"error","severity":"ERROR","code":"42883","hint":"No function matches the given name and argument types. You might need to add explicit type casts.","position":"45","file":"parse_func.c","line":"629","routine":"ParseFuncOrColumn"},"query":"SELECT password_hash FROM users WHERE email=LOWER()","env":"development"}
 {"timestamp":"2026-09-08T19:29:20.008Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-08T19:29:20.242Z","level":"error","message":"Query execution failed","error":{"length":200,"name":"error","severity":"ERROR","code":"42883","hint":"No function matches the given name and argument types. You might need to add explicit type casts.","position":"45","file":"parse_func.c","line":"629","routine":"ParseFuncOrColumn"},"query":"SELECT password_hash FROM users WHERE email=LOWER()","env":"development"}
 {"timestamp":"2026-09-08T19:30:38.661Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:31:47.515Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-08T19:31:48.040Z","level":"error","message":"Login failed","error":"secretOrPrivateKey must have a value","env":"development"}
-{"timestamp":"2026-09-08T19:31:48.044Z","level":"error","message":"API Error: Login failed","statusCode":500,"path":"/api/auth/login","method":"POST","details":{},"stack":"Error: Login failed\n    at login (file:///root/zs-websites/backend/controllers/authController.js:127:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-08T19:35:58.701Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:35:58.724Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T19:36:40.006Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
@@ -179,7 +121,6 @@
 {"timestamp":"2026-09-08T19:50:35.832Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T19:50:35.854Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-08T19:50:35.867Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
-{"timestamp":"2026-09-08T19:52:13.859Z","level":"error","message":"API Error: Unexpected token 'H', ...\"password\":HGCtaglcxO\"... is not valid JSON","statusCode":400,"path":"/api/auth/login","method":"POST","details":{},"stack":"SyntaxError: Unexpected token 'H', ...\"password\":HGCtaglcxO\"... is not valid JSON\n    at JSON.parse (<anonymous>)\n    at parse (/root/zs-websites/backend/node_modules/body-parser/lib/types/json.js:96:19)\n    at /root/zs-websites/backend/node_modules/body-parser/lib/read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:227:14)\n    at invokeCallback (/root/zs-websites/backend/node_modules/raw-body/index.js:238:16)\n    at done (/root/zs-websites/backend/node_modules/raw-body/index.js:227:7)\n    at IncomingMessage.onEnd (/root/zs-websites/backend/node_modules/raw-body/index.js:287:7)\n    at IncomingMessage.emit (node:events:509:28)\n    at endReadableNT (node:internal/streams/readable:1736:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","env":"development"}
 {"timestamp":"2026-09-08T19:54:28.106Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T19:55:35.299Z","level":"info","message":"GET /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-08T19:56:28.259Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"node","env":"development"}
@@ -244,7 +185,6 @@
 {"timestamp":"2026-09-08T22:11:45.320Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T22:12:11.608Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T22:12:52.006Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-08T22:37:01.529Z","level":"error","message":"Query execution failed","error":{},"query":"\n    SELECT\n      column_name,\n      data_type,\n      is_nullable,\n      column_default\n    FROM information_schema.columns\n    WHERE table_schema = 'public'\n      AND table_name = $1\n    ORDER BY ordinal_position\n  ","env":"development"}
 {"timestamp":"2026-09-08T22:37:49.552Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T22:38:08.465Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-08T22:38:59.719Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
@@ -253,51 +193,32 @@
 {"timestamp":"2026-09-09T12:41:51.821Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T12:44:33.457Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T12:44:38.889Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T12:44:38.893Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-09T12:44:55.848Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T12:44:56.059Z","level":"error","message":"Query execution failed","error":{},"query":"SELECT id, username, email, password_hash, first_name, last_name, role, is_active FROM users WHERE email = LOWER($1)","env":"development"}
-{"timestamp":"2026-09-09T12:44:56.067Z","level":"error","message":"Login failed","error":"Connection terminated unexpectedly","env":"development"}
-{"timestamp":"2026-09-09T12:44:56.068Z","level":"error","message":"API Error: Login failed","statusCode":500,"path":"/api/auth/login","method":"POST","details":{},"stack":"Error: Login failed\n    at login (file:///root/zs-websites/backend/controllers/authController.js:127:14)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)","env":"development"}
 {"timestamp":"2026-09-09T12:46:36.610Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T12:46:38.393Z","level":"warn","message":"Slow query detected (1779ms)","text":"SELECT id, username, email, password_hash, first_name, last_name, role, is_active FROM users WHERE e","env":"development"}
 {"timestamp":"2026-09-09T12:48:06.629Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T12:53:24.999Z","level":"info","message":"GET /api/auth/me","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T12:53:25.008Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-09T12:53:49.301Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T12:55:31.200Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:08:45.422Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:08:51.164Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T15:08:51.177Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-09T15:08:58.605Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:09:04.503Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:10:47.002Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:23:01.877Z","level":"info","message":"GET /api/state","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T15:23:08.053Z","level":"info","message":"GET /api/auth/me","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T15:23:08.056Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-09T15:23:16.058Z","level":"info","message":"GET /api/auth/me","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-09T15:23:16.060Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-09T15:27:34.023Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-09T16:09:57.750Z","level":"info","message":"GET /api/health","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-10T10:38:19.047Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-10T10:38:19.085Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-10T10:38:23.504Z","level":"info","message":"GET /api/state","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-10T10:38:30.630Z","level":"info","message":"GET /api/state","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-10T10:39:02.553Z","level":"info","message":"GET /api/state","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
 {"timestamp":"2026-09-10T18:00:06.987Z","level":"info","message":"HEAD /","ip":"::ffff:127.0.0.1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-10T18:00:29.618Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-10T18:00:29.626Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-10T18:00:41.848Z","level":"info","message":"GET /api/leads","ip":"::ffff:127.0.0.1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-10T18:00:41.849Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-10T18:01:10.698Z","level":"info","message":"GET /api/vehicles","ip":"::ffff:127.0.0.1","userAgent":"curl/8.21.0","env":"development"}
-{"timestamp":"2026-09-10T18:01:11.165Z","level":"error","message":"Query execution failed","error":{},"query":"\n            SELECT\n                id,\n                created_at,\n                make,\n                model,\n                year,\n                variant,\n                mileage,\n                price_zar,\n                est_monthly_zar,\n                color,\n                transmission,\n                fuel_type,\n                status,\n                image_urls,\n                description\n            FROM vehicles\n            WHERE status = 'Available'\n            ORDER BY year DESC, make ASC, model ASC\n        ","env":"development"}
-{"timestamp":"2026-09-10T18:01:11.181Z","level":"error","message":"API Error: Connection terminated unexpectedly","statusCode":500,"path":"/api/vehicles","method":"GET","details":{},"stack":"Error: Connection terminated unexpectedly\n    at /root/zs-websites/backend/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async query (file:///root/zs-websites/backend/config/database.js:52:24)\n    at async file:///root/zs-websites/backend/routes/vehicles.js:11:24","env":"development"}
 {"timestamp":"2026-09-10T18:04:03.796Z","level":"info","message":"SIGTERM received, shutting down gracefully","env":"development"}
 {"timestamp":"2026-09-19T06:49:35.730Z","level":"info","message":"POST /api/auth/login","ip":"::ffff:127.0.0.1","env":"test"}
-{"timestamp":"2026-09-19T06:49:37.290Z","level":"error","message":"Database connection failed","length":84,"name":"error","severity":"FATAL","code":"XX000","env":"test"}
-{"timestamp":"2026-09-19T06:49:37.321Z","level":"error","message":"Failed to start server","length":84,"name":"error","severity":"FATAL","code":"XX000","env":"test"}
-{"timestamp":"2026-09-19T17:46:11.567Z","level":"error","message":"Database connection failed","length":84,"name":"error","severity":"FATAL","code":"XX000","env":"development"}
-{"timestamp":"2026-09-19T17:46:17.978Z","level":"error","message":"Database connection failed","length":84,"name":"error","severity":"FATAL","code":"XX000","env":"development"}
-{"timestamp":"2026-09-19T17:46:25.043Z","level":"error","message":"Database connection failed","length":84,"name":"error","severity":"FATAL","code":"XX000","env":"development"}
 {"timestamp":"2026-09-19T18:02:14.284Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T18:02:14.299Z","level":"info","message":"Database connected successfully","env":"development"}
 {"timestamp":"2026-09-19T18:02:14.317Z","level":"info","message":"Server running on port 3000 in development mode","env":"development"}
@@ -306,37 +227,26 @@
 {"timestamp":"2026-09-19T18:07:32.140Z","level":"info","message":"GET /api/health","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:07:37.564Z","level":"info","message":"GET /api/vehicles","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:08:02.529Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:08:02.533Z","level":"warn","message":"Authentication failed","error":"No token provided","env":"development"}
 {"timestamp":"2026-09-19T18:08:50.419Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:08:58.628Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:08:58.632Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
-{"timestamp":"2026-09-19T18:10:04.803Z","level":"error","message":"Query execution failed","error":{},"query":"SELECT id, username, email, role, is_active FROM users ORDER BY email","env":"development"}
 {"timestamp":"2026-09-19T18:12:03.495Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T18:15:32.413Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-19T18:15:32.810Z","level":"error","message":"Query execution failed","error":{"length":94,"name":"error","severity":"ERROR","code":"42601","position":"33","file":"scan.l","line":"1244","routine":"scanner_yyerror"},"query":"UPDATE users SET password_hash= WHERE email=LOWER()","env":"development"}
 {"timestamp":"2026-09-19T18:16:29.883Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:17:58.707Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-19T18:17:58.935Z","level":"error","message":"Query execution failed","error":{"length":201,"name":"error","severity":"ERROR","code":"42883","hint":"No function matches the given name and argument types. You might need to add explicit type casts.","position":"102","file":"parse_func.c","line":"629","routine":"ParseFuncOrColumn"},"query":"SELECT email, username, role, is_active, length(password_hash) AS hash_length FROM users WHERE email=LOWER()","env":"development"}
 {"timestamp":"2026-09-19T18:18:24.450Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T18:19:05.819Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T18:20:02.187Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:20:03.474Z","level":"info","message":"User logged in","userId":"f6005fb4-8c79-424a-9b5f-19dad59396f0","email":"primelanemotors2@gmail.com","env":"development"}
 {"timestamp":"2026-09-19T18:20:28.611Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:20:28.613Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:22:30.822Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:22:30.825Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:23:25.932Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:23:26.929Z","level":"info","message":"User logged in","userId":"f6005fb4-8c79-424a-9b5f-19dad59396f0","email":"primelanemotors2@gmail.com","env":"development"}
 {"timestamp":"2026-09-19T18:25:26.212Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:25:26.224Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:26:45.234Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:26:45.238Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:27:52.755Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:27:52.756Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:28:48.009Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:28:48.525Z","level":"info","message":"User logged in","userId":"f6005fb4-8c79-424a-9b5f-19dad59396f0","email":"primelanemotors2@gmail.com","env":"development"}
 {"timestamp":"2026-09-19T18:29:50.929Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
-{"timestamp":"2026-09-19T18:29:50.932Z","level":"warn","message":"Authentication failed","error":"Invalid token","env":"development"}
 {"timestamp":"2026-09-19T18:30:57.738Z","level":"info","message":"POST /api/auth/login","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:30:58.321Z","level":"info","message":"User logged in","userId":"f6005fb4-8c79-424a-9b5f-19dad59396f0","email":"primelanemotors2@gmail.com","env":"development"}
 {"timestamp":"2026-09-19T18:32:11.515Z","level":"info","message":"GET /api/leads","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
@@ -371,11 +281,9 @@
 {"timestamp":"2026-09-19T18:52:28.488Z","level":"info","message":"GET /api/leads/6c1ce24f-a839-45fc-a207-b2e7e756684e","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T18:52:33.262Z","level":"info","message":"GET /api/leads/6c1ce24f-a839-45fc-a207-b2e7e756684e/history","ip":"::1","userAgent":"curl/8.22.0","env":"development"}
 {"timestamp":"2026-09-19T19:21:55.913Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-19T19:21:56.145Z","level":"error","message":"Query execution failed","error":{"length":209,"name":"error","severity":"ERROR","code":"42883","hint":"No function matches the given name and argument types. You might need to add explicit type casts.","position":"8","file":"parse_func.c","line":"629","routine":"ParseFuncOrColumn"},"query":"SELECT PostGIS_Version()","env":"development"}
 {"timestamp":"2026-09-19T19:30:13.499Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T19:31:06.988Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T19:31:42.936Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
-{"timestamp":"2026-09-19T19:32:26.990Z","level":"error","message":"Database connection failed","env":"development"}
 {"timestamp":"2026-09-19T19:32:47.758Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T19:33:04.171Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}
 {"timestamp":"2026-09-19T19:33:30.583Z","level":"info","message":"Database connection successful","host":"aws-0-eu-central-1.pooler.supabase.com","database":"postgres","env":"development"}

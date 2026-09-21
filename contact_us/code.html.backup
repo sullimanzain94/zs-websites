@@ -208,26 +208,26 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">First Name</label>
-<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your first name" type="text" name="first_name" required/>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your first name" type="text"/>
 </div>
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Last Name</label>
-<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your last name" type="text" name="last_name" required/>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Enter your last name" type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Phone Number</label>
-<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your contact number" type="tel" name="phone_number" required/>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your contact number" type="tel"/>
 </div>
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Email Address</label>
-<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your email address" type="email" name="email" required/>
+<input class="input-ghost py-2 w-full font-body-md text-body-md" placeholder="Your email address" type="email"/>
 </div>
 </div>
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Employment Status</label>
-<select class="input-ghost py-2 w-full font-body-md text-body-md bg-transparent appearance-none" name="employment_status" required>
+<select class="input-ghost py-2 w-full font-body-md text-body-md bg-transparent appearance-none">
 <option class="bg-surface text-on-surface" value="">Select status...</option>
 <option class="bg-surface text-on-surface" value="employed">Employed</option>
 <option class="bg-surface text-on-surface" value="self_employed">Self Employed</option>
@@ -236,7 +236,7 @@
 </div>
 <div class="flex flex-col">
 <label class="font-label-sm text-label-sm text-secondary-fixed mb-2 uppercase">Additional Information (Optional)</label>
-<textarea class="input-ghost py-2 w-full font-body-md text-body-md resize-none h-24" name="notes" placeholder="Tell us about the vehicle you are interested in..."></textarea>
+<textarea class="input-ghost py-2 w-full font-body-md text-body-md resize-none h-24" placeholder="Tell us about the vehicle you are interested in..."></textarea>
 </div>
 <button class="w-full bg-gradient-gold text-on-primary-fixed font-headline-md text-headline-md uppercase py-4 rounded mt-4 glint-hover transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center gap-2" type="submit">
                         Submit Assessment
@@ -271,64 +271,9 @@
 </div>
 </footer>
 <script>
-document.getElementById('contact-assessment-form').addEventListener('submit', async (event) => {
+document.getElementById('contact-assessment-form').addEventListener('submit', (event) => {
     event.preventDefault();
-
-    const form = event.currentTarget;
-    const button = form.querySelector('button[type="submit"]');
-    const success = document.getElementById('contact-success');
-
-    const firstName = form.querySelector('[name="first_name"]').value.trim();
-    const lastName = form.querySelector('[name="last_name"]').value.trim();
-    const phone = form.querySelector('[name="phone_number"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const employment = form.querySelector('[name="employment_status"]').value;
-    const notes = form.querySelector('[name="notes"]').value.trim();
-
-    const payload = {
-        full_name: `${firstName} ${lastName}`.trim(),
-        phone_number: phone,
-        email: email || null,
-        target_monthly_budget: null,
-        source: 'Website - Contact Assessment',
-        notes: [
-            employment ? `Employment status: ${employment}` : '',
-            notes
-        ].filter(Boolean).join('\\n')
-    };
-
-    button.disabled = true;
-    button.style.opacity = '0.6';
-
-    try {
-        const apiBase = `${window.location.protocol}//${window.location.hostname}:3000`;
-
-        const response = await fetch(`${apiBase}/api/leads`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-            throw new Error(result.message || 'Unable to submit assessment');
-        }
-
-        form.reset();
-        success.textContent = 'Thank you. Your assessment has been received. We will contact you shortly.';
-        success.classList.remove('hidden');
-
-    } catch (error) {
-        console.error('PLM lead submission failed:', error);
-        success.textContent = 'We could not submit your assessment. Please try again or contact us directly.';
-        success.classList.remove('hidden');
-    } finally {
-        button.disabled = false;
-        button.style.opacity = '';
-    }
+    document.getElementById('contact-success').classList.remove('hidden');
 });
 </script>
 </body></html>
