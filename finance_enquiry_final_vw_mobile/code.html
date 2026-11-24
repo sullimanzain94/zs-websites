@@ -130,137 +130,46 @@
 <img alt="Prime Lane Motors Logo" class="w-32 h-32 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXQNvny8g4jUadfmkIVVZiU0IJvOzYiVSb3NGk09drD--F-o0I3tVGYa-p95vAtgCrsTzbrd9A3exBja81zcQ452VrafifBWIqTOkPJsEGMGh_ZrIkSmCRpS83CEIjibr1ymqipACKHSTGdesH5Uxn4OZkilkLauWkjnuSrwXxydMKz8Uo5V_HjDP9t8BwbimAK4go1l_qIHRSImFB2X9vo6X54yOvS0VCCuZ6SEbIYbkE2AmNV_s4ETy9FTCsNnYr1-0"/>
 </header>
 <!-- Main Content Canvas -->
-<main class="flex-grow px-margin-mobile md:px-margin-desktop py-8 flex justify-center items-start">
-<!-- Form Container -->
-<div class="w-full max-w-[600px] glass-panel rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-6 relative">
-<div id="form-container">
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-6 uppercase text-center">Finance Enquiry</h2>
-<form class="space-y-6" id="finance-enquiry-form">
-<!-- Personal Details -->
-<div class="space-y-6">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Full Name</label>
-<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="John Doe" required="" type="text"/>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Mobile Number</label>
-<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="082 123 4567" required="" type="tel"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Email Address</label>
-<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="john@example.com" required="" type="email"/>
-</div>
-</div>
-</div>
-<!-- Vehicle & Financials -->
-<div class="space-y-6 pt-4 border-t border-outline-variant/30">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">VW Model of Interest</label>
-<input class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="e.g. Golf GTI, Polo" required="" type="text"/>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Employment Status</label>
-<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
-<option disabled="" selected="" value="">Select Status</option>
-<option value="employed">Employed Full-Time</option>
-<option value="self_employed">Self Employed</option>
-<option value="contract">Contract Worker</option>
-<option value="retired">Retired</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Monthly Income (Net)</label>
-<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
-<option disabled="" selected="" value="">Select Income</option>
-<option value="under_10k">Under R10,000</option>
-<option value="10k_20k">R10,000 - R20,000</option>
-<option value="20k_30k">R20,000 - R30,000</option>
-<option value="30k_plus">R30,000+</option>
-</select>
-</div>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Do you have a deposit?</label>
-<div class="grid grid-cols-3 gap-3">
-<label class="cursor-pointer">
-<input class="peer sr-only" name="deposit" required="" type="radio" value="yes"/>
-<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Yes</div>
-</label>
-<label class="cursor-pointer">
-<input class="peer sr-only" name="deposit" type="radio" value="no"/>
-<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">No</div>
-</label>
-<label class="cursor-pointer">
-<input class="peer sr-only" name="deposit" type="radio" value="not_sure"/>
-<div class="form-well p-3 rounded-lg text-center peer-checked:border-primary peer-checked:bg-surface-container-high peer-checked:text-primary transition-all">Not Sure</div>
-</label>
-</div>
-</div>
-</div>
-<!-- Preferences & Additional Info -->
-<div class="space-y-6 pt-4 border-t border-outline-variant/30">
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Preferred Contact Method</label>
-<select class="w-full form-well p-4 rounded-lg text-on-surface appearance-none focus:outline-none focus:ring-0" required="">
-<option value="phone">Phone Call</option>
-<option value="whatsapp">WhatsApp</option>
-<option value="email">Email</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Additional Information (Optional)</label>
-<textarea class="w-full form-well p-4 rounded-lg text-on-surface focus:outline-none focus:ring-0 placeholder:text-outline-variant" placeholder="Any specific requirements or questions?" rows="3"></textarea>
-</div>
-<!-- Consent Checkboxes -->
-<div class="space-y-4 pt-4 border-t border-outline-variant/30">
-<label class="flex items-start gap-3 cursor-pointer group">
-<div class="mt-1 flex-shrink-0">
-<input class="w-5 h-5 rounded border-outline-variant bg-surface-container-low text-primary focus:ring-primary focus:ring-offset-background" required="" type="checkbox"/>
-</div>
-<span class="text-body-md font-body-md text-on-surface-variant group-hover:text-on-surface transition-colors">I consent to Prime Lane Motors processing my information for this enquiry.</span>
-</label>
-</div>
-</div>
-<!-- Navigation Buttons -->
-<div class="pt-6 flex justify-center items-center mt-auto">
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md uppercase px-8 py-4 rounded-lg font-bold hover:bg-primary-container transition-colors shadow-[0_0_20px_rgba(242,202,80,0.3)]" id="submit-btn" type="submit">
-                    SUBMIT FINANCE ENQUIRY
-                </button>
-</div>
-</form>
-</div>
-<!-- Success State -->
-<div class="success-state flex-col items-center justify-center py-12 text-center" id="success-state">
-<span class="material-symbols-outlined text-primary text-[64px] mb-4">check_circle</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4 uppercase">ENQUIRY RECEIVED</h2>
-<p class="text-on-surface-variant text-body-lg">Thank you for your interest. One of our finance specialists will contact you shortly.</p>
-</div>
-<!-- Disclaimer -->
-<div class="mt-8 text-[12px] leading-relaxed text-outline-variant text-center opacity-60 px-4">
-        "Prime Lane Motors assists customers with their vehicle and finance journey. Finance approval, interest rates, instalments and other credit terms are determined by the applicable finance provider and are subject to its assessment, affordability requirements, credit criteria and approval. Finance approval is not guaranteed."
-    </div>
-</div>
-</main>
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('finance-enquiry-form');
-            const formContainer = document.getElementById('form-container');
-            const successState = document.getElementById('success-state');
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Hide form, show success state
-                formContainer.style.display = 'none';
-                successState.classList.add('active');
-                
-                // Scroll to top of container for mobile
-                window.scrollTo({
-                    top: formContainer.parentElement.offsetTop - 20,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-12 flex justify-center items-start">
+  <section class="w-full max-w-[700px] glass-panel rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-6 md:p-10">
+    <div class="text-center mb-10">
+      <p class="text-primary uppercase tracking-widest font-bold mb-4">Prime Lane Motors</p>
+      <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-5 uppercase">Vehicle Finance Assistance</h1>
+      <p class="text-on-surface-variant">
+        Exploring vehicle finance? Contact us to discuss your requirements and the assistance we may be able to provide through our partner network.
+      </p>
+    </div>
+
+    <div class="space-y-5 mb-10">
+      <div class="rounded-lg border border-white/10 p-5">
+        <h2 class="text-primary font-bold text-lg mb-2">1. Tell us what you need</h2>
+        <p class="text-on-surface-variant">Share the vehicle you are considering, your approximate budget and your preferred contact method.</p>
+      </div>
+      <div class="rounded-lg border border-white/10 p-5">
+        <h2 class="text-primary font-bold text-lg mb-2">2. Discuss possible options</h2>
+        <p class="text-on-surface-variant">We can discuss the next steps and, where appropriate, the relevant dealership or finance-provider process.</p>
+      </div>
+      <div class="rounded-lg border border-white/10 p-5">
+        <h2 class="text-primary font-bold text-lg mb-2">3. Provider assessment</h2>
+        <p class="text-on-surface-variant">Any credit application, affordability assessment and finance decision are handled by the applicable finance provider.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <a href="https://wa.me/27657572632" target="_blank" rel="noopener noreferrer"
+         class="rounded-lg bg-primary text-black font-bold text-center p-4 hover:opacity-90">WhatsApp</a>
+      <a href="tel:+27657572632"
+         class="rounded-lg border border-primary text-primary font-bold text-center p-4 hover:bg-white/5">Call PLM</a>
+      <a href="mailto:primelanemotors2@gmail.com"
+         class="rounded-lg border border-primary text-primary font-bold text-center p-4 hover:bg-white/5">Email PLM</a>
+    </div>
+
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <p class="text-sm text-on-surface-variant">
+        Prime Lane Motors assists customers with their vehicle and finance journey. Finance approval, interest rates, instalments and other credit terms are determined by the applicable finance provider and are subject to its assessment, affordability requirements, credit criteria and approval. Finance approval is not guaranteed. Prime Lane Motors is not presenting this service as a credit offer or a guarantee of finance.
+      </p>
+    </div>
+  </section>
+</main>
 </body></html>
